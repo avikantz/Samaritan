@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DynamicLabel.h
 //  Samaritan
 //
 //  Created by Avikant Saini on 11/29/15.
@@ -7,11 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AppDelegate.h"
-#import "SamaritanView.h"
 
-@interface ViewController : UIViewController
+IB_DESIGNABLE
 
+@interface DynamicLabel : UILabel
 
 @end
-

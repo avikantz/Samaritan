@@ -23,20 +23,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsC-Gl-IWn">
-                                <rect key="frame" x="20" y="287" width="560" height="25"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
+                                <rect key="frame" x="32" y="287" width="536" height="25"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-6z-m2b" customClass="BlinkingImageView">
+                                <rect key="frame" x="278" y="328" width="44" height="44"/>
+                                <animations/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="blinkDuration">
+                                        <real key="value" value="1.6000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="leadingMargin" secondItem="ZsC-Gl-IWn" secondAttribute="leading" id="fyq-i6-ItO"/>
-                            <constraint firstItem="ZsC-Gl-IWn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qrA-gK-7Mm"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="ZsC-Gl-IWn" secondAttribute="trailing" id="zdf-m1-jrI"/>
+                            <constraint firstItem="FKU-6z-m2b" firstAttribute="centerX" secondItem="R0S-RB-bGg" secondAttribute="centerX" id="IYH-pE-BpX"/>
+                            <constraint firstItem="R0S-RB-bGg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M6d-JI-XHz"/>
+                            <constraint firstItem="FKU-6z-m2b" firstAttribute="top" secondItem="R0S-RB-bGg" secondAttribute="bottom" constant="16" id="QIS-5d-XHy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R0S-RB-bGg" secondAttribute="trailing" constant="12" id="nl4-Rx-cQx"/>
+                            <constraint firstItem="R0S-RB-bGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="xWk-hH-Dlz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -45,4 +56,7 @@
             <point key="canvasLocation" x="342" y="362"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RedTriangle" width="44" height="44"/>
+    </resources>
 </document>

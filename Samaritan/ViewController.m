@@ -12,11 +12,19 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+//	SamaritanView *samaritanView;
+}
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+	
+//	samaritanView = [[[NSBundle mainBundle] loadNibNamed:@"SamaritanView" owner:self options:nil] firstObject];
+//	[samaritanView setFrame:CGRectMake(0, 0, SWidth - 60, SHeight - 60)];
+//	[samaritanView setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin];
+//	[self.view addSubview:samaritanView];
+	
 }
 
 - (void)didReceiveMemoryWarning {
