@@ -14,6 +14,9 @@
 		592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */; };
 		592192CA1C0B298200E93480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592192C91C0B298200E93480 /* Assets.xcassets */; };
 		592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592192CB1C0B298200E93480 /* LaunchScreen.storyboard */; };
+		592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */; };
+		592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */; };
+		592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DE1C0B2AD200E93480 /* SamaritanData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,11 @@
 		592192C91C0B298200E93480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		592192CC1C0B298200E93480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		592192CE1C0B298200E93480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "magdacleanmono-regular.otf"; sourceTree = "<group>"; };
+		592192DB1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SamaritanData+CoreDataProperties.h"; sourceTree = "<group>"; };
+		592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SamaritanData+CoreDataProperties.m"; sourceTree = "<group>"; };
+		592192DD1C0B2AD200E93480 /* SamaritanData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamaritanData.h; sourceTree = "<group>"; };
+		592192DE1C0B2AD200E93480 /* SamaritanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamaritanData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,15 +68,11 @@
 		592192B91C0B298200E93480 /* Samaritan */ = {
 			isa = PBXGroup;
 			children = (
-				592192BD1C0B298200E93480 /* AppDelegate.h */,
-				592192BE1C0B298200E93480 /* AppDelegate.m */,
-				592192C01C0B298200E93480 /* ViewController.h */,
-				592192C11C0B298200E93480 /* ViewController.m */,
-				592192C31C0B298200E93480 /* Main.storyboard */,
 				592192C91C0B298200E93480 /* Assets.xcassets */,
-				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
-				592192CE1C0B298200E93480 /* Info.plist */,
-				592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */,
+				592192D61C0B29CA00E93480 /* App Delegate */,
+				592192D91C0B29E400E93480 /* Model */,
+				592192DA1C0B29F200E93480 /* Views */,
+				592192D71C0B29D100E93480 /* Controllers */,
 				592192BA1C0B298200E93480 /* Supporting Files */,
 			);
 			path = Samaritan;
@@ -77,9 +81,58 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */,
+				592192CE1C0B298200E93480 /* Info.plist */,
 				592192BB1C0B298200E93480 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		592192D61C0B29CA00E93480 /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				592192BD1C0B298200E93480 /* AppDelegate.h */,
+				592192BE1C0B298200E93480 /* AppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		592192D71C0B29D100E93480 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				592192D81C0B29DB00E93480 /* Main */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		592192D81C0B29DB00E93480 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				592192C01C0B298200E93480 /* ViewController.h */,
+				592192C11C0B298200E93480 /* ViewController.m */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		592192D91C0B29E400E93480 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */,
+				592192DB1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.h */,
+				592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */,
+				592192DD1C0B2AD200E93480 /* SamaritanData.h */,
+				592192DE1C0B2AD200E93480 /* SamaritanData.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		592192DA1C0B29F200E93480 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				592192C31C0B298200E93480 /* Main.storyboard */,
+				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +194,7 @@
 			files = (
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
+				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -152,7 +206,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */,
 				592192C21C0B298200E93480 /* ViewController.m in Sources */,
+				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
@@ -266,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Samaritan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -277,6 +334,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Samaritan/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
