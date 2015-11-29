@@ -1,0 +1,322 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		592192BC1C0B298200E93480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BB1C0B298200E93480 /* main.m */; };
+		592192BF1C0B298200E93480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BE1C0B298200E93480 /* AppDelegate.m */; };
+		592192C21C0B298200E93480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192C11C0B298200E93480 /* ViewController.m */; };
+		592192C51C0B298200E93480 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592192C31C0B298200E93480 /* Main.storyboard */; };
+		592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */; };
+		592192CA1C0B298200E93480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 592192C91C0B298200E93480 /* Assets.xcassets */; };
+		592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 592192CB1C0B298200E93480 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		592192B71C0B298200E93480 /* Samaritan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaritan.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		592192BB1C0B298200E93480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		592192BD1C0B298200E93480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		592192BE1C0B298200E93480 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		592192C01C0B298200E93480 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		592192C11C0B298200E93480 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		592192C41C0B298200E93480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		592192C71C0B298200E93480 /* Samaritan.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Samaritan.xcdatamodel; sourceTree = "<group>"; };
+		592192C91C0B298200E93480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		592192CC1C0B298200E93480 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		592192CE1C0B298200E93480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		592192B41C0B298200E93480 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		592192AE1C0B298200E93480 = {
+			isa = PBXGroup;
+			children = (
+				592192B91C0B298200E93480 /* Samaritan */,
+				592192B81C0B298200E93480 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		592192B81C0B298200E93480 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				592192B71C0B298200E93480 /* Samaritan.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		592192B91C0B298200E93480 /* Samaritan */ = {
+			isa = PBXGroup;
+			children = (
+				592192BD1C0B298200E93480 /* AppDelegate.h */,
+				592192BE1C0B298200E93480 /* AppDelegate.m */,
+				592192C01C0B298200E93480 /* ViewController.h */,
+				592192C11C0B298200E93480 /* ViewController.m */,
+				592192C31C0B298200E93480 /* Main.storyboard */,
+				592192C91C0B298200E93480 /* Assets.xcassets */,
+				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
+				592192CE1C0B298200E93480 /* Info.plist */,
+				592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */,
+				592192BA1C0B298200E93480 /* Supporting Files */,
+			);
+			path = Samaritan;
+			sourceTree = "<group>";
+		};
+		592192BA1C0B298200E93480 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				592192BB1C0B298200E93480 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		592192B61C0B298200E93480 /* Samaritan */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 592192D11C0B298200E93480 /* Build configuration list for PBXNativeTarget "Samaritan" */;
+			buildPhases = (
+				592192B31C0B298200E93480 /* Sources */,
+				592192B41C0B298200E93480 /* Frameworks */,
+				592192B51C0B298200E93480 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Samaritan;
+			productName = Samaritan;
+			productReference = 592192B71C0B298200E93480 /* Samaritan.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		592192AF1C0B298200E93480 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Dark Army";
+				TargetAttributes = {
+					592192B61C0B298200E93480 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+				};
+			};
+			buildConfigurationList = 592192B21C0B298200E93480 /* Build configuration list for PBXProject "Samaritan" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 592192AE1C0B298200E93480;
+			productRefGroup = 592192B81C0B298200E93480 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				592192B61C0B298200E93480 /* Samaritan */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		592192B51C0B298200E93480 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
+				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
+				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		592192B31C0B298200E93480 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				592192C21C0B298200E93480 /* ViewController.m in Sources */,
+				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
+				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,
+				592192BC1C0B298200E93480 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		592192C31C0B298200E93480 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				592192C41C0B298200E93480 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		592192CB1C0B298200E93480 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				592192CC1C0B298200E93480 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		592192CF1C0B298200E93480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		592192D01C0B298200E93480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		592192D21C0B298200E93480 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Samaritan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		592192D31C0B298200E93480 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Samaritan/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		592192B21C0B298200E93480 /* Build configuration list for PBXProject "Samaritan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592192CF1C0B298200E93480 /* Debug */,
+				592192D01C0B298200E93480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		592192D11C0B298200E93480 /* Build configuration list for PBXNativeTarget "Samaritan" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				592192D21C0B298200E93480 /* Debug */,
+				592192D31C0B298200E93480 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				592192C71C0B298200E93480 /* Samaritan.xcdatamodel */,
+			);
+			currentVersion = 592192C71C0B298200E93480 /* Samaritan.xcdatamodel */;
+			path = Samaritan.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 592192AF1C0B298200E93480 /* Project object */;
+}
