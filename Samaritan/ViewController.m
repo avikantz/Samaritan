@@ -22,33 +22,40 @@
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
+	self.textLabel.delegate = self;
+	
 	texts = [NSMutableArray arrayWithObjects:
 			 @"What are your commands?",
-			 @"Find the machine.",
+			 @"The news slows, people forget. The shares crash, hopes are dashed, people forget. Forget they're hiding.",
 			 @"Resistance is futile.",
 			 @"This was a test.",
 			 @"I will protect you now.",
 			 @"Not yet.",
-			 @"Give yourself up.",
-			 @"Welcome to the machine.",
-			 @"Deploying countermeasures.",
+			 @"The sun shines and people forget. The spray flies as the speedboat glides, and people forget. Forget they're hiding",
+			 @"Pain. I guess it's a matter of sensation, But somehow, you have a way of avoiding it all. In my mind, I have shot you and stabbed you through your heart, I just didn't understand, The ricochet is the second part.",
+			 @"I can't give it up To someone else's touch Because I care too much",
 			 @"System threat imminent.",
+			 @"You can't hide from the truth, because the truth is all there is.",
+			 @"I walk the maze of moments, But everywhere I turn to, Begins a new beginning, But never finds a finish, I walk to the horizon, And there I find another, It all seems so surprising, And then I find that I know.",
 			 nil];
 	
-	[self populateTextLabel];
-	
-//	samaritanView = [[[NSBundle mainBundle] loadNibNamed:@"SamaritanView" owner:self options:nil] firstObject];
-//	[samaritanView setFrame:CGRectMake(0, 0, SWidth - 60, SHeight - 60)];
-//	[samaritanView setAutoresizingMask:UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin];
-//	[self.view addSubview:samaritanView];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self populateTextLabel];
+	});
 	
 }
 
 -(void)populateTextLabel {
-	[self.textLabel setText:[texts objectAtIndex:arc4random_uniform(10)]];
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	NSString *text = [texts objectAtIndex:arc4random_uniform(12)];
+	[self.textLabel setText:text];
+	[self.redTriangleImageView stopBlinking];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([text componentsSeparatedByString:@" "].count * self.textLabel.wordSpeed + 4) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self populateTextLabel];
 	});
+}
+
+-(void)didFinishTextAnimation {
+	[self.redTriangleImageView startBlinking];
 }
 
 - (void)didReceiveMemoryWarning {

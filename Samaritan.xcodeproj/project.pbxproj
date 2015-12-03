@@ -17,8 +17,6 @@
 		592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */; };
 		592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */; };
 		592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DE1C0B2AD200E93480 /* SamaritanData.m */; };
-		592192E21C0B2D5100E93480 /* SamaritanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 592192E11C0B2D5100E93480 /* SamaritanView.xib */; };
-		592192E61C0B2D6900E93480 /* SamaritanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192E51C0B2D6900E93480 /* SamaritanView.m */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
 /* End PBXBuildFile section */
@@ -40,9 +38,6 @@
 		592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SamaritanData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		592192DD1C0B2AD200E93480 /* SamaritanData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamaritanData.h; sourceTree = "<group>"; };
 		592192DE1C0B2AD200E93480 /* SamaritanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamaritanData.m; sourceTree = "<group>"; };
-		592192E11C0B2D5100E93480 /* SamaritanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SamaritanView.xib; path = SamaritanView/SamaritanView.xib; sourceTree = "<group>"; };
-		592192E41C0B2D6900E93480 /* SamaritanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamaritanView.h; path = SamaritanView/SamaritanView.h; sourceTree = "<group>"; };
-		592192E51C0B2D6900E93480 /* SamaritanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamaritanView.m; path = SamaritanView/SamaritanView.m; sourceTree = "<group>"; };
 		59EB08591C0B7577000DFBEA /* BlinkingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlinkingImageView.h; path = SamaritanView/BlinkingImageView.h; sourceTree = "<group>"; };
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
@@ -150,9 +145,6 @@
 		592192E31C0B2D5600E93480 /* SamaritanView */ = {
 			isa = PBXGroup;
 			children = (
-				592192E11C0B2D5100E93480 /* SamaritanView.xib */,
-				592192E41C0B2D6900E93480 /* SamaritanView.h */,
-				592192E51C0B2D6900E93480 /* SamaritanView.m */,
 				59EB08591C0B7577000DFBEA /* BlinkingImageView.h */,
 				59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */,
 				59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */,
@@ -219,7 +211,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
-				592192E21C0B2D5100E93480 /* SamaritanView.xib in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
@@ -237,7 +228,6 @@
 				59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */,
 				592192C21C0B298200E93480 /* ViewController.m in Sources */,
 				59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */,
-				592192E61C0B2D6900E93480 /* SamaritanView.m in Sources */,
 				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,

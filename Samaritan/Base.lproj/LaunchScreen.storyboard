@@ -3,7 +3,13 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="magdacleanmono-regular.otf">
+            <string>MagdaCleanMono-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
@@ -16,8 +22,28 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_____" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="b82-Ge-8rM">
+                                <rect key="frame" x="32" y="285" width="536" height="29"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="28"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="K1a-lf-tx2">
+                                <rect key="frame" x="278" y="322" width="44" height="44"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="b82-Ge-8rM" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="12" id="5fT-nx-BfR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="b82-Ge-8rM" secondAttribute="trailing" constant="12" id="6yx-11-Yb1"/>
+                            <constraint firstItem="b82-Ge-8rM" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="WLb-Rp-cdp"/>
+                            <constraint firstItem="K1a-lf-tx2" firstAttribute="centerX" secondItem="b82-Ge-8rM" secondAttribute="centerX" id="ZuP-F8-PZ7"/>
+                            <constraint firstItem="K1a-lf-tx2" firstAttribute="top" secondItem="b82-Ge-8rM" secondAttribute="bottom" constant="8" id="qRw-zC-TaF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,4 +51,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="RedTriangle" width="44" height="44"/>
+    </resources>
 </document>

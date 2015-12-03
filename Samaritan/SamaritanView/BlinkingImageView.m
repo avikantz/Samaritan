@@ -25,27 +25,39 @@
 }
 
 -(void)blinkSelf {
-	if (isBlinking) {
-		[UIView animateWithDuration:self.blinkDuration/5 delay:3*self.blinkDuration/5 options:UIViewAnimationOptionCurveEaseIn animations:^{
+	[UIView animateWithDuration:self.blinkDuration/5 delay:3*self.blinkDuration/5 options:UIViewAnimationOptionCurveEaseIn animations:^{
 			self.alpha = 0.0;
-		} completion:^(BOOL finished) {
-			[UIView animateWithDuration:self.blinkDuration/5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+	} completion:^(BOOL finished) {
+		[UIView animateWithDuration:self.blinkDuration/5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+			if (isBlinking)
 				self.alpha = 1.0;
-			} completion:^(BOOL finished) {
-				if (isBlinking)
-					[self blinkSelf];
-			}];
+		} completion:^(BOOL finished) {
+//				if (isBlinking)
+			[self blinkSelf];
 		}];
-	}
+	}];
 }
 
 -(void)stopBlinking {
 	isBlinking = NO;
+	[UIView animateWithDuration:self.blinkDuration/5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		self.alpha = 0.0;
+	} completion:nil];
 }
 
 -(void)startBlinking {
 	isBlinking = YES;
-	[self blinkSelf];
+}
+
+-(void)setHidden:(BOOL)hidden {
+	[UIView animateWithDuration:1.0 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+		if (hidden)
+			self.alpha = 0.0;
+		else
+			self.alpha = 1.0;
+	} completion:^(BOOL finished) {
+		[super setHidden:hidden];
+	}];
 }
 
 /*
