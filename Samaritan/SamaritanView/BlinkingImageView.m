@@ -12,7 +12,6 @@
 
 @implementation BlinkingImageView {
 	BOOL isBlinking;
-	NSTimer *timer;
 }
 
 -(void)awakeFromNib {
@@ -22,11 +21,10 @@
 	if (!isBlinking)
 		isBlinking = YES;
 	
-	timer = [NSTimer timerWithTimeInterval:self.blinkDuration target:self selector:@selector(blinkSelf:) userInfo:nil repeats:YES];
-	[timer fire];
+	[self blinkSelf];
 }
 
--(void)blinkSelf:(NSTimer *)aTimer {
+-(void)blinkSelf {
 	if (isBlinking) {
 		[UIView animateWithDuration:self.blinkDuration/5 delay:3*self.blinkDuration/5 options:UIViewAnimationOptionCurveEaseIn animations:^{
 			self.alpha = 0.0;
@@ -35,7 +33,7 @@
 				self.alpha = 1.0;
 			} completion:^(BOOL finished) {
 				if (isBlinking)
-					[self blinkSelf:aTimer];
+					[self blinkSelf];
 			}];
 		}];
 	}
@@ -47,6 +45,7 @@
 
 -(void)startBlinking {
 	isBlinking = YES;
+	[self blinkSelf];
 }
 
 /*

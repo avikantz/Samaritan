@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "AppDelegate.h"
-#import "SamaritanView.h"
+#import "BlinkingImageView.h"
+#import "DynamicLabel.h"
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet DynamicLabel *textLabel;
+
+@property (weak, nonatomic) IBOutlet BlinkingImageView *redTriangleImageView;
 
 @end
 

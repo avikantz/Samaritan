@@ -12,4 +12,6 @@ IB_DESIGNABLE
 
 @interface DynamicLabel : UILabel
 
+@property IBInspectable CGFloat lineWidth;
+
 @end
