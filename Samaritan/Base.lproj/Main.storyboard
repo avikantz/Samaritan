@@ -8,9 +8,147 @@
     <customFonts key="customFonts">
         <mutableArray key="magdacleanmono-regular.otf">
             <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
+        <!--Settings-->
+        <scene sceneID="dDU-XN-9NF">
+            <objects>
+                <tableViewController storyboardIdentifier="SettingsTVC" id="N05-CM-Vzg" customClass="SettingsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="vRx-2h-7ZD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection headerTitle="Theme" id="CnN-cl-sXY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="160" id="fGL-89-czl" customClass="SamatitanViewTableViewCell">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="160"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fGL-89-czl" id="Cut-gx-97G">
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="159"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6le-zJ-1Zi" customClass="UnderlinedLabel">
+                                                    <rect key="frame" x="8" y="47" width="551" height="33"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-MK-fIB">
+                                                    <rect key="frame" x="261" y="88" width="44" height="44"/>
+                                                    <animations/>
+                                                </imageView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="6le-zJ-1Zi" secondAttribute="trailing" id="3KN-n6-EZQ"/>
+                                                <constraint firstItem="6le-zJ-1Zi" firstAttribute="centerY" secondItem="Cut-gx-97G" secondAttribute="centerY" constant="-16" id="BNQ-c0-UYQ"/>
+                                                <constraint firstItem="zAo-MK-fIB" firstAttribute="top" secondItem="6le-zJ-1Zi" secondAttribute="bottom" constant="8" id="DyN-aV-mbb"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="6le-zJ-1Zi" secondAttribute="leading" id="WN0-bN-GdP"/>
+                                                <constraint firstItem="zAo-MK-fIB" firstAttribute="centerX" secondItem="6le-zJ-1Zi" secondAttribute="centerX" id="b22-sm-KPP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="themeNameLabel" destination="6le-zJ-1Zi" id="Vfw-U8-WY1"/>
+                                            <segue destination="nZ0-vg-KkD" kind="show" identifier="themePickerSegue" id="GBy-EE-xiv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="N05-CM-Vzg" id="NTx-vQ-Mhe"/>
+                            <outlet property="delegate" destination="N05-CM-Vzg" id="gSq-nf-zVZ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="dod-Z8-s26">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LHY-Mu-p6M">
+                            <connections>
+                                <action selector="cancelAction:" destination="N05-CM-Vzg" id="CbZ-C4-YlA"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="eey-Jb-g2C">
+                            <connections>
+                                <action selector="doneAction:" destination="N05-CM-Vzg" id="rWx-mh-BFc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="themePickerCell" destination="fGL-89-czl" id="CCt-l4-0Jq"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qms-kd-SLC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1014" y="-321"/>
+        </scene>
+        <!--Theme Picker Table View Controller-->
+        <scene sceneID="JYy-Ho-yjo">
+            <objects>
+                <tableViewController id="nZ0-vg-KkD" customClass="ThemePickerTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="g1H-AY-p1w">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="themePickerCell" rowHeight="160" id="QAN-nm-v3z" customClass="SamatitanViewTableViewCell">
+                                <rect key="frame" x="0.0" y="114" width="600" height="160"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QAN-nm-v3z" id="Ncb-jU-b4k">
+                                    <rect key="frame" x="0.0" y="0.0" width="561" height="160"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TbQ-zS-c2y" customClass="UnderlinedLabel">
+                                            <rect key="frame" x="8" y="47" width="545" height="33"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-My-KWz">
+                                            <rect key="frame" x="259" y="88" width="44" height="44"/>
+                                            <animations/>
+                                        </imageView>
+                                    </subviews>
+                                    <animations/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="TbQ-zS-c2y" secondAttribute="trailing" id="BQc-W6-7Ir"/>
+                                        <constraint firstItem="TbQ-zS-c2y" firstAttribute="centerY" secondItem="Ncb-jU-b4k" secondAttribute="centerY" constant="-16" id="cUS-Rj-YD9"/>
+                                        <constraint firstItem="X9N-My-KWz" firstAttribute="centerX" secondItem="TbQ-zS-c2y" secondAttribute="centerX" id="djX-Ya-eBX"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="TbQ-zS-c2y" secondAttribute="leading" id="fur-oB-7pC"/>
+                                        <constraint firstItem="X9N-My-KWz" firstAttribute="top" secondItem="TbQ-zS-c2y" secondAttribute="bottom" constant="8" id="rBT-gm-XNh"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="themeNameLabel" destination="TbQ-zS-c2y" id="eGF-61-vmw"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nZ0-vg-KkD" id="6Yn-iN-IiN"/>
+                            <outlet property="delegate" destination="nZ0-vg-KkD" id="o7E-he-E9c"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mTw-kL-6bj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1693" y="-321"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,7 +161,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GATHERING DATA" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
                                 <rect key="frame" x="32" y="285" width="536" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="28"/>
@@ -38,7 +176,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-6z-m2b" customClass="BlinkingImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-6z-m2b" customClass="BlinkingImageView">
                                 <rect key="frame" x="278" y="322" width="44" height="44"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>
@@ -47,6 +185,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-9a-tso">
+                                <rect key="frame" x="20" y="20" width="44" height="44"/>
+                                <animations/>
+                                <state key="normal" image="settings"/>
+                                <connections>
+                                    <segue destination="tAa-Oh-AvI" kind="presentation" id="93w-0x-vQT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,7 +200,9 @@
                             <constraint firstItem="FKU-6z-m2b" firstAttribute="centerX" secondItem="R0S-RB-bGg" secondAttribute="centerX" id="IYH-pE-BpX"/>
                             <constraint firstItem="R0S-RB-bGg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M6d-JI-XHz"/>
                             <constraint firstItem="FKU-6z-m2b" firstAttribute="top" secondItem="R0S-RB-bGg" secondAttribute="bottom" constant="8" id="QIS-5d-XHy"/>
+                            <constraint firstItem="wiy-9a-tso" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YAZ-ar-jpZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R0S-RB-bGg" secondAttribute="trailing" constant="12" id="nl4-Rx-cQx"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wiy-9a-tso" secondAttribute="leading" id="tXA-t7-weI"/>
                             <constraint firstItem="R0S-RB-bGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="xWk-hH-Dlz"/>
                         </constraints>
                     </view>
@@ -67,8 +215,36 @@
             </objects>
             <point key="canvasLocation" x="342" y="362"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="PtD-aY-RAQ">
+            <objects>
+                <navigationController storyboardIdentifier="SettingsNav" automaticallyAdjustsScrollViewInsets="NO" id="tAa-Oh-AvI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MfL-C6-8iX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="N05-CM-Vzg" kind="relationship" relationship="rootViewController" id="mx2-jr-Gf0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IIF-0Q-K0B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="-321"/>
+        </scene>
     </scenes>
     <resources>
         <image name="RedTriangle" width="44" height="44"/>
+        <image name="settings" width="44" height="44"/>
     </resources>
 </document>

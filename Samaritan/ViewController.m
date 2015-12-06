@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SamaritanData.h"
+#import "Themes.h"
 
 @interface ViewController ()
 
@@ -16,28 +18,22 @@
 //	SamaritanView *samaritanView;
 	
 	NSMutableArray *texts;
+	NSMutableArray *commands;
+	
+	NSManagedObjectContext *managedObjectContext;
+	NSFetchRequest *fetchRequest;
+	
+	Themes *currentTheme;
 }
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 	
-	self.textLabel.delegate = self;
+	commands = [NSMutableArray new];
 	
-	texts = [NSMutableArray arrayWithObjects:
-			 @"What are your commands?",
-			 @"The news slows, people forget. The shares crash, hopes are dashed, people forget. Forget they're hiding.",
-			 @"Resistance is futile.",
-			 @"This was a test.",
-			 @"I will protect you now.",
-			 @"Not yet.",
-			 @"The sun shines and people forget. The spray flies as the speedboat glides, and people forget. Forget they're hiding",
-			 @"Pain. I guess it's a matter of sensation, But somehow, you have a way of avoiding it all. In my mind, I have shot you and stabbed you through your heart, I just didn't understand, The ricochet is the second part.",
-			 @"I can't give it up To someone else's touch Because I care too much",
-			 @"System threat imminent.",
-			 @"You can't hide from the truth, because the truth is all there is.",
-			 @"I walk the maze of moments, But everywhere I turn to, Begins a new beginning, But never finds a finish, I walk to the horizon, And there I find another, It all seems so surprising, And then I find that I know.",
-			 nil];
+	self.textLabel.delegate = self;
+//	[self.textLabel setText:@"What are your commands?"];
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self populateTextLabel];
@@ -45,8 +41,25 @@
 	
 }
 
+-(void)viewDidAppear:(BOOL)animated {
+	// Load "commands" from Core Data Store
+	managedObjectContext = [AppDelegate managedObjectContext];
+	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
+	commands = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+	
+	NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
+	[themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
+	NSArray *themes = [managedObjectContext executeFetchRequest:themesRequest error:nil];
+	currentTheme = [themes firstObject];
+	
+	if (currentTheme) {
+		[self setTheme:currentTheme];
+	}
+}
+
 -(void)populateTextLabel {
-	NSString *text = [texts objectAtIndex:arc4random_uniform(12)];
+	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
+	NSString *text = data.displayString;
 	[self.textLabel setText:text];
 	[self.redTriangleImageView stopBlinking];
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([text componentsSeparatedByString:@" "].count * self.textLabel.wordSpeed + 4) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
@@ -56,6 +69,12 @@
 
 -(void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
+}
+
+-(void)setTheme:(Themes *)theme {
+	self.view.backgroundColor = theme.backgroundColor;
+	self.textLabel.textColor = theme.foregroundColor;
+	self.textLabel.font = [UIFont fontWithName:theme.fontName size:28.f];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -4,7 +4,19 @@
         <attribute name="displayString" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tags" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
+    <entity name="Themes" representedClassName="Themes" syncable="YES">
+        <attribute name="backgroundBlue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="backgroundGreen" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="backgroundRed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="blinkDuration" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="fontName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="foregroundBlue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="foregroundGreen" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="foregroundRed" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="themeName" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="SamaritanData" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Themes" positionX="-63" positionY="0" width="128" height="180"/>
     </elements>
 </model>

@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "SamaritanData.h"
+#import "Themes.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +19,49 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 	// Override point for customization after application launch.
+	
+	NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+	NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
+	NSError *error;
+	NSArray *commands = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	if (commands.count == 0) {
+		NSLog(@"Saving bundled data to core data store.");
+		NSMutableArray *defaultCommands = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaultCommands" ofType:@"json"]] options:kNilOptions error:nil];
+		for (NSDictionary *dict in defaultCommands) {
+			SamaritanData *data = [NSEntityDescription insertNewObjectForEntityForName:@"SamaritanData" inManagedObjectContext:managedObjectContext];
+			data.displayString = dict[@"displayString"];
+			data.tags = dict[@"tags"];
+		}
+		NSError *error;
+		if (![managedObjectContext save:&error]) {
+			NSLog(@"Can't Save : %@, %@", error, [error localizedDescription]);
+		}
+	}
+	
+	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
+	NSArray *themes = [managedObjectContext executeFetchRequest:fetchRequest error:&error];
+	if (themes.count == 0) {
+		NSLog(@"Saving bundled themes to core data store.");
+		NSMutableArray *defaultThemes = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"defaultThemes" ofType:@"json"]] options:kNilOptions error:nil];
+		for (NSDictionary *dict in defaultThemes) {
+			 Themes *theme = [NSEntityDescription insertNewObjectForEntityForName:@"Themes" inManagedObjectContext:managedObjectContext];
+			theme.themeName = dict[@"themeName"];
+			theme.fontName = dict[@"fontName"];
+			theme.foregroundRed = [dict[@"foregroundRed"] integerValue];
+			theme.foregroundGreen = [dict[@"foregroundGreen"] integerValue];
+			theme.foregroundBlue = [dict[@"foregroundBlue"] integerValue];
+			theme.backgroundRed = [dict[@"backgroundRed"] integerValue];
+			theme.backgroundGreen = [dict[@"backgroundGreen"] integerValue];
+			theme.backgroundBlue = [dict[@"backgroundBlue"] integerValue];
+			theme.blinkDuration = [dict[@"blinkDuration"] doubleValue];
+		}
+		NSError *error;
+		if (![managedObjectContext save:&error]) {
+			NSLog(@"Can't Save : %@, %@", error, [error localizedDescription]);
+		}
+		[[NSUserDefaults standardUserDefaults] setValue:@"Samaritan Black" forKey:@"selectedTheme"];
+	}
+	
 	return YES;
 }
 
@@ -93,6 +138,14 @@
     return _persistentStoreCoordinator;
 }
 
++ (NSManagedObjectContext *)managedObjectContext {
+	NSManagedObjectContext *context = nil;
+	id delegate = [[UIApplication sharedApplication] delegate];
+	if ([delegate performSelector:@selector(managedObjectContext)]) {
+		context = [delegate managedObjectContext];
+	}
+	return context;
+}
 
 - (NSManagedObjectContext *)managedObjectContext {
     // Returns the managed object context for the application (which is already bound to the persistent store coordinator for the application.)

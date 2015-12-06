@@ -17,6 +17,15 @@
 		592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */; };
 		592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */; };
 		592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DE1C0B2AD200E93480 /* SamaritanData.m */; };
+		5955D0591C142E23000BD806 /* defaultCommands.json in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0581C142E23000BD806 /* defaultCommands.json */; };
+		5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0621C144B8D000BD806 /* Themes+CoreDataProperties.m */; };
+		5955D0661C144B8D000BD806 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0641C144B8D000BD806 /* Themes.m */; };
+		5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0681C14544F000BD806 /* SamaritanView.xib */; };
+		5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D06B1C14556D000BD806 /* UnderlinedLabel.m */; };
+		5955D06F1C14585C000BD806 /* SamatitanViewTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D06E1C14585C000BD806 /* SamatitanViewTableViewCell.m */; };
+		5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0711C145921000BD806 /* SettingsTableViewController.m */; };
+		5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */; };
+		5955D0791C146586000BD806 /* defaultThemes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0781C146586000BD806 /* defaultThemes.json */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
 /* End PBXBuildFile section */
@@ -38,6 +47,21 @@
 		592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SamaritanData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		592192DD1C0B2AD200E93480 /* SamaritanData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamaritanData.h; sourceTree = "<group>"; };
 		592192DE1C0B2AD200E93480 /* SamaritanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamaritanData.m; sourceTree = "<group>"; };
+		5955D0581C142E23000BD806 /* defaultCommands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultCommands.json; sourceTree = "<group>"; };
+		5955D0611C144B8D000BD806 /* Themes+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Themes+CoreDataProperties.h"; sourceTree = "<group>"; };
+		5955D0621C144B8D000BD806 /* Themes+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Themes+CoreDataProperties.m"; sourceTree = "<group>"; };
+		5955D0631C144B8D000BD806 /* Themes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Themes.h; sourceTree = "<group>"; };
+		5955D0641C144B8D000BD806 /* Themes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Themes.m; sourceTree = "<group>"; };
+		5955D0681C14544F000BD806 /* SamaritanView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SamaritanView.xib; path = SamaritanView/SamaritanView.xib; sourceTree = "<group>"; };
+		5955D06A1C14556D000BD806 /* UnderlinedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UnderlinedLabel.h; path = SamaritanView/UnderlinedLabel.h; sourceTree = "<group>"; };
+		5955D06B1C14556D000BD806 /* UnderlinedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnderlinedLabel.m; path = SamaritanView/UnderlinedLabel.m; sourceTree = "<group>"; };
+		5955D06D1C14585C000BD806 /* SamatitanViewTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SamatitanViewTableViewCell.h; path = SamaritanView/SamatitanViewTableViewCell.h; sourceTree = "<group>"; };
+		5955D06E1C14585C000BD806 /* SamatitanViewTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SamatitanViewTableViewCell.m; path = SamaritanView/SamatitanViewTableViewCell.m; sourceTree = "<group>"; };
+		5955D0701C145921000BD806 /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsTableViewController.h; sourceTree = "<group>"; };
+		5955D0711C145921000BD806 /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsTableViewController.m; sourceTree = "<group>"; };
+		5955D0731C14592C000BD806 /* ThemePickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemePickerTableViewController.h; sourceTree = "<group>"; };
+		5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemePickerTableViewController.m; sourceTree = "<group>"; };
+		5955D0781C146586000BD806 /* defaultThemes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultThemes.json; sourceTree = "<group>"; };
 		59EB08591C0B7577000DFBEA /* BlinkingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlinkingImageView.h; path = SamaritanView/BlinkingImageView.h; sourceTree = "<group>"; };
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
@@ -87,6 +111,8 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5955D0781C146586000BD806 /* defaultThemes.json */,
+				5955D0581C142E23000BD806 /* defaultCommands.json */,
 				592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */,
 				592192CE1C0B298200E93480 /* Info.plist */,
 				592192BB1C0B298200E93480 /* main.m */,
@@ -107,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				592192D81C0B29DB00E93480 /* Main */,
+				5955D0761C145931000BD806 /* Settings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -124,10 +151,8 @@
 			isa = PBXGroup;
 			children = (
 				592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */,
-				592192DB1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.h */,
-				592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */,
-				592192DD1C0B2AD200E93480 /* SamaritanData.h */,
-				592192DE1C0B2AD200E93480 /* SamaritanData.m */,
+				5955D0671C144BA1000BD806 /* Themes */,
+				5955D05A1C144B20000BD806 /* SamaritanData */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -145,12 +170,58 @@
 		592192E31C0B2D5600E93480 /* SamaritanView */ = {
 			isa = PBXGroup;
 			children = (
+				5955D0681C14544F000BD806 /* SamaritanView.xib */,
 				59EB08591C0B7577000DFBEA /* BlinkingImageView.h */,
 				59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */,
 				59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */,
 				59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */,
+				5955D06A1C14556D000BD806 /* UnderlinedLabel.h */,
+				5955D06B1C14556D000BD806 /* UnderlinedLabel.m */,
+				5955D06D1C14585C000BD806 /* SamatitanViewTableViewCell.h */,
+				5955D06E1C14585C000BD806 /* SamatitanViewTableViewCell.m */,
 			);
 			name = SamaritanView;
+			sourceTree = "<group>";
+		};
+		5955D05A1C144B20000BD806 /* SamaritanData */ = {
+			isa = PBXGroup;
+			children = (
+				592192DB1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.h */,
+				592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */,
+				592192DD1C0B2AD200E93480 /* SamaritanData.h */,
+				592192DE1C0B2AD200E93480 /* SamaritanData.m */,
+			);
+			name = SamaritanData;
+			sourceTree = "<group>";
+		};
+		5955D0671C144BA1000BD806 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				5955D0611C144B8D000BD806 /* Themes+CoreDataProperties.h */,
+				5955D0621C144B8D000BD806 /* Themes+CoreDataProperties.m */,
+				5955D0631C144B8D000BD806 /* Themes.h */,
+				5955D0641C144B8D000BD806 /* Themes.m */,
+			);
+			name = Themes;
+			sourceTree = "<group>";
+		};
+		5955D0761C145931000BD806 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				5955D0701C145921000BD806 /* SettingsTableViewController.h */,
+				5955D0711C145921000BD806 /* SettingsTableViewController.m */,
+				5955D0771C145938000BD806 /* Theme Picker */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		5955D0771C145938000BD806 /* Theme Picker */ = {
+			isa = PBXGroup;
+			children = (
+				5955D0731C14592C000BD806 /* ThemePickerTableViewController.h */,
+				5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */,
+			);
+			name = "Theme Picker";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,8 +281,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
+				5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
+				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
 			);
@@ -231,7 +305,13 @@
 				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,
+				5955D06F1C14585C000BD806 /* SamatitanViewTableViewCell.m in Sources */,
+				5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */,
+				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
+				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
+				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
+				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
