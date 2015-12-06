@@ -61,6 +61,10 @@
 
 -(void)didFinishPickingTheme:(Themes *)theme {
 	selectedTheme = theme;
+	[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]} forState:UIControlStateNormal];
+	self.navigationController.navigationBar.barTintColor = selectedTheme.backgroundColor;
+	self.navigationController.navigationBar.backgroundColor = selectedTheme.backgroundColor;
+	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]};
 }
 
 #pragma mark - Table view data source

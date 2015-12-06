@@ -13,7 +13,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Settings-->
+        <!--SETTINGS-->
         <scene sceneID="dDU-XN-9NF">
             <objects>
                 <tableViewController storyboardIdentifier="SettingsTVC" id="N05-CM-Vzg" customClass="SettingsTableViewController" sceneMemberID="viewController">
@@ -35,14 +35,14 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="159"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6le-zJ-1Zi" customClass="UnderlinedLabel">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6le-zJ-1Zi" customClass="UnderlinedLabel">
                                                     <rect key="frame" x="8" y="47" width="551" height="33"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-MK-fIB">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-MK-fIB">
                                                     <rect key="frame" x="261" y="88" width="44" height="44"/>
                                                     <animations/>
                                                 </imageView>
@@ -71,13 +71,13 @@
                             <outlet property="delegate" destination="N05-CM-Vzg" id="gSq-nf-zVZ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Settings" id="dod-Z8-s26">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="LHY-Mu-p6M">
+                    <navigationItem key="navigationItem" title="SETTINGS" id="dod-Z8-s26">
+                        <barButtonItem key="leftBarButtonItem" title="CANCEL" style="plain" id="LHY-Mu-p6M">
                             <connections>
                                 <action selector="cancelAction:" destination="N05-CM-Vzg" id="CbZ-C4-YlA"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="eey-Jb-g2C">
+                        <barButtonItem key="rightBarButtonItem" title="DONE" style="done" id="eey-Jb-g2C">
                             <connections>
                                 <action selector="doneAction:" destination="N05-CM-Vzg" id="rWx-mh-BFc"/>
                             </connections>
@@ -110,14 +110,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="561" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TbQ-zS-c2y" customClass="UnderlinedLabel">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="TbQ-zS-c2y" customClass="UnderlinedLabel">
                                             <rect key="frame" x="8" y="47" width="545" height="33"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-My-KWz">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-My-KWz">
                                             <rect key="frame" x="259" y="88" width="44" height="44"/>
                                             <animations/>
                                         </imageView>
@@ -161,7 +161,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
                                 <rect key="frame" x="32" y="285" width="536" height="29"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="28"/>
@@ -176,7 +176,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-6z-m2b" customClass="BlinkingImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="FKU-6z-m2b" customClass="BlinkingImageView">
                                 <rect key="frame" x="278" y="322" width="44" height="44"/>
                                 <animations/>
                                 <userDefinedRuntimeAttributes>

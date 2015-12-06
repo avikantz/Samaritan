@@ -1,0 +1,79 @@
+[
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Samaritan Black",
+    "foregroundRed": 255,
+    "foregroundGreen": 255,
+    "foregroundBlue": 255,
+    "backgroundRed": 0,
+    "backgroundGreen": 0,
+    "backgroundBlue": 0,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Samaritan White",
+    "foregroundRed": 0,
+    "foregroundGreen": 0,
+    "foregroundBlue": 0,
+    "backgroundRed": 255,
+    "backgroundGreen": 255,
+    "backgroundBlue": 255,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Terminal (Homebrew)",
+    "foregroundRed": 113,
+    "foregroundGreen": 245,
+    "foregroundBlue": 20,
+    "backgroundRed": 0,
+    "backgroundGreen": 0,
+    "backgroundBlue": 0,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Terminal (Man Page)",
+    "foregroundRed": 0,
+    "foregroundGreen": 0,
+    "foregroundBlue": 0,
+    "backgroundRed": 254,
+    "backgroundGreen": 244,
+    "backgroundBlue": 156,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Terminal (Pro)",
+    "foregroundRed": 244,
+    "foregroundGreen": 244,
+    "foregroundBlue": 244,
+    "backgroundRed": 0,
+    "backgroundGreen": 0,
+    "backgroundBlue": 0,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Dark Weight",
+    "foregroundRed": 252,
+    "foregroundGreen": 249,
+    "foregroundBlue": 238,
+    "backgroundRed": 58,
+    "backgroundGreen": 80,
+    "backgroundBlue": 105,
+    "blinkDuration": 1.6
+  },
+  {
+    "fontName": "MagdaCleanMono-Regular",
+    "themeName": "Light Weight",
+    "foregroundRed": 58,
+    "foregroundGreen": 80,
+    "foregroundBlue": 105,
+    "backgroundRed": 252,
+    "backgroundGreen": 249,
+    "backgroundBlue": 238,
+    "blinkDuration": 1.6
+  }
+]

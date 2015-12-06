@@ -61,6 +61,14 @@
 		}
 		[[NSUserDefaults standardUserDefaults] setValue:@"Samaritan Black" forKey:@"selectedTheme"];
 	}
+	else {
+		Themes *selectedTheme = [[themes filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]] firstObject];
+		[[UINavigationBar appearance] setBackgroundColor:selectedTheme.backgroundColor];
+		[[UINavigationBar appearance] setBarTintColor:selectedTheme.backgroundColor];
+		[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]}];
+		[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]} forState:UIControlStateNormal];
+	}
+	
 	
 	return YES;
 }

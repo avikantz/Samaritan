@@ -16,11 +16,11 @@
             <rect key="frame" x="0.0" y="0.0" width="400" height="180"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="Y7N-aK-8cl">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="Y7N-aK-8cl">
                     <rect key="frame" x="178" y="99" width="44" height="44"/>
                     <animations/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="NSz-rY-N8V" customClass="UnderlinedLabel">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SAMARITAN BLACK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="NSz-rY-N8V" customClass="UnderlinedLabel">
                     <rect key="frame" x="32" y="58" width="336" height="33"/>
                     <animations/>
                     <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>

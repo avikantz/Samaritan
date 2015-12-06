@@ -62,7 +62,7 @@
 	NSString *text = data.displayString;
 	[self.textLabel setText:text];
 	[self.redTriangleImageView stopBlinking];
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([text componentsSeparatedByString:@" "].count * self.textLabel.wordSpeed + 4) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(([text componentsSeparatedByString:@" "].count * self.textLabel.wordSpeed + 6) * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self populateTextLabel];
 	});
 }

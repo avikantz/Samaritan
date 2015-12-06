@@ -1,0 +1,50 @@
+[
+  {
+    "displayString": "System threat imminent!",
+    "tags": "danger system threat virus trojan"
+  },
+  {
+    "displayString": "I will protect you now.",
+    "tags": "danger protection"
+  },
+  {
+    "displayString": "Resistance is futile.",
+    "tags": "borg star trek resistance"
+  },
+  {
+    "displayString": "This was not an attack. This was a test.",
+    "tags": "test correction"
+  },
+  {
+    "displayString": "Not yet.",
+    "tags": "problem eliminated eliminate exterminated exterminate destroyed"
+  },
+  {
+    "displayString": "System failure!",
+    "tags": "danger system failure"
+  },
+  {
+    "displayString": "Search ongoing.",
+    "tags": "search find"
+  },
+  {
+    "displayString": "For academic purposes only.",
+    "tags": "fap academic purposes"
+  },
+  {
+    "displayString": "Asset in danger, sending reinforcements.",
+    "tags": "asset danger threat"
+  },
+  {
+    "displayString": "Admin access denied. You don't have the permission.",
+    "tags": "give admin administrator access"
+  },
+  {
+    "displayString": "Locating target ... ... Target located, extermination in 10 9 8 7 6 5 4 3 2 1 ... Target destroyed.",
+    "tags": "destroy target"
+  },
+  {
+    "displayString": "Stock market crash in progress.",
+    "tags": "crash stock market"
+  }
+]

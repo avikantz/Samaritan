@@ -40,7 +40,7 @@
 
 -(void)stopBlinking {
 	isBlinking = NO;
-	[UIView animateWithDuration:self.blinkDuration/5 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
+	[UIView animateWithDuration:0.1 delay:0.0 options:UIViewAnimationOptionCurveEaseOut animations:^{
 		self.alpha = 0.0;
 	} completion:nil];
 }
