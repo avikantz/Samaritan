@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */; };
 		18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */; };
-		18DEA5CA1C14B50C0010DAE0 /* AddCommandViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C91C14B50C0010DAE0 /* AddCommandViewController.m */; };
 		592192BC1C0B298200E93480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BB1C0B298200E93480 /* main.m */; };
 		592192BF1C0B298200E93480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BE1C0B298200E93480 /* AppDelegate.m */; };
 		592192C21C0B298200E93480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192C11C0B298200E93480 /* ViewController.m */; };
@@ -33,10 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandTableViewController.h; path = Samaritan/AddCommandTableViewController.h; sourceTree = "<group>"; };
+		1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandTableViewController.m; path = Samaritan/AddCommandTableViewController.m; sourceTree = "<group>"; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
 		18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllCommandsTableViewController.m; path = Samaritan/AllCommandsTableViewController.m; sourceTree = "<group>"; };
-		18DEA5C81C14B50C0010DAE0 /* AddCommandViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandViewController.h; path = Samaritan/AddCommandViewController.h; sourceTree = "<group>"; };
-		18DEA5C91C14B50C0010DAE0 /* AddCommandViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandViewController.m; path = Samaritan/AddCommandViewController.m; sourceTree = "<group>"; };
 		592192B71C0B298200E93480 /* Samaritan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaritan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592192BB1C0B298200E93480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592192BD1C0B298200E93480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -88,8 +88,8 @@
 		18D51F861C14F9E80083A3FD /* New Commands */ = {
 			isa = PBXGroup;
 			children = (
-				18DEA5C81C14B50C0010DAE0 /* AddCommandViewController.h */,
-				18DEA5C91C14B50C0010DAE0 /* AddCommandViewController.m */,
+				1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */,
+				1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */,
 			);
 			name = "New Commands";
 			path = ..;
@@ -338,7 +338,7 @@
 				18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */,
 				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
 				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
-				18DEA5CA1C14B50C0010DAE0 /* AddCommandViewController.m in Sources */,
+				1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
 				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
 				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,

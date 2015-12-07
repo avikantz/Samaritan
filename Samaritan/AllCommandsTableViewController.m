@@ -40,7 +40,7 @@
     commandsArray = [fetchedArray mutableCopy];
     [self.tableView reloadData];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(84, 0, 0, 0);
     
     NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
     [themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];

@@ -18,4 +18,3 @@
 @property (weak, nonatomic) IBOutlet BlinkingImageView *redTriangleImageView;
 
 @end
-
