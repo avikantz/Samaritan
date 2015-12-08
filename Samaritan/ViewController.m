@@ -33,7 +33,7 @@
 	commands = [NSMutableArray new];
 	
 	self.textLabel.delegate = self;
-	[self.textLabel setDefaultText:@"What are your commands?"];
+	[self.textLabel setDefaultText:@"______"];
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self populateTextLabel];

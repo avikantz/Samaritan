@@ -225,6 +225,8 @@
 				592192C31C0B298200E93480 /* Main.storyboard */,
 				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
 				5988FF7B1C16E0FD00223FD3 /* Outline Progrss View */,
+				5988FF911C16E97900223FD3 /* Blinking Image View */,
+				5988FF921C16E98500223FD3 /* Dynamic Label */,
 				592192E31C0B2D5600E93480 /* SamaritanView */,
 			);
 			name = Views;
@@ -234,12 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				5955D0681C14544F000BD806 /* SamaritanView.xib */,
-				59EB08591C0B7577000DFBEA /* BlinkingImageView.h */,
-				59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */,
-				59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */,
-				59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */,
-				5955D06A1C14556D000BD806 /* UnderlinedLabel.h */,
-				5955D06B1C14556D000BD806 /* UnderlinedLabel.m */,
 				5955D06D1C14585C000BD806 /* SamatitanViewTableViewCell.h */,
 				5955D06E1C14585C000BD806 /* SamatitanViewTableViewCell.m */,
 			);
@@ -321,6 +317,26 @@
 				5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */,
 			);
 			name = "Middle Out Segue";
+			sourceTree = "<group>";
+		};
+		5988FF911C16E97900223FD3 /* Blinking Image View */ = {
+			isa = PBXGroup;
+			children = (
+				59EB08591C0B7577000DFBEA /* BlinkingImageView.h */,
+				59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */,
+			);
+			name = "Blinking Image View";
+			sourceTree = "<group>";
+		};
+		5988FF921C16E98500223FD3 /* Dynamic Label */ = {
+			isa = PBXGroup;
+			children = (
+				5955D06A1C14556D000BD806 /* UnderlinedLabel.h */,
+				5955D06B1C14556D000BD806 /* UnderlinedLabel.m */,
+				59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */,
+				59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */,
+			);
+			name = "Dynamic Label";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

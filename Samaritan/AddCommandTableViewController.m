@@ -37,7 +37,7 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
+    // self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -139,6 +139,8 @@
         }
         
     }
+	
+	[self.navigationController popViewControllerAnimated:YES];
     
 }
 

@@ -77,7 +77,7 @@
   },
   {
     "name": "SHIELD",
-    "weight": 16
+    "weight": 8
   },
   {
     "name": "HNA",
@@ -129,7 +129,7 @@
   },
   {
     "name": "HYDRA",
-    "weight": 12
+    "weight": 6
   },
   {
     "name": "CIS",

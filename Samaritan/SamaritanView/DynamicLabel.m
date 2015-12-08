@@ -48,7 +48,7 @@
 		[lineAnimation setFillMode:kCAFillModeBoth];
 		[lineAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
 	}
-	[self animateLine];
+//	[self animateLine];
 //	 */
 }
 
@@ -119,6 +119,9 @@
 
 -(void)setDefaultText:(NSString *)text {
 	[super setText:[text uppercaseString]];
+	fromPath = [self beizerPathForText:SPACES];
+	toPath = [self beizerPathForText:@"COMMANDS"];
+//	[self animateLine];
 }
 
 @end

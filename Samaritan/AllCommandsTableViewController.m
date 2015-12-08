@@ -40,8 +40,6 @@
     commandsArray = [fetchedArray mutableCopy];
     [self.tableView reloadData];
     
-    self.tableView.contentInset = UIEdgeInsetsMake(84, 0, 0, 0);
-    
     NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
     [themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
     NSArray *themes = [[AppDelegate managedObjectContext] executeFetchRequest:themesRequest error:nil];
@@ -143,14 +141,19 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
+
+- (IBAction)cancelAction:(id)sender {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
