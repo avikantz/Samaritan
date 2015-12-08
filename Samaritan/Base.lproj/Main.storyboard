@@ -673,8 +673,8 @@ drive status
                                         <exclude reference="TU5-PF-b5Q"/>
                                         <exclude reference="rAH-Md-18v"/>
                                         <exclude reference="ZnP-6V-fug"/>
-                                        <exclude reference="om2-Ro-LAc"/>
                                         <exclude reference="gfa-dI-aDq"/>
+                                        <exclude reference="om2-Ro-LAc"/>
                                     </mask>
                                 </variation>
                             </view>
