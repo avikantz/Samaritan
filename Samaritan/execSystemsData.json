@@ -1,0 +1,58 @@
+[
+  {
+    "name": "INPUTS: ACTIVE",
+    "weight": 4
+  },
+  {
+    "name": "PREPROCESSING: ACTIVE",
+    "weight": 2
+  },
+  {
+    "name": "NEURAL NETS: ACTIVE",
+    "weight": 6
+  },
+  {
+    "name": "PATTERN RECOGNITION: ACTIVE",
+    "weight": 3
+  },
+  {
+    "name": "MEMORY ASSIMILATION: ACTIVE",
+    "weight": 2
+  },
+  {
+    "name": "MACHINE LEARNING: ACTIVE",
+    "weight": 8
+  },
+  {
+    "name": "EVOLUTIONARY COMPUTATION: ACTIVE",
+    "weight": 4
+  },
+  {
+    "name": "RATIONAL AGENTS: ACTIVE",
+    "weight": 1
+  },
+  {
+    "name": "COGNITIVE ARCHITECTURES: ACTIVE",
+    "weight": 4
+  },
+  {
+    "name": "HEURISTICS: ACTIVE",
+    "weight": 5
+  },
+  {
+    "name": "ALGORITHMIC ENGINES: ACTIVE",
+    "weight": 2
+  },
+  {
+    "name": "FLEXIBLE PLANNING: ACTIVE",
+    "weight": 4
+  },
+  {
+    "name": "SOCIAL ENGINEERING: ACTIVE",
+    "weight": 3
+  },
+  {
+    "name": "AUTONOMOUS IMPROVEMENT: ACTIVE",
+    "weight": 6
+  }
+]

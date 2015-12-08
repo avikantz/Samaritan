@@ -28,6 +28,15 @@
 		5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0711C145921000BD806 /* SettingsTableViewController.m */; };
 		5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */; };
 		5955D0791C146586000BD806 /* defaultThemes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0781C146586000BD806 /* defaultThemes.json */; };
+		5988FF771C16E0F000223FD3 /* MiddleOutSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */; };
+		5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF791C16E0F700223FD3 /* OutlineProgressView.m */; };
+		5988FF801C16E11300223FD3 /* StartupFullAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF7D1C16E11300223FD3 /* StartupFullAccessViewController.m */; };
+		5988FF811C16E11300223FD3 /* StartupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF7F1C16E11300223FD3 /* StartupViewController.m */; };
+		5988FF861C16E12100223FD3 /* IntelligenceData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF831C16E12100223FD3 /* IntelligenceData.m */; };
+		5988FF871C16E12100223FD3 /* LoadingData.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF851C16E12100223FD3 /* LoadingData.m */; };
+		5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF881C16E12800223FD3 /* execSystemsData.json */; };
+		5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF891C16E12800223FD3 /* intelligenceData.json */; };
+		5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF8A1C16E12800223FD3 /* loadingData.json */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
 /* End PBXBuildFile section */
@@ -68,6 +77,21 @@
 		5955D0731C14592C000BD806 /* ThemePickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemePickerTableViewController.h; sourceTree = "<group>"; };
 		5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemePickerTableViewController.m; sourceTree = "<group>"; };
 		5955D0781C146586000BD806 /* defaultThemes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultThemes.json; sourceTree = "<group>"; };
+		5988FF751C16E0F000223FD3 /* MiddleOutSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleOutSegue.h; sourceTree = "<group>"; };
+		5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleOutSegue.m; sourceTree = "<group>"; };
+		5988FF781C16E0F700223FD3 /* OutlineProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineProgressView.h; sourceTree = "<group>"; };
+		5988FF791C16E0F700223FD3 /* OutlineProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OutlineProgressView.m; sourceTree = "<group>"; };
+		5988FF7C1C16E11300223FD3 /* StartupFullAccessViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupFullAccessViewController.h; sourceTree = "<group>"; };
+		5988FF7D1C16E11300223FD3 /* StartupFullAccessViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupFullAccessViewController.m; sourceTree = "<group>"; };
+		5988FF7E1C16E11300223FD3 /* StartupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartupViewController.h; sourceTree = "<group>"; };
+		5988FF7F1C16E11300223FD3 /* StartupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartupViewController.m; sourceTree = "<group>"; };
+		5988FF821C16E12100223FD3 /* IntelligenceData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IntelligenceData.h; sourceTree = "<group>"; };
+		5988FF831C16E12100223FD3 /* IntelligenceData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IntelligenceData.m; sourceTree = "<group>"; };
+		5988FF841C16E12100223FD3 /* LoadingData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingData.h; sourceTree = "<group>"; };
+		5988FF851C16E12100223FD3 /* LoadingData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingData.m; sourceTree = "<group>"; };
+		5988FF881C16E12800223FD3 /* execSystemsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = execSystemsData.json; sourceTree = "<group>"; };
+		5988FF891C16E12800223FD3 /* intelligenceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intelligenceData.json; sourceTree = "<group>"; };
+		5988FF8A1C16E12800223FD3 /* loadingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingData.json; sourceTree = "<group>"; };
 		59EB08591C0B7577000DFBEA /* BlinkingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlinkingImageView.h; path = SamaritanView/BlinkingImageView.h; sourceTree = "<group>"; };
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
@@ -125,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				592192C91C0B298200E93480 /* Assets.xcassets */,
+				5988FF901C16E25E00223FD3 /* Middle Out Segue */,
 				592192D61C0B29CA00E93480 /* App Delegate */,
 				592192D91C0B29E400E93480 /* Model */,
 				592192DA1C0B29F200E93480 /* Views */,
@@ -137,6 +162,9 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5988FF881C16E12800223FD3 /* execSystemsData.json */,
+				5988FF891C16E12800223FD3 /* intelligenceData.json */,
+				5988FF8A1C16E12800223FD3 /* loadingData.json */,
 				5955D0781C146586000BD806 /* defaultThemes.json */,
 				5955D0581C142E23000BD806 /* defaultCommands.json */,
 				592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */,
@@ -158,9 +186,11 @@
 		592192D71C0B29D100E93480 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5988FF8F1C16E14000223FD3 /* Startup */,
+				5988FF8E1C16E13000223FD3 /* Startup Full Access */,
+				592192D81C0B29DB00E93480 /* Main */,
 				18D51F871C14F9FD0083A3FD /* All Commands */,
 				18D51F861C14F9E80083A3FD /* New Commands */,
-				592192D81C0B29DB00E93480 /* Main */,
 				5955D0761C145931000BD806 /* Settings */,
 			);
 			name = Controllers;
@@ -178,6 +208,10 @@
 		592192D91C0B29E400E93480 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5988FF821C16E12100223FD3 /* IntelligenceData.h */,
+				5988FF831C16E12100223FD3 /* IntelligenceData.m */,
+				5988FF841C16E12100223FD3 /* LoadingData.h */,
+				5988FF851C16E12100223FD3 /* LoadingData.m */,
 				592192C61C0B298200E93480 /* Samaritan.xcdatamodeld */,
 				5955D0671C144BA1000BD806 /* Themes */,
 				5955D05A1C144B20000BD806 /* SamaritanData */,
@@ -190,6 +224,7 @@
 			children = (
 				592192C31C0B298200E93480 /* Main.storyboard */,
 				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
+				5988FF7B1C16E0FD00223FD3 /* Outline Progrss View */,
 				592192E31C0B2D5600E93480 /* SamaritanView */,
 			);
 			name = Views;
@@ -252,6 +287,42 @@
 			name = "Theme Picker";
 			sourceTree = "<group>";
 		};
+		5988FF7B1C16E0FD00223FD3 /* Outline Progrss View */ = {
+			isa = PBXGroup;
+			children = (
+				5988FF781C16E0F700223FD3 /* OutlineProgressView.h */,
+				5988FF791C16E0F700223FD3 /* OutlineProgressView.m */,
+			);
+			name = "Outline Progrss View";
+			sourceTree = "<group>";
+		};
+		5988FF8E1C16E13000223FD3 /* Startup Full Access */ = {
+			isa = PBXGroup;
+			children = (
+				5988FF7C1C16E11300223FD3 /* StartupFullAccessViewController.h */,
+				5988FF7D1C16E11300223FD3 /* StartupFullAccessViewController.m */,
+			);
+			name = "Startup Full Access";
+			sourceTree = "<group>";
+		};
+		5988FF8F1C16E14000223FD3 /* Startup */ = {
+			isa = PBXGroup;
+			children = (
+				5988FF7E1C16E11300223FD3 /* StartupViewController.h */,
+				5988FF7F1C16E11300223FD3 /* StartupViewController.m */,
+			);
+			name = Startup;
+			sourceTree = "<group>";
+		};
+		5988FF901C16E25E00223FD3 /* Middle Out Segue */ = {
+			isa = PBXGroup;
+			children = (
+				5988FF751C16E0F000223FD3 /* MiddleOutSegue.h */,
+				5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */,
+			);
+			name = "Middle Out Segue";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -309,9 +380,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */,
 				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
 				5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */,
+				5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */,
+				5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
 				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
@@ -326,9 +400,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5988FF771C16E0F000223FD3 /* MiddleOutSegue.m in Sources */,
 				592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */,
+				5988FF861C16E12100223FD3 /* IntelligenceData.m in Sources */,
 				59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */,
 				592192C21C0B298200E93480 /* ViewController.m in Sources */,
+				5988FF811C16E11300223FD3 /* StartupViewController.m in Sources */,
 				59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */,
 				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
@@ -337,10 +414,13 @@
 				5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */,
 				18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */,
 				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
+				5988FF871C16E12100223FD3 /* LoadingData.m in Sources */,
 				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
+				5988FF801C16E11300223FD3 /* StartupFullAccessViewController.m in Sources */,
 				1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
 				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
+				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,
 				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

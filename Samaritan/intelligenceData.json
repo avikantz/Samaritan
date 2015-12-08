@@ -1,0 +1,202 @@
+[
+  {
+    "name": "MI5",
+    "weight": 6
+  },
+  {
+    "name": "MI6",
+    "weight": 8
+  },
+  {
+    "name": "NCA",
+    "weight": 2
+  },
+  {
+    "name": "CIA",
+    "weight": 10
+  },
+  {
+    "name": "NSA",
+    "weight": 8
+  },
+  {
+    "name": "MCIA",
+    "weight": 2
+  },
+  {
+    "name": "FBI",
+    "weight": 8
+  },
+  {
+    "name": "NGA",
+    "weight": 1
+  },
+  {
+    "name": "HLD I&A",
+    "weight": 2
+  },
+  {
+    "name": "NSS",
+    "weight": 1
+  },
+  {
+    "name": "CSS",
+    "weight": 1
+  },
+  {
+    "name": "SHIU",
+    "weight": 1
+  },
+  {
+    "name": "SEFECONAR",
+    "weight": 1
+  },
+  {
+    "name": "DNIEM",
+    "weight": 1
+  },
+  {
+    "name": "UIF",
+    "weight": 1
+  },
+  {
+    "name": "SIFA",
+    "weight": 1
+  },
+  {
+    "name": "ASIS",
+    "weight": 2
+  },
+  {
+    "name": "ASIO",
+    "weight": 1
+  },
+  {
+    "name": "ARGUS",
+    "weight": 2
+  },
+  {
+    "name": "SHIELD",
+    "weight": 16
+  },
+  {
+    "name": "HNA",
+    "weight": 1
+  },
+  {
+    "name": "MTN",
+    "weight": 1
+  },
+  {
+    "name": "SIB",
+    "weight": 1
+  },
+  {
+    "name": "NSI",
+    "weight": 2
+  },
+  {
+    "name": "DISS",
+    "weight": 1
+  },
+  {
+    "name": "ABIN",
+    "weight": 1
+  },
+  {
+    "name": "FINTRAC",
+    "weight": 1
+  },
+  {
+    "name": "DGSI",
+    "weight": 2
+  },
+  {
+    "name": "BND",
+    "weight": 3
+  },
+  {
+    "name": "MAD",
+    "weight": 2
+  },
+  {
+    "name": "EYΠ",
+    "weight": 2
+  },
+  {
+    "name": "DGCEI",
+    "weight": 2
+  },
+  {
+    "name": "HYDRA",
+    "weight": 12
+  },
+  {
+    "name": "CIS",
+    "weight": 2
+  },
+  {
+    "name": "CISR",
+    "weight": 1
+  },
+  {
+    "name": "CISEN",
+    "weight": 1
+  },
+  {
+    "name": "SEIDO",
+    "weight": 1
+  },
+  {
+    "name": "DST",
+    "weight": 1
+  },
+  {
+    "name": "NSM",
+    "weight": 2
+  },
+  {
+    "name": "IB",
+    "weight": 1
+  },
+  {
+    "name": "NICA",
+    "weight": 1
+  },
+  {
+    "name": "FSB",
+    "weight": 6
+  },
+  {
+    "name": "GRU",
+    "weight": 2
+  },
+  {
+    "name": "SVR",
+    "weight": 8
+  },
+  {
+    "name": "SSA",
+    "weight": 3
+  },
+  {
+    "name": "MUST",
+    "weight": 1
+  },
+  {
+    "name": "NESA",
+    "weight": 1
+  },
+  {
+    "name": "NGA",
+    "weight": 2
+  },
+  {
+    "name": "INTERPOL",
+    "weight": 8
+  },
+  {
+    "name": "ISIS",
+    "weight": 8
+  }
+]

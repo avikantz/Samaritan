@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
+#import "Themes.h"
 
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height
@@ -34,6 +35,8 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
+
++(Themes *)currentTheme;
 
 
 @end

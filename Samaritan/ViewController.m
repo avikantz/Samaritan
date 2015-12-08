@@ -33,7 +33,7 @@
 	commands = [NSMutableArray new];
 	
 	self.textLabel.delegate = self;
-//	[self.textLabel setText:@"What are your commands?"];
+	[self.textLabel setDefaultText:@"What are your commands?"];
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self populateTextLabel];
@@ -41,20 +41,17 @@
 	
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	currentTheme = [AppDelegate currentTheme];
+	[self setTheme:currentTheme];
+}
+
 -(void)viewDidAppear:(BOOL)animated {
 	// Load "commands" from Core Data Store
 	managedObjectContext = [AppDelegate managedObjectContext];
 	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
 	commands = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-	
-	NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
-	[themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
-	NSArray *themes = [managedObjectContext executeFetchRequest:themesRequest error:nil];
-	currentTheme = [themes firstObject];
-	
-	if (currentTheme) {
-		[self setTheme:currentTheme];
-	}
 }
 
 -(void)populateTextLabel {

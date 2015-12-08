@@ -117,4 +117,8 @@
 	shapeLayer.fillColor = self.textColor.CGColor;
 }
 
+-(void)setDefaultText:(NSString *)text {
+	[super setText:[text uppercaseString]];
+}
+
 @end

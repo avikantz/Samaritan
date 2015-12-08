@@ -1,0 +1,207 @@
+[
+  {
+    "command": "RESOURCES.COMM.ARCHIVE",
+    "sequence": 40,
+    "weight": 80
+  },
+  {
+    "command": "RESOURCES.IM.USERS",
+    "sequence": 25	,
+    "weight": 60
+  },
+  {
+    "command": "RESOURCES.IM.DATA",
+    "sequence": 25,
+    "weight": 50
+  },
+  {
+    "command": "RESOURCES.EMAIL.USERS",
+    "sequence": 80,
+    "weight": 6
+  },
+  {
+    "command": "RESOURCES.EMAIL.DATA",
+    "sequence": 80,
+    "weight": 8
+  },
+  {
+    "command": "RESOURCES.SOCIAL.PROFILES",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "RESOURCES.SOCIAL.SHAREDATA",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "RESOURCES.VIDEO.METADATA",
+    "sequence": 0,
+    "weight": 150
+  },
+  {
+    "command": "RESOURCES.VIDEO.ANALYSIS",
+    "sequence": 0,
+    "weight": 250
+  },
+  {
+    "command": "RESOURCES.VIDEO.ARCHIVE",
+    "sequence": 0,
+    "weight": 250
+  },
+  {
+    "command": "RESOURCES.AUDIO.ANALYSIS",
+    "sequence": 0,
+    "weight": 150
+  },
+  {
+    "command": "RESOURCES.AUDIO.ARCHIVE",
+    "sequence": 0,
+    "weight": 250
+  },
+  {
+    "command": "DOMAIN.AWARE.MIC.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "DOMAIN.AWARE.OPS.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "DOMAIN.AWARE.MOSFET.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "CIA.DISPATCH.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "CIA.ALPR.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "CIA.DASHCAM.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "CIA.HELICAM.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "911.CENTER.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "FBI.IRFID.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "FBI.CODIS.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "US.DMV.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "EUR.DMV.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "ASIA.DMV.SYS",
+    "sequence": 0,
+    "weight": 400
+  },
+  {
+    "command": "AFR.DMV.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "AUS.DMV.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "SA.DMV.SYS",
+    "sequence": 0,
+    "weight": 100
+  },
+  {
+    "command": "CELL.GPS.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "CELL.MIC.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "CELL.CAM.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "CELL.DATA.SYS",
+    "sequence": 0,
+    "weight": 600
+  },
+  {
+    "command": "ISP.DATA.SYS",
+    "sequence": 0,
+    "weight": 400
+  },
+  {
+    "command": "WIRED.NETWORK.SYS",
+    "sequence": 50,
+    "weight": 12
+  },
+  {
+    "command": "WIRELESS.NETWORK.SYS",
+    "sequence": 50,
+    "weight": 10
+  },
+  {
+    "command": "FAA.ATC.SYS",
+    "sequence": 0,
+    "weight": 300
+  },
+  {
+    "command": "KH11.REG1.OPI.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "KH11.REG1.IR.SYS",
+    "sequence": 0,
+    "weight": 200
+  },
+  {
+    "command": "LINKING.NETWORKS",
+    "sequence": 100,
+    "weight": 2
+  },
+  {
+    "command": "LINKING.PEOPLE",
+    "sequence": 100,
+    "weight": 6
+  },
+  {
+    "command": "LINKING.DATABASES.SIGINT",
+    "sequence": 100,
+    "weight": 3
+  }
+]

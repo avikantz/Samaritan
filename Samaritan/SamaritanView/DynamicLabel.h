@@ -22,4 +22,6 @@ IB_DESIGNABLE
 
 @property (weak, nonatomic) id<DynamicLabelDelegate> delegate;
 
+-(void)setDefaultText:(NSString *)text;
+
 @end
