@@ -193,4 +193,23 @@
     }
 }
 
+# pragma mark - Setup SpeechKit Connection
+
+- (void)setupSpeechKitConnection {
+    [SpeechKit setupWithID:@"NMDPTRIAL_santoship20140212162853"
+                      host:@"sandbox.nmdp.nuancemobility.net"
+                      port:443
+                    useSSL:NO
+                  delegate:nil];
+    
+    // Set earcons to play
+    SKEarcon* earconStart	= [SKEarcon earconWithName:@"earcon_listening.wav"];
+    SKEarcon* earconStop	= [SKEarcon earconWithName:@"earcon_done_listening.wav"];
+    SKEarcon* earconCancel	= [SKEarcon earconWithName:@"earcon_cancel.wav"];
+    
+    [SpeechKit setEarcon:earconStart forType:SKStartRecordingEarconType];
+    [SpeechKit setEarcon:earconStop forType:SKStopRecordingEarconType];
+    [SpeechKit setEarcon:earconCancel forType:SKCancelRecordingEarconType];
+}
+
 @end

@@ -28,8 +28,9 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <string key="text">PROGRAM : SAMARITAN
 Creators : @avikantz @ykl7
-Version 0.007
-Initiating Skynet protocol</string>
+Version 7.007
+Initiating Skynet Protocol
+P-NP completeness achieved</string>
                                 <color key="textColor" red="0.1066071484" green="1" blue="0.094133632159999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

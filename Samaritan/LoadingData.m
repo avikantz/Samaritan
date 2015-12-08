@@ -50,7 +50,7 @@
 		}
 		else {
 			for (NSInteger i = 1; i <= sequence; ++i) {
-				LoadingData *ldata = [[LoadingData alloc] initWithCommand:[NSString stringWithFormat:@"%@.%.3li", commandName, i] andWeight:weight];
+				LoadingData *ldata = [[LoadingData alloc] initWithCommand:[NSString stringWithFormat:@"%@.%.3li", commandName, (long) i] andWeight:weight];
 				[array addObject:ldata];
 			}
 		}
