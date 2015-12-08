@@ -10,7 +10,7 @@
 
 @interface AddCommandTableViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITextField *commandTextField;
-@property (strong, nonatomic) IBOutlet UITextField *tagTextField;
+@property (strong, nonatomic) IBOutlet UITextView *commandEntry;
+@property (strong, nonatomic) IBOutlet UITextView *tagEntry;
 
 @end

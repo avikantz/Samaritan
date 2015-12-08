@@ -68,7 +68,7 @@
         if (indexPath.row == 0)
         {
             
-            [self.commandTextField becomeFirstResponder];
+            [self.commandEntry becomeFirstResponder];
             
         }
         
@@ -80,7 +80,7 @@
         if (indexPath.row ==0)
         {
             
-            [self.tagTextField becomeFirstResponder];
+            [self.tagEntry becomeFirstResponder];
             
         }
         
@@ -101,8 +101,8 @@
 - (void) saveNewCommand
 {
     
-    command = self.commandTextField.text;
-    tag = self.tagTextField.text;
+    command = self.commandEntry.text;
+    tag = self.tagEntry.text;
     
     NSManagedObjectContext *context = [AppDelegate managedObjectContext];
     NSFetchRequest *fetchReq = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
@@ -141,6 +141,17 @@
     }
 	
 	[self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (indexPath.section == 0 && indexPath.row == 0)
+        return 100.f;
+    if (indexPath.section == 1 && indexPath.row == 0)
+        return 100.f;
+    return 40.f;
     
 }
 

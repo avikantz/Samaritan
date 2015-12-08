@@ -319,36 +319,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aiL-ZL-5M0">
-                                                    <rect key="frame" x="8" y="4" width="584" height="37"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-TU-qDX">
+                                                    <rect key="frame" x="8" y="8" width="584" height="33"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="480" id="6S0-iM-Dij"/>
+                                                        <constraint firstAttribute="width" constant="584" id="myc-wx-bEu"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="6S0-iM-Dij"/>
-                                                        </mask>
-                                                    </variation>
-                                                </textField>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                </textView>
                                             </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="aiL-ZL-5M0" firstAttribute="trailing" secondItem="FqG-LE-ABb" secondAttribute="trailingMargin" id="2aJ-uT-mn6"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="aiL-ZL-5M0" secondAttribute="bottom" constant="-6" id="GQm-c1-01b"/>
-                                                <constraint firstAttribute="topMargin" secondItem="aiL-ZL-5M0" secondAttribute="top" constant="4" id="P9p-tE-nzD"/>
-                                                <constraint firstItem="aiL-ZL-5M0" firstAttribute="top" secondItem="FqG-LE-ABb" secondAttribute="topMargin" id="qiq-wE-QNC"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="aiL-ZL-5M0" secondAttribute="trailing" id="rez-Lk-83i"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="aiL-ZL-5M0" secondAttribute="leading" id="uSm-cw-k3t"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="2aJ-uT-mn6"/>
-                                                    <exclude reference="qiq-wE-QNC"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -363,36 +345,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lKA-qK-pak">
-                                                    <rect key="frame" x="8" y="4" width="584" height="37"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-F5-gZp">
+                                                    <rect key="frame" x="8" y="8" width="584" height="35"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="480" id="OVs-mb-11D"/>
+                                                        <constraint firstAttribute="width" constant="584" id="yka-aK-w1h"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="OVs-mb-11D"/>
-                                                        </mask>
-                                                    </variation>
-                                                </textField>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstItem="lKA-qK-pak" firstAttribute="trailing" secondItem="jv0-do-bi0" secondAttribute="trailingMargin" id="4qx-rp-YeO"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="lKA-qK-pak" secondAttribute="leading" id="5H5-im-vxT"/>
-                                                <constraint firstItem="lKA-qK-pak" firstAttribute="top" secondItem="jv0-do-bi0" secondAttribute="topMargin" constant="-4" id="7SL-eC-GGi"/>
-                                                <constraint firstItem="lKA-qK-pak" firstAttribute="centerY" secondItem="jv0-do-bi0" secondAttribute="centerY" id="Uca-sl-CzJ"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="lKA-qK-pak" secondAttribute="bottom" constant="-6" id="XG3-Bc-gVe"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="lKA-qK-pak" secondAttribute="trailing" id="eea-Ij-nWB"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="4qx-rp-YeO"/>
-                                                    <exclude reference="Uca-sl-CzJ"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -407,9 +371,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-pc-TFR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-pc-TFR">
                                                     <rect key="frame" x="8" y="11" width="584" height="21"/>
                                                     <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="584" id="Y5X-oY-XRo"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -417,10 +384,7 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="trailing" secondItem="Mhk-ym-KJG" secondAttribute="trailingMargin" id="3VR-rS-AcF"/>
-                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="leading" secondItem="Mhk-ym-KJG" secondAttribute="leadingMargin" id="Mn0-Bv-hDF"/>
-                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="centerY" secondItem="Mhk-ym-KJG" secondAttribute="centerY" id="NQP-tX-TP5"/>
-                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="centerX" secondItem="Mhk-ym-KJG" secondAttribute="centerX" id="v4Z-Sb-pRU"/>
+                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="centerX" secondItem="Mhk-ym-KJG" secondAttribute="centerX" id="GP0-3m-SO4"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -434,8 +398,8 @@
                         </connections>
                     </tableView>
                     <connections>
-                        <outlet property="commandTextField" destination="aiL-ZL-5M0" id="UJV-ew-IuZ"/>
-                        <outlet property="tagTextField" destination="lKA-qK-pak" id="ESd-R3-8Wz"/>
+                        <outlet property="commandEntry" destination="mJE-TU-qDX" id="rtO-em-Nfa"/>
+                        <outlet property="tagEntry" destination="PaA-F5-gZp" id="Gqs-ni-nzi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3t-WJ-jfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
