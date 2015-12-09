@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="C2R-Oe-ZT3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -319,7 +318,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-TU-qDX">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-TU-qDX">
                                                     <rect key="frame" x="8" y="8" width="584" height="33"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -328,9 +327,20 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="myc-wx-bEu"/>
+                                                        </mask>
+                                                    </variation>
                                                 </textView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="mJE-TU-qDX" secondAttribute="bottom" constant="-6" id="20W-b9-TVy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mJE-TU-qDX" secondAttribute="trailing" id="MVH-OG-853"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="mJE-TU-qDX" secondAttribute="leading" id="VgQ-z4-54o"/>
+                                                <constraint firstAttribute="topMargin" secondItem="mJE-TU-qDX" secondAttribute="top" id="jBP-2A-kH5"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -345,7 +355,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-F5-gZp">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-F5-gZp">
                                                     <rect key="frame" x="8" y="8" width="584" height="35"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -354,9 +364,20 @@
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="yka-aK-w1h"/>
+                                                        </mask>
+                                                    </variation>
                                                 </textView>
                                             </subviews>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="PaA-F5-gZp" secondAttribute="bottom" constant="-8" id="PGg-34-ByS"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="PaA-F5-gZp" secondAttribute="leading" id="UGC-ka-R9J"/>
+                                                <constraint firstAttribute="topMargin" secondItem="PaA-F5-gZp" secondAttribute="top" id="nSD-av-htl"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PaA-F5-gZp" secondAttribute="trailing" id="qb8-AW-mP6"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>
@@ -371,7 +392,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-pc-TFR">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-pc-TFR">
                                                     <rect key="frame" x="8" y="11" width="584" height="21"/>
                                                     <animations/>
                                                     <constraints>
@@ -380,12 +401,26 @@
                                                     <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="Y5X-oY-XRo"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="top" secondItem="Mhk-ym-KJG" secondAttribute="topMargin" constant="3" id="0eJ-dK-nrN"/>
                                                 <constraint firstItem="Qj8-pc-TFR" firstAttribute="centerX" secondItem="Mhk-ym-KJG" secondAttribute="centerX" id="GP0-3m-SO4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Qj8-pc-TFR" secondAttribute="trailing" id="MAI-Qh-2cP"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qj8-pc-TFR" secondAttribute="bottom" constant="3" id="YKj-Oq-4yA"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="Qj8-pc-TFR" secondAttribute="leading" id="oRa-7R-zJ1"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="GP0-3m-SO4"/>
+                                                </mask>
+                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                     </tableViewCell>

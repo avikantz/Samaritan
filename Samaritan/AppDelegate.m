@@ -193,7 +193,6 @@
     }
 }
 
-/*              UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
 # pragma mark - Setup SpeechKit Connection
 
 - (void)setupSpeechKitConnection {
@@ -212,5 +211,5 @@
     [SpeechKit setEarcon:earconStop forType:SKStopRecordingEarconType];
     [SpeechKit setEarcon:earconCancel forType:SKCancelRecordingEarconType];
 }
-*/
+
 @end

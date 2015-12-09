@@ -40,6 +40,11 @@
 		5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF881C16E12800223FD3 /* execSystemsData.json */; };
 		5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF891C16E12800223FD3 /* intelligenceData.json */; };
 		5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF8A1C16E12800223FD3 /* loadingData.json */; };
+		59A302CE1C18698C001E55F9 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302CD1C18698C001E55F9 /* SpeechKit.framework */; };
+		59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302CF1C186999001E55F9 /* AudioToolbox.framework */; };
+		59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D11C18699E001E55F9 /* SystemConfiguration.framework */; };
+		59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D31C1869A6001E55F9 /* CoreGraphics.framework */; };
+		59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D51C186A43001E55F9 /* AVFoundation.framework */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
 /* End PBXBuildFile section */
@@ -47,9 +52,9 @@
 /* Begin PBXFileReference section */
 		1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandTableViewController.h; path = Samaritan/AddCommandTableViewController.h; sourceTree = "<group>"; };
 		1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandTableViewController.m; path = Samaritan/AddCommandTableViewController.m; sourceTree = "<group>"; };
-		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
-		18635B2B1C175743006F10B1 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_done_listening.wav; sourceTree = "<group>"; };
-		18635B2C1C175743006F10B1 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_listening.wav; sourceTree = "<group>"; };
+		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_cancel.wav; path = Samaritan/earcon_cancel.wav; sourceTree = "<group>"; };
+		18635B2B1C175743006F10B1 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_done_listening.wav; path = Samaritan/earcon_done_listening.wav; sourceTree = "<group>"; };
+		18635B2C1C175743006F10B1 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_listening.wav; path = Samaritan/earcon_listening.wav; sourceTree = "<group>"; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
 		18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllCommandsTableViewController.m; path = Samaritan/AllCommandsTableViewController.m; sourceTree = "<group>"; };
 		592192B71C0B298200E93480 /* Samaritan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaritan.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,6 +103,11 @@
 		5988FF881C16E12800223FD3 /* execSystemsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = execSystemsData.json; sourceTree = "<group>"; };
 		5988FF891C16E12800223FD3 /* intelligenceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intelligenceData.json; sourceTree = "<group>"; };
 		5988FF8A1C16E12800223FD3 /* loadingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingData.json; sourceTree = "<group>"; };
+		59A302CD1C18698C001E55F9 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = Samaritan/SpeechKit.framework; sourceTree = "<group>"; };
+		59A302CF1C186999001E55F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		59A302D11C18699E001E55F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		59A302D31C1869A6001E55F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		59A302D51C186A43001E55F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		59EB08591C0B7577000DFBEA /* BlinkingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlinkingImageView.h; path = SamaritanView/BlinkingImageView.h; sourceTree = "<group>"; };
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
@@ -109,6 +119,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
+				59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */,
+				59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */,
+				59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */,
+				59A302CE1C18698C001E55F9 /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,6 +153,7 @@
 		592192AE1C0B298200E93480 = {
 			isa = PBXGroup;
 			children = (
+				59A302D71C186B7E001E55F9 /* Frameworks */,
 				592192B91C0B298200E93480 /* Samaritan */,
 				592192B81C0B298200E93480 /* Products */,
 			);
@@ -168,9 +184,6 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				18635B2A1C175743006F10B1 /* earcon_cancel.wav */,
-				18635B2B1C175743006F10B1 /* earcon_done_listening.wav */,
-				18635B2C1C175743006F10B1 /* earcon_listening.wav */,
 				5988FF881C16E12800223FD3 /* execSystemsData.json */,
 				5988FF891C16E12800223FD3 /* intelligenceData.json */,
 				5988FF8A1C16E12800223FD3 /* loadingData.json */,
@@ -346,6 +359,21 @@
 				59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */,
 			);
 			name = "Dynamic Label";
+			sourceTree = "<group>";
+		};
+		59A302D71C186B7E001E55F9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59A302CD1C18698C001E55F9 /* SpeechKit.framework */,
+				18635B2A1C175743006F10B1 /* earcon_cancel.wav */,
+				18635B2B1C175743006F10B1 /* earcon_done_listening.wav */,
+				18635B2C1C175743006F10B1 /* earcon_listening.wav */,
+				59A302D51C186A43001E55F9 /* AVFoundation.framework */,
+				59A302D31C1869A6001E55F9 /* CoreGraphics.framework */,
+				59A302D11C18699E001E55F9 /* SystemConfiguration.framework */,
+				59A302CF1C186999001E55F9 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -559,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Samaritan",
@@ -579,6 +608,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Samaritan",

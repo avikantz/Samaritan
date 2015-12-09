@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="magdacleanmono-regular.otf">
@@ -22,10 +22,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="og7-ba-6P3">
-                                <rect key="frame" x="20" y="452" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="og7-ba-6P3">
+                                <rect key="frame" x="20" y="480" width="240" height="100"/>
                                 <animations/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="VfP-YY-QUA"/>
+                                    <constraint firstAttribute="width" constant="240" id="bsC-UC-Za2"/>
+                                </constraints>
                                 <string key="text">PROGRAM : SAMARITAN
 Creators : @avikantz @ykl7
 Version 7.007
@@ -38,6 +42,16 @@ P-NP completeness achieved</string>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="og7-ba-6P3" secondAttribute="trailing" constant="320" id="7YZ-bw-GDS"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="og7-ba-6P3" secondAttribute="leading" id="ZXF-lx-hVE"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="og7-ba-6P3" secondAttribute="bottom" constant="20" id="aol-nV-j8w"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7YZ-bw-GDS"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
