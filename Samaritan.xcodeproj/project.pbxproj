@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1800D8061C1761A500DFA18D /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1800D8051C1761A500DFA18D /* SpeechKit.framework */; };
 		1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */; };
 		18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2A1C175743006F10B1 /* earcon_cancel.wav */; };
 		18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2B1C175743006F10B1 /* earcon_done_listening.wav */; };
@@ -46,7 +45,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1800D8051C1761A500DFA18D /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = ../../../../Desktop/DragonMobileSDK_1.4.21/SpeechKit.framework; sourceTree = "<group>"; };
 		1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandTableViewController.h; path = Samaritan/AddCommandTableViewController.h; sourceTree = "<group>"; };
 		1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandTableViewController.m; path = Samaritan/AddCommandTableViewController.m; sourceTree = "<group>"; };
 		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = earcon_cancel.wav; sourceTree = "<group>"; };
@@ -111,7 +109,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1800D8061C1761A500DFA18D /* SpeechKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +154,6 @@
 		592192B91C0B298200E93480 /* Samaritan */ = {
 			isa = PBXGroup;
 			children = (
-				1800D8051C1761A500DFA18D /* SpeechKit.framework */,
 				592192C91C0B298200E93480 /* Assets.xcassets */,
 				5988FF901C16E25E00223FD3 /* Middle Out Segue */,
 				592192D61C0B29CA00E93480 /* App Delegate */,
@@ -571,8 +567,11 @@
 				INFOPLIST_FILE = Samaritan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -588,8 +587,11 @@
 				INFOPLIST_FILE = Samaritan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = com.darkarmy.Samaritan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};

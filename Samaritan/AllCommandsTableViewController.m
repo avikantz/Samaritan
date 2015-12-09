@@ -15,6 +15,9 @@
 {
     NSMutableArray *commandsArray;
     
+    NSFetchRequest *fetchRequest;
+    NSManagedObjectContext *managedObjectContext;
+    
     Themes *currentTheme;
 }
 
@@ -32,8 +35,10 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
     NSError *error = nil;
+    
+    managedObjectContext = [AppDelegate managedObjectContext];
     
     NSArray *fetchedArray = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
     commandsArray = [[NSMutableArray alloc] init];
@@ -42,7 +47,7 @@
     
     NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
     [themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
-    NSArray *themes = [[AppDelegate managedObjectContext] executeFetchRequest:themesRequest error:nil];
+    NSArray *themes = [managedObjectContext executeFetchRequest:themesRequest error:nil];
     currentTheme = [themes firstObject];
     
     // fetched recent theme object, set it to table view and background
@@ -88,7 +93,14 @@
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.tableView.isEditing)
+    {
+        
+    }
+    else
+    {
+        [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
     
 }
 
@@ -104,6 +116,69 @@
     
     UIView *blankView = [[UIView alloc] initWithFrame:CGRectZero];
     return blankView;
+    
+}
+/*
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (self.tableView.isEditing)
+    {
+        
+        UIBarButtonItem *deleteButton = [[UIBarButtonItem alloc] initWithTitle:@"Delete" style:UIBarButtonItemStyleDone target:self action:@selector(deleteAction:)];
+        self.navigationItem.leftBarButtonItem = deleteButton;
+        
+    }
+    
+    return YES;
+}
+*/
+- (void) deleteAction:(id)sender
+{
+    
+    NSMutableArray *alteredCommandsArray = [NSMutableArray arrayWithArray:commandsArray];
+    NSArray *selectedToBeDeleted = [self.tableView indexPathsForSelectedRows];
+    for (NSIndexPath *indexPath in selectedToBeDeleted)
+    {
+        
+        SamaritanData *commandToBeDeleted = [commandsArray objectAtIndex:indexPath.row];
+        [managedObjectContext deleteObject:commandToBeDeleted];
+        [alteredCommandsArray removeObject:commandToBeDeleted];
+        
+    }
+    
+    commandsArray = [NSMutableArray arrayWithArray:alteredCommandsArray];
+    [self.tableView deleteRowsAtIndexPaths:selectedToBeDeleted withRowAnimation:UITableViewRowAnimationMiddle];
+    NSError *error;
+    if (![managedObjectContext save:&error])
+    {
+        NSLog(@"Can't delete: %@, %@", error, [error localizedDescription]);
+        return;
+    }
+    self.editing = NO;
+    self.navigationItem.leftBarButtonItem = self.navigationItem.backBarButtonItem;
+    self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [self.tableView reloadData];
+    
+}
+
+- (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    if (editingStyle == UITableViewCellEditingStyleDelete)
+    {
+        
+        [managedObjectContext deleteObject:[commandsArray objectAtIndex:indexPath.row]];
+        NSError *error;
+        if (![managedObjectContext save:&error])
+        {
+            NSLog(@"Can't delete: %@, %@", error, [[commandsArray objectAtIndex:indexPath.row] localizedDescription]);
+            return;
+        }
+        
+        [commandsArray removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+    }
     
 }
 
