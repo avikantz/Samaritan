@@ -132,7 +132,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 #pragma mark - OEEventsObserver delegate
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
-	NSLog(@"The received hypothesis is %@ with a score of %@ and an ID of %@", hypothesis, recognitionScore, utteranceID);
+	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
+	
+	// Return if score is less than specidied value
+	if ([recognitionScore floatValue] < -150000) {
+		return;
+	}
+	
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
@@ -147,35 +153,36 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 			matchedData = data;
 	}
 	if (matchedData != nil) {
-		NSLog(@"Matched: %@", matchedData.displayString);
+		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
 		[self.textLabel setText:matchedData.displayString];
+		[self.redTriangleImageView stopBlinking];
 	}
 }
 
 - (void) pocketsphinxDidStartListening {
-	NSLog(@"Pocketsphinx is now listening.");
+	printf("\n[pocketsphinx listening]");
 }
 
 - (void) pocketsphinxDidDetectSpeech {
-	NSLog(@"Pocketsphinx has detected speech.");
+	printf("\n[pocketsphinx speechDetected]");
 }
 
 - (void) pocketsphinxDidDetectFinishedSpeech {
-	NSLog(@"Pocketsphinx has detected a period of silence, concluding an utterance.");
+	printf("\n[pocketsphinx silence]");
 }
 
 - (void) pocketsphinxDidStopListening {
-	NSLog(@"Pocketsphinx has stopped listening.");
+	printf("\n[pocketsphinx stopped]");
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
 }
 
 - (void) pocketsphinxDidSuspendRecognition {
-	NSLog(@"Pocketsphinx has suspended recognition.");
+	printf("\n[pocketsphinx suspend]");
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
 }
 
 - (void) pocketsphinxDidResumeRecognition {
-	NSLog(@"Pocketsphinx has resumed recognition.");
+	printf("\n[pocketsphinx resume]");
 }
 
 - (void) pocketsphinxDidChangeLanguageModelToFile:(NSString *)newLanguageModelPathAsString andDictionary:(NSString *)newDictionaryPathAsString {
@@ -188,10 +195,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 
 - (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure {
 	NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@", reasonForFailure);
-}
-
-- (void) testRecognitionCompleted {
-	NSLog(@"A test file that was submitted for recognition is now complete.");
 }
 
 // /*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION

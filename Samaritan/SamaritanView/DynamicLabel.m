@@ -18,6 +18,8 @@
 	UIBezierPath *fromPath;
 	UIBezierPath *toPath;
 	CABasicAnimation *lineAnimation;
+	
+	BOOL animating;
 }
 
 -(void)awakeFromNib {
@@ -48,6 +50,7 @@
 		[lineAnimation setFillMode:kCAFillModeBoth];
 		[lineAnimation setTimingFunction: [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
 	}
+	animating = NO;
 //	[self animateLine];
 //	 */
 }
@@ -92,6 +95,7 @@
 			toPath = [self beizerPathForText:SPACES];
 			[self animateLine];
 			[self.delegate didFinishTextAnimation];
+			animating = NO;
 		});
 		return;
 	}
@@ -104,11 +108,17 @@
 }
 
 -(void)setText:(NSString *)text {
+	if (animating) {
+		// TODO: enqueue "text"
+		return;
+	}
+	// else dequeue and display
 	NSString *mtext = [text stringByReplacingOccurrencesOfString:@"," withString:@""];
 //	mtext = [mtext stringByReplacingOccurrencesOfString:@"." withString:@""];
 	mtext = [mtext uppercaseString];
 	NSArray *tokens = [mtext componentsSeparatedByString:@" "];
 	[self setTextTokenWise:mtext andTokens:tokens atIndex:0];
+	animating = YES;
 }
 
 -(void)setTextColor:(UIColor *)textColor {
