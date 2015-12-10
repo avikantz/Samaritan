@@ -47,6 +47,10 @@
 		59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D51C186A43001E55F9 /* AVFoundation.framework */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
+		59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */; };
+		59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */; };
+		59ED10881C19DBBC00C81793 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED10841C19DBBC00C81793 /* OpenEars.framework */; };
+		59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED10851C19DBBC00C81793 /* Slt.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +116,10 @@
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
 		59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicLabel.m; path = SamaritanView/DynamicLabel.m; sourceTree = "<group>"; };
+		59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
+		59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
+		59ED10841C19DBBC00C81793 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
+		59ED10851C19DBBC00C81793 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,10 +128,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
+				59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */,
 				59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */,
 				59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */,
 				59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */,
 				59A302CE1C18698C001E55F9 /* SpeechKit.framework in Frameworks */,
+				59ED10881C19DBBC00C81793 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -364,6 +374,7 @@
 		59A302D71C186B7E001E55F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				59ED10811C19DBBB00C81793 /* Open Ears */,
 				59A302CD1C18698C001E55F9 /* SpeechKit.framework */,
 				18635B2A1C175743006F10B1 /* earcon_cancel.wav */,
 				18635B2B1C175743006F10B1 /* earcon_done_listening.wav */,
@@ -374,6 +385,18 @@
 				59A302CF1C186999001E55F9 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		59ED10811C19DBBB00C81793 /* Open Ears */ = {
+			isa = PBXGroup;
+			children = (
+				59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */,
+				59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */,
+				59ED10841C19DBBC00C81793 /* OpenEars.framework */,
+				59ED10851C19DBBC00C81793 /* Slt.framework */,
+			);
+			name = "Open Ears";
+			path = Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */,
+				59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */,
 				18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */,
 				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
@@ -446,6 +470,7 @@
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
 				18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */,
+				59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -592,6 +617,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Samaritan",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = Samaritan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -613,6 +639,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Samaritan",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Framework",
 				);
 				INFOPLIST_FILE = Samaritan/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;

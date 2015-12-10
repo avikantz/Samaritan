@@ -10,9 +10,8 @@
 #import "AppDelegate.h"
 #import "BlinkingImageView.h"
 #import "DynamicLabel.h"
-#import <SpeechKit/SpeechKit.h>
 
-@interface ViewController : UIViewController <DynamicLabelDelegate, SpeechKitDelegate, SKRecognizerDelegate>
+@interface ViewController : UIViewController <DynamicLabelDelegate, SpeechKitDelegate, SKRecognizerDelegate, OEEventsObserverDelegate>
 
 @property (weak, nonatomic) IBOutlet DynamicLabel *textLabel;
 
@@ -21,5 +20,7 @@
 @property (strong, nonatomic) SKRecognizer *voiceSearch;
 
 @property (strong, nonatomic) AppDelegate *appDelegate;
+
+@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
 
 @end

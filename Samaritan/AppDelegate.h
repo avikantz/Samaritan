@@ -10,6 +10,12 @@
 #import <CoreData/CoreData.h>
 #import "Themes.h"
 #import <SpeechKit/SpeechKit.h>
+#import <OpenEars/OEPocketsphinxController.h>
+#import <OpenEars/OEAcousticModel.h>
+#import <OpenEars/OEEventsObserver.h>
+#import <OpenEars/OELanguageModelGenerator.h>
+#import <OpenEars/OEAcousticModel.h>
+
 
 #define SWidth [UIScreen mainScreen].bounds.size.width
 #define SHeight [UIScreen mainScreen].bounds.size.height
@@ -18,6 +24,8 @@
 colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+
+#define LANGUAGE_MODEL_FILE_NAME @"languageModel"
 
 //#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0x3a5069, 1.f)
 //#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xfcf9ee, 1.f)
@@ -39,7 +47,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 +(Themes *)currentTheme;
 
-- (void)setupSpeechKitConnection;
+- (void)setupSpeechKitConnectionWithDelegate:(id)delegate;
 
 @end
 

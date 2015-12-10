@@ -22,34 +22,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="og7-ba-6P3">
-                                <rect key="frame" x="20" y="480" width="240" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wQ9-HU-exo">
+                                <rect key="frame" x="20" y="493" width="244" height="87"/>
                                 <animations/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="VfP-YY-QUA"/>
-                                    <constraint firstAttribute="width" constant="240" id="bsC-UC-Za2"/>
-                                </constraints>
                                 <string key="text">PROGRAM : SAMARITAN
 Creators : @avikantz @ykl7
 Version 7.007
 Initiating Skynet Protocol
 P-NP completeness achieved</string>
-                                <color key="textColor" red="0.1066071484" green="1" blue="0.094133632159999994" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="16"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="og7-ba-6P3" secondAttribute="trailing" constant="320" id="7YZ-bw-GDS"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="og7-ba-6P3" secondAttribute="leading" id="ZXF-lx-hVE"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="og7-ba-6P3" secondAttribute="bottom" constant="20" id="aol-nV-j8w"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="wQ9-HU-exo" secondAttribute="leading" id="Su8-Xg-Da8"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="wQ9-HU-exo" secondAttribute="bottom" constant="20" id="ZMv-cs-PY3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="wQ9-HU-exo" secondAttribute="trailing" constant="297" id="mWr-c7-SYb"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="7YZ-bw-GDS"/>
+                                <exclude reference="mWr-c7-SYb"/>
                             </mask>
                         </variation>
                     </view>
