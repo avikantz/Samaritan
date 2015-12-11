@@ -134,23 +134,40 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
-	// Return if score is less than specidied value
+	// Return if score is less than specified value
 	if ([recognitionScore floatValue] < -150000) {
 		return;
 	}
 	
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
+    
+    //algorithm to return command from recorded audio, after recognition
+    
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
-	for (SamaritanData *data in commands) {
+    NSInteger *highestNumberOfMatches = 0;
+	for (SamaritanData *data in commands)
+    {
 		NSString *upperCaseTags = [data.tags uppercaseString];
-		BOOL matched = YES;
-		for (NSString *string in extractedTags) {
+		BOOL matched = NO;
+        // add counter here to find number of tags being matched to
+        // return the string with maximum counter
+        
+        NSInteger *numberOfMatchedTags = 0;
+		for (NSString *string in extractedTags)
+        {
 			if (![upperCaseTags containsString:string])
 				matched = NO;
+            else
+                numberOfMatchedTags += 1;
 		}
-		if (matched)
+        
+        // no need for the boolean flag
+		if (numberOfMatchedTags >= highestNumberOfMatches)
+        {
 			matchedData = data;
+            highestNumberOfMatches = numberOfMatchedTags;
+        }
 	}
 	if (matchedData != nil) {
 		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
@@ -203,14 +220,14 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 - (void) recognizerDidBeginRecording:(SKRecognizer *)recognizer
 {
     
-    NSLog(@"Listening...start of recording works");
+   // NSLog(@"Listening...start of recording works");
     
 }
 
 - (void) recognizerDidFinishRecording:(SKRecognizer *)recognizer
 {
     
-    NSLog(@"Recorded");
+    //NSLog(@"Recorded");
     
 }
 
@@ -231,14 +248,14 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
         [self.voiceSearch cancel];
         
     }
-	NSLog(@"Speech results: %@", results.results);
+	//NSLog(@"Speech results: %@", results.results);
     
 }
 
 - (void) recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion
 {
     
-    NSLog(@"Error in recording %@", error.localizedDescription);
+    //NSLog(@"Error in recording %@", error.localizedDescription);
     
 }
 
