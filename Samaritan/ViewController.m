@@ -135,9 +135,9 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
 	// Return if score is less than specified value
-	if ([recognitionScore floatValue] < -150000) {
+	/*if ([recognitionScore floatValue] < -150000) {
 		return;
-	}
+	}*/
 	
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
     
@@ -145,10 +145,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
+    NSLog(@"%@", extractedTags);
     NSInteger *highestNumberOfMatches = 0;
 	for (SamaritanData *data in commands)
     {
+        //NSLog(@"checking %@", data.displayString);
 		NSString *upperCaseTags = [data.tags uppercaseString];
+        //NSLog(@"tags being checked %@", upperCaseTags);
 		BOOL matched = NO;
         // add counter here to find number of tags being matched to
         // return the string with maximum counter
@@ -156,22 +159,25 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
         NSInteger *numberOfMatchedTags = 0;
 		for (NSString *string in extractedTags)
         {
+            //NSLog(@"checking tag %@", string);
 			if (![upperCaseTags containsString:string])
 				matched = NO;
             else
                 numberOfMatchedTags += 1;
 		}
-        
+        //NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
         // no need for the boolean flag
 		if (numberOfMatchedTags >= highestNumberOfMatches)
         {
 			matchedData = data;
+            //NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
             highestNumberOfMatches = numberOfMatchedTags;
         }
 	}
 	if (matchedData != nil) {
 		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
 		[self.textLabel setText:matchedData.displayString];
+        NSLog(@"final data %@", matchedData.displayString);
 		[self.redTriangleImageView stopBlinking];
 	}
 }

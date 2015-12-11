@@ -46,5 +46,25 @@
   {
     "displayString": "Stock market crash in progress.",
     "tags": "crash stock market"
-  }
+  },
+{
+    "displayString": "Halt and catch fire",
+    "tags": "destroy destruct end"
+ },
+ {
+    "displayString": "open systems interconnection",
+    "tags": "ready open start"
+ },
+ {
+    "displayString": "launching nuclear retaliation protocol",
+    "tags": "destroy war nuclear attack"
+ },
+ {
+    "displayString": "alerting target now",
+    "tags": "alert warning"
+ },
+ {
+    "displayString": "missile systems active",
+    "tags": "missile war attack"
+ },
 ]

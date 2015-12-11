@@ -58,6 +58,28 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    currentTheme = [AppDelegate currentTheme];
+    [self setTheme:currentTheme];
+}
+
+-(void)setTheme:(Themes *)theme
+{
+    self.view.backgroundColor = theme.backgroundColor;
+    self.commandEntry.textColor = theme.foregroundColor;
+    self.commandEntry.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.commandEntry.backgroundColor = theme.backgroundColor;
+    self.tagEntry.textColor = theme.foregroundColor;
+    self.tagEntry.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.tagEntry.backgroundColor = theme.backgroundColor;
+    self.buttonLabel.textColor = theme.foregroundColor;
+    self.buttonLabel.backgroundColor = theme.backgroundColor;
+    self.buttonLabel.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.tableView.separatorColor = theme.foregroundColor;
+}
+
 #pragma mark - Table view methods
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath

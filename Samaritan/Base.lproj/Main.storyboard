@@ -245,7 +245,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="pzL-HZ-O7X" detailTextLabel="Bje-6h-H7c" rowHeight="60" style="IBUITableViewCellStyleSubtitle" id="0e9-br-OPC">
                                 <rect key="frame" x="0.0" y="114" width="600" height="60"/>
@@ -307,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Enter Command" id="xYO-Je-ylp">
                                 <cells>
@@ -319,7 +319,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mJE-TU-qDX">
-                                                    <rect key="frame" x="8" y="8" width="584" height="33"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -336,10 +336,10 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="mJE-TU-qDX" secondAttribute="bottom" constant="-6" id="20W-b9-TVy"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="mJE-TU-qDX" secondAttribute="trailing" id="MVH-OG-853"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="mJE-TU-qDX" secondAttribute="leading" id="VgQ-z4-54o"/>
-                                                <constraint firstAttribute="topMargin" secondItem="mJE-TU-qDX" secondAttribute="top" id="jBP-2A-kH5"/>
+                                                <constraint firstAttribute="trailing" secondItem="mJE-TU-qDX" secondAttribute="trailing" id="0En-ZU-B5d"/>
+                                                <constraint firstItem="mJE-TU-qDX" firstAttribute="leading" secondItem="FqG-LE-ABb" secondAttribute="leading" id="OCB-el-m1N"/>
+                                                <constraint firstAttribute="bottom" secondItem="mJE-TU-qDX" secondAttribute="bottom" id="cUp-Kd-jar"/>
+                                                <constraint firstItem="mJE-TU-qDX" firstAttribute="top" secondItem="FqG-LE-ABb" secondAttribute="top" id="jXH-LR-a5E"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -356,7 +356,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PaA-F5-gZp">
-                                                    <rect key="frame" x="8" y="8" width="584" height="35"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
@@ -373,10 +373,10 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstAttribute="bottomMargin" secondItem="PaA-F5-gZp" secondAttribute="bottom" constant="-8" id="PGg-34-ByS"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="PaA-F5-gZp" secondAttribute="leading" id="UGC-ka-R9J"/>
-                                                <constraint firstAttribute="topMargin" secondItem="PaA-F5-gZp" secondAttribute="top" id="nSD-av-htl"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="PaA-F5-gZp" secondAttribute="trailing" id="qb8-AW-mP6"/>
+                                                <constraint firstAttribute="trailing" secondItem="PaA-F5-gZp" secondAttribute="trailing" id="SiL-er-vXF"/>
+                                                <constraint firstAttribute="bottom" secondItem="PaA-F5-gZp" secondAttribute="bottom" id="VFN-YO-Hdk"/>
+                                                <constraint firstItem="PaA-F5-gZp" firstAttribute="leading" secondItem="jv0-do-bi0" secondAttribute="leading" id="j6V-rA-soq"/>
+                                                <constraint firstItem="PaA-F5-gZp" firstAttribute="top" secondItem="jv0-do-bi0" secondAttribute="top" id="kH3-Gh-MUy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -393,7 +393,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DONE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj8-pc-TFR">
-                                                    <rect key="frame" x="8" y="11" width="584" height="21"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                                     <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="584" id="Y5X-oY-XRo"/>
@@ -410,11 +410,11 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="top" secondItem="Mhk-ym-KJG" secondAttribute="topMargin" constant="3" id="0eJ-dK-nrN"/>
+                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="leading" secondItem="Mhk-ym-KJG" secondAttribute="leading" id="2Yb-4e-9Zs"/>
+                                                <constraint firstItem="Qj8-pc-TFR" firstAttribute="top" secondItem="Mhk-ym-KJG" secondAttribute="top" id="AVL-VA-J99"/>
                                                 <constraint firstItem="Qj8-pc-TFR" firstAttribute="centerX" secondItem="Mhk-ym-KJG" secondAttribute="centerX" id="GP0-3m-SO4"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Qj8-pc-TFR" secondAttribute="trailing" id="MAI-Qh-2cP"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="Qj8-pc-TFR" secondAttribute="bottom" constant="3" id="YKj-Oq-4yA"/>
-                                                <constraint firstAttribute="leadingMargin" secondItem="Qj8-pc-TFR" secondAttribute="leading" id="oRa-7R-zJ1"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qj8-pc-TFR" secondAttribute="trailing" id="Spv-RI-D1X"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qj8-pc-TFR" secondAttribute="bottom" id="ji8-gS-WFv"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -433,6 +433,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="buttonLabel" destination="Qj8-pc-TFR" id="oFz-E0-Xof"/>
                         <outlet property="commandEntry" destination="mJE-TU-qDX" id="rtO-em-Nfa"/>
                         <outlet property="tagEntry" destination="PaA-F5-gZp" id="Gqs-ni-nzi"/>
                     </connections>

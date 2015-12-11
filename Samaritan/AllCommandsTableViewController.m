@@ -54,6 +54,34 @@
     
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    
+    fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
+    NSError *error = nil;
+    
+    managedObjectContext = [AppDelegate managedObjectContext];
+    
+    NSArray *fetchedArray = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
+    commandsArray = [[NSMutableArray alloc] init];
+    commandsArray = [fetchedArray mutableCopy];
+    [self.tableView reloadData];
+    
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    currentTheme = [AppDelegate currentTheme];
+    [self setTheme:currentTheme];
+}
+
+-(void)setTheme:(Themes *)theme
+{
+    self.view.backgroundColor = theme.backgroundColor;
+    self.tableView.separatorColor = theme.foregroundColor;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -85,6 +113,11 @@
     SamaritanData *presentData = [commandsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = presentData.displayString;
     cell.detailTextLabel.text = presentData.tags;
+    cell.textLabel.font = [UIFont fontWithName:currentTheme.fontName size:22.f];
+    cell.detailTextLabel.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.backgroundColor = currentTheme.backgroundColor;
+    cell.textLabel.textColor = currentTheme.foregroundColor;
+    cell.detailTextLabel.textColor = currentTheme.foregroundColor;
     
     return cell;
     
@@ -107,7 +140,7 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    return 40.f;
+    return 60.f;
     
 }
 

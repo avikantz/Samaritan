@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *commandEntry;
 @property (strong, nonatomic) IBOutlet UITextView *tagEntry;
+@property (strong, nonatomic) IBOutlet UILabel *buttonLabel;
 
 @end
