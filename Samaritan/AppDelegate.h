@@ -27,10 +27,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
 
 #define LANGUAGE_MODEL_FILE_NAME @"languageModel"
 
-//#define GLOBAL_TINT_COLOR UIColorFromRGBWithAlpha(0x3a5069, 1.f)
-//#define GLOBAL_BACK_COLOR UIColorFromRGBWithAlpha(0xfcf9ee, 1.f)
-
-#define SHOW_ALERT(alertMessage) [[[UIAlertView alloc] initWithTitle:@"Error" message:alertMessage delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil, nil] show];
+#define SHOW_ALERT(alertMessage) UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Error" message:alertMessage preferredStyle:UIAlertControllerStyleAlert]; [alertController addAction:[UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) { }]]; [self presentViewController:alertController animated:YES completion:nil];
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

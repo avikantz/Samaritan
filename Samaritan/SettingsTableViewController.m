@@ -14,35 +14,18 @@
 @end
 
 @implementation SettingsTableViewController {
-	NSManagedObjectContext *managedObjectContext;
-	NSFetchRequest *fetchRequest;
-	NSArray *themes;
-	
 	Themes *selectedTheme;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	managedObjectContext = [AppDelegate managedObjectContext];
-	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
-	themes = [managedObjectContext executeFetchRequest:fetchRequest error:nil];
-	
-	selectedTheme = [[themes filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]] firstObject];
-	self.themePickerCell.backgroundColor = selectedTheme.backgroundColor;
-	self.themePickerCell.themeNameLabel.text = [selectedTheme.themeName uppercaseString];
-	self.themePickerCell.themeNameLabel.textColor = selectedTheme.foregroundColor;
-	
+	selectedTheme = [AppDelegate currentTheme];
+	[self setTheme:selectedTheme];
 	[[NSUserDefaults standardUserDefaults] setValue:selectedTheme.themeName forKey:@"selectedTheme"];
+	
+	self.showsIntroSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"showsIntro"];
 
-}
-
--(void)viewDidAppear:(BOOL)animated {
-//	NSLog(@"Selected theme: %@.", selectedTheme.themeName);
-	self.themePickerCell.backgroundColor = selectedTheme.backgroundColor;
-	self.themePickerCell.backgroundView.backgroundColor = selectedTheme.backgroundColor;
-	self.themePickerCell.themeNameLabel.text = [selectedTheme.themeName uppercaseString];
-	self.themePickerCell.themeNameLabel.textColor = selectedTheme.foregroundColor;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -61,10 +44,32 @@
 
 -(void)didFinishPickingTheme:(Themes *)theme {
 	selectedTheme = theme;
-	[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]} forState:UIControlStateNormal];
-	self.navigationController.navigationBar.barTintColor = selectedTheme.backgroundColor;
-	self.navigationController.navigationBar.backgroundColor = selectedTheme.backgroundColor;
-	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]};
+	[self setTheme:theme];
+}
+
+-(void)setTheme:(Themes *)theme {
+	[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]} forState:UIControlStateNormal];
+	self.navigationController.navigationBar.barTintColor = theme.backgroundColor;
+	self.navigationController.navigationBar.backgroundColor = theme.backgroundColor;
+	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]};
+	[[UINavigationBar appearance] setBackgroundColor:theme.backgroundColor];
+	[[UINavigationBar appearance] setBarTintColor:theme.backgroundColor];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]}];
+	self.tableView.backgroundColor = theme.backgroundColor;
+	self.tableView.backgroundView.backgroundColor = theme.backgroundColor;
+	self.tableView.separatorColor = theme.foregroundColor;
+	self.themePickerCell.backgroundColor = theme.backgroundColor;
+	self.themePickerCell.backgroundView.backgroundColor = theme.backgroundColor;
+	self.themePickerCell.themeNameLabel.text = [theme.themeName uppercaseString];
+	self.themePickerCell.themeNameLabel.textColor = theme.foregroundColor;
+	self.showsIntroCell.backgroundColor = theme.backgroundColor;
+	self.showsIntroCell.backgroundView.backgroundColor = theme.backgroundColor;
+	self.showsIntroLabel.textColor = theme.foregroundColor;
+	self.showsIntroSwitch.onTintColor = theme.foregroundColor;
+	self.showsIntroSwitch.tintColor = theme.foregroundColor;
+	self.showsIntroSwitch.thumbTintColor = theme.backgroundColor;
+	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
 }
 
 #pragma mark - Table view data source
@@ -119,6 +124,11 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+- (IBAction)showsIntroSwitchValueChanged:(UISwitch *)sender {
+	[[NSUserDefaults standardUserDefaults] setBool:self.showsIntroSwitch.on forKey:@"showsIntro"];
+}
+
+
 
 #pragma mark - Navigation
 
@@ -126,7 +136,6 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 	if ([segue.identifier isEqualToString:@"themePickerSegue"]) {
 		ThemePickerTableViewController *tptvc = [segue destinationViewController];
-		tptvc.themes = themes;
 		tptvc.selectedTheme = selectedTheme;
 		tptvc.delegate = self;
 	}

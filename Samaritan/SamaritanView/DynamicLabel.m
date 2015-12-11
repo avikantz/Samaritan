@@ -119,6 +119,8 @@
 	NSArray *tokens = [mtext componentsSeparatedByString:@" "];
 	[self setTextTokenWise:mtext andTokens:tokens atIndex:0];
 	animating = YES;
+	 
+//	[super setText:text];
 }
 
 -(void)setTextColor:(UIColor *)textColor {

@@ -7,6 +7,7 @@
 //
 
 #import "AllCommandsTableViewController.h"
+#import "AddCommandTableViewController.h"
 #import "SamaritanData.h"
 #import "Themes.h"
 #import "AppDelegate.h"
@@ -41,16 +42,10 @@
     managedObjectContext = [AppDelegate managedObjectContext];
     
     NSArray *fetchedArray = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    commandsArray = [[NSMutableArray alloc] init];
     commandsArray = [fetchedArray mutableCopy];
     [self.tableView reloadData];
-    
-    NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
-    [themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
-    NSArray *themes = [managedObjectContext executeFetchRequest:themesRequest error:nil];
-    currentTheme = [themes firstObject];
-    
-    // fetched recent theme object, set it to table view and background
+	
+	self.tableView.rowHeight = UITableViewAutomaticDimension;
     
 }
 
@@ -63,7 +58,6 @@
     managedObjectContext = [AppDelegate managedObjectContext];
     
     NSArray *fetchedArray = [[AppDelegate managedObjectContext] executeFetchRequest:fetchRequest error:&error];
-    commandsArray = [[NSMutableArray alloc] init];
     commandsArray = [fetchedArray mutableCopy];
     [self.tableView reloadData];
     
@@ -74,12 +68,22 @@
     [super viewWillAppear:animated];
     currentTheme = [AppDelegate currentTheme];
     [self setTheme:currentTheme];
+	[self.tableView reloadData];
 }
 
 -(void)setTheme:(Themes *)theme
 {
     self.view.backgroundColor = theme.backgroundColor;
     self.tableView.separatorColor = theme.foregroundColor;
+	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
+	[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]} forState:UIControlStateNormal];
+	self.navigationController.navigationBar.barTintColor = theme.backgroundColor;
+	self.navigationController.navigationBar.backgroundColor = theme.backgroundColor;
+	self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]};
+	[[UINavigationBar appearance] setBackgroundColor:theme.backgroundColor];
+	[[UINavigationBar appearance] setBarTintColor:theme.backgroundColor];
+	[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]}];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -113,8 +117,9 @@
     SamaritanData *presentData = [commandsArray objectAtIndex:indexPath.row];
     cell.textLabel.text = presentData.displayString;
     cell.detailTextLabel.text = presentData.tags;
-    cell.textLabel.font = [UIFont fontWithName:currentTheme.fontName size:22.f];
-    cell.detailTextLabel.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.textLabel.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.detailTextLabel.font = [UIFont fontWithName:currentTheme.fontName size:14.f];
+	cell.detailTextLabel.alpha = 0.5;
     cell.backgroundColor = currentTheme.backgroundColor;
     cell.textLabel.textColor = currentTheme.foregroundColor;
     cell.detailTextLabel.textColor = currentTheme.foregroundColor;
@@ -137,9 +142,8 @@
     
 }
 
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+- (CGFloat) tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath
 {
-    
     return 60.f;
     
 }
@@ -261,6 +265,11 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+	if ([segue.identifier isEqualToString:@"CommandEditorSegue"]) {
+		NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+		AddCommandTableViewController *actvc = [segue destinationViewController];
+		actvc.passedData = [commandsArray objectAtIndex:indexPath.row];
+	}
 }
 
 

@@ -8,7 +8,6 @@
 
 #import "AddCommandTableViewController.h"
 #import "AppDelegate.h"
-#import "SamaritanData.h"
 #import "Themes.h"
 #import "AllCommandsTableViewController.h"
 
@@ -39,23 +38,16 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     // self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
+	
+	if (self.passedData) {
+		self.commandEntry.text = self.passedData.displayString;
+		self.tagEntry.text = self.passedData.tags;
+	}
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) viewDidAppear:(BOOL)animated
-{
-    
-    NSFetchRequest *themesRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
-    [themesRequest setPredicate:[NSPredicate predicateWithFormat:@"themeName contains[cd] %@", [[NSUserDefaults standardUserDefaults] valueForKey:@"selectedTheme"]]];
-    NSArray *themes = [managedObjectContext executeFetchRequest:themesRequest error:nil];
-    currentTheme = [themes firstObject];
-    
-    // fetched recent theme object, set it to text field and background
-    
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -69,15 +61,17 @@
 {
     self.view.backgroundColor = theme.backgroundColor;
     self.commandEntry.textColor = theme.foregroundColor;
-    self.commandEntry.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.commandEntry.font = [UIFont fontWithName:theme.fontName size:18.f];
     self.commandEntry.backgroundColor = theme.backgroundColor;
     self.tagEntry.textColor = theme.foregroundColor;
-    self.tagEntry.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.tagEntry.font = [UIFont fontWithName:theme.fontName size:18.f];
     self.tagEntry.backgroundColor = theme.backgroundColor;
     self.buttonLabel.textColor = theme.foregroundColor;
     self.buttonLabel.backgroundColor = theme.backgroundColor;
-    self.buttonLabel.font = [UIFont fontWithName:theme.fontName size:28.f];
+    self.buttonLabel.font = [UIFont fontWithName:theme.fontName size:24.f];
     self.tableView.separatorColor = theme.foregroundColor;
+	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
 }
 
 #pragma mark - Table view methods
@@ -126,33 +120,41 @@
     
     command = self.commandEntry.text;
     tag = self.tagEntry.text;
-    
-    NSManagedObjectContext *context = [AppDelegate managedObjectContext];
-    NSFetchRequest *fetchReq = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
-    NSError *err = nil;
-    
-    NSArray *dataArray = [[AppDelegate managedObjectContext] executeFetchRequest:fetchReq error:&err];
-    
-    BOOL commandAlreadyAdded = false;
-    
-    for (int i=0; i<dataArray.count; i++)
-    {
-        SamaritanData *dataCheck = [dataArray objectAtIndex:i];
-        if ([dataCheck.tags isEqualToString:tag])
-        {
-            commandAlreadyAdded = true;
-            break;
-        }
-    }
-    
-    if (!commandAlreadyAdded)
-    {
-        
+	
+	if (command.length < 5) {
+		SHOW_ALERT(@"Commands must be atleast 5 characters long.");
+		return;
+	}
+	if (tag.length < 3) {
+		SHOW_ALERT(@"Tags must be atleast 3 characters long.");
+		return;
+	}
+	
+	NSManagedObjectContext *context = [AppDelegate managedObjectContext];
+	
+	if (self.passedData) {
+		self.passedData.displayString = self.commandEntry.text;
+		self.passedData.tags = self.tagEntry.text;
+		NSError *error;
+		if (![context save:&error]) {
+			NSLog(@"Save error: %@", error);
+		}
+	}
+	else {
+		
+		NSFetchRequest *fetchReq = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
+		[fetchReq setPredicate:[NSPredicate predicateWithFormat:@"displayString contains[cd] @%", tag]];
+		NSError *err = nil;
+		
+		NSArray *dataArray = [context executeFetchRequest:fetchReq error:&err];
+		if (dataArray.count > 0) {
+			SHOW_ALERT(@"Command already present!");
+			return;
+		}
+		
         SamaritanData *data = [NSEntityDescription insertNewObjectForEntityForName:@"SamaritanData" inManagedObjectContext:context];
         data.displayString = command;
         data.tags = tag;
-        
-        NSLog(@"Favourites %@ %@", data.displayString, data.tags);
         
         if (![context save:&err])
         {
@@ -170,12 +172,17 @@
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    if (indexPath.section == 0 && indexPath.row == 0)
-        return 100.f;
-    if (indexPath.section == 1 && indexPath.row == 0)
-        return 100.f;
+    if (indexPath.section == 0 || indexPath.section == 1)
+		return 120.f;
     return 40.f;
     
+}
+
+#pragma mark - Scroll view delegate
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+	[self.commandEntry resignFirstResponder];
+	[self.tagEntry resignFirstResponder];
 }
 
 /*

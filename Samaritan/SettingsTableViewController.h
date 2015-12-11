@@ -14,4 +14,9 @@
 
 @property (weak, nonatomic) IBOutlet SamatitanViewTableViewCell *themePickerCell;
 
+@property (weak, nonatomic) IBOutlet UITableViewCell *showsIntroCell;
+@property (weak, nonatomic) IBOutlet UILabel *showsIntroLabel;
+@property (weak, nonatomic) IBOutlet UISwitch *showsIntroSwitch;
+
+
 @end

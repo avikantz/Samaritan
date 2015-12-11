@@ -96,6 +96,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 		NSLog(@"Error: %@",[err localizedDescription]);
 	}
 	
+//	if ([[OEPocketsphinxController sharedInstance] isListening])
+//		[[OEPocketsphinxController sharedInstance] stopListening];
 	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English.
 	
 }
@@ -122,6 +124,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	self.view.backgroundColor = theme.backgroundColor;
 	self.textLabel.textColor = theme.foregroundColor;
 	self.textLabel.font = [UIFont fontWithName:theme.fontName size:28.f];
+	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,9 +139,9 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
 	// Return if score is less than specified value
-	/*if ([recognitionScore floatValue] < -150000) {
+	if ([recognitionScore floatValue] < -200000) {
 		return;
-	}*/
+	}
 	
 	[[OEPocketsphinxController sharedInstance] resumeRecognition];
     
@@ -145,8 +149,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
-    NSLog(@"%@", extractedTags);
-    NSInteger *highestNumberOfMatches = 0;
+    NSLog(@"TAGS: %@", extractedTags);
+    NSInteger highestNumberOfMatches = 0;
 	for (SamaritanData *data in commands)
     {
         //NSLog(@"checking %@", data.displayString);
@@ -156,7 +160,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
         // add counter here to find number of tags being matched to
         // return the string with maximum counter
         
-        NSInteger *numberOfMatchedTags = 0;
+        NSInteger numberOfMatchedTags = 0;
 		for (NSString *string in extractedTags)
         {
             //NSLog(@"checking tag %@", string);
@@ -177,7 +181,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	if (matchedData != nil) {
 		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
 		[self.textLabel setText:matchedData.displayString];
-        NSLog(@"final data %@", matchedData.displayString);
 		[self.redTriangleImageView stopBlinking];
 	}
 }

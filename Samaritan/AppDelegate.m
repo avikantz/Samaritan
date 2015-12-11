@@ -36,6 +36,8 @@
 		if (![managedObjectContext save:&error]) {
 			NSLog(@"Can't Save : %@, %@", error, [error localizedDescription]);
 		}
+		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"showsIntro"])
+			[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"showsIntro"];
 	}
 	
 	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Themes"];
@@ -68,6 +70,14 @@
 		[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]}];
 		[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]} forState:UIControlStateNormal];
 	}
+	
+	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"MainVC"];
+	if ([[NSUserDefaults standardUserDefaults] boolForKey:@"showsIntro"])
+		viewController = [storyboard instantiateViewControllerWithIdentifier:@"StartupVC"];
+	self.window.rootViewController = viewController;
+	[self.window makeKeyAndVisible];
 	
 	return YES;
 }

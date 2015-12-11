@@ -17,7 +17,6 @@
 @interface ThemePickerTableViewController : UITableViewController
 
 @property (nonatomic, strong) Themes *selectedTheme;
-@property (nonatomic, strong) NSArray *themes;
 
 @property (weak, nonatomic) id<ThemePickerDelegate> delegate;
 

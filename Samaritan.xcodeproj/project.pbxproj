@@ -22,6 +22,16 @@
 		592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 592192D41C0B29A600E93480 /* magdacleanmono-regular.otf */; };
 		592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */; };
 		592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192DE1C0B2AD200E93480 /* SamaritanData.m */; };
+		5938BF821C1B28AC000E6D8C /* HRBrightnessCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF731C1B28AC000E6D8C /* HRBrightnessCursor.m */; };
+		5938BF831C1B28AC000E6D8C /* HRBrightnessSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF751C1B28AC000E6D8C /* HRBrightnessSlider.m */; };
+		5938BF841C1B28AC000E6D8C /* HRColorCursor.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF771C1B28AC000E6D8C /* HRColorCursor.m */; };
+		5938BF851C1B28AC000E6D8C /* HRColorInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF791C1B28AC000E6D8C /* HRColorInfoView.m */; };
+		5938BF861C1B28AC000E6D8C /* HRColorMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF7B1C1B28AC000E6D8C /* HRColorMapView.m */; };
+		5938BF871C1B28AC000E6D8C /* HRColorPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF7D1C1B28AC000E6D8C /* HRColorPickerView.m */; };
+		5938BF881C1B28AC000E6D8C /* HRHSVColorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF7F1C1B28AC000E6D8C /* HRHSVColorUtil.m */; };
+		5938BF891C1B28AC000E6D8C /* UIImage+CoreGraphics.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF811C1B28AC000E6D8C /* UIImage+CoreGraphics.m */; };
+		5938BF8D1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF8C1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.m */; };
+		5938BF911C1B2CA4000E6D8C /* HRSampleColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5938BF901C1B2CA4000E6D8C /* HRSampleColorPickerViewController.m */; };
 		5955D0591C142E23000BD806 /* defaultCommands.json in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0581C142E23000BD806 /* defaultCommands.json */; };
 		5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0621C144B8D000BD806 /* Themes+CoreDataProperties.m */; };
 		5955D0661C144B8D000BD806 /* Themes.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0641C144B8D000BD806 /* Themes.m */; };
@@ -77,6 +87,26 @@
 		592192DC1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SamaritanData+CoreDataProperties.m"; sourceTree = "<group>"; };
 		592192DD1C0B2AD200E93480 /* SamaritanData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamaritanData.h; sourceTree = "<group>"; };
 		592192DE1C0B2AD200E93480 /* SamaritanData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamaritanData.m; sourceTree = "<group>"; };
+		5938BF721C1B28AC000E6D8C /* HRBrightnessCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRBrightnessCursor.h; sourceTree = "<group>"; };
+		5938BF731C1B28AC000E6D8C /* HRBrightnessCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRBrightnessCursor.m; sourceTree = "<group>"; };
+		5938BF741C1B28AC000E6D8C /* HRBrightnessSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRBrightnessSlider.h; sourceTree = "<group>"; };
+		5938BF751C1B28AC000E6D8C /* HRBrightnessSlider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRBrightnessSlider.m; sourceTree = "<group>"; };
+		5938BF761C1B28AC000E6D8C /* HRColorCursor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorCursor.h; sourceTree = "<group>"; };
+		5938BF771C1B28AC000E6D8C /* HRColorCursor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorCursor.m; sourceTree = "<group>"; };
+		5938BF781C1B28AC000E6D8C /* HRColorInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorInfoView.h; sourceTree = "<group>"; };
+		5938BF791C1B28AC000E6D8C /* HRColorInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorInfoView.m; sourceTree = "<group>"; };
+		5938BF7A1C1B28AC000E6D8C /* HRColorMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorMapView.h; sourceTree = "<group>"; };
+		5938BF7B1C1B28AC000E6D8C /* HRColorMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorMapView.m; sourceTree = "<group>"; };
+		5938BF7C1C1B28AC000E6D8C /* HRColorPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRColorPickerView.h; sourceTree = "<group>"; };
+		5938BF7D1C1B28AC000E6D8C /* HRColorPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRColorPickerView.m; sourceTree = "<group>"; };
+		5938BF7E1C1B28AC000E6D8C /* HRHSVColorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRHSVColorUtil.h; sourceTree = "<group>"; };
+		5938BF7F1C1B28AC000E6D8C /* HRHSVColorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRHSVColorUtil.m; sourceTree = "<group>"; };
+		5938BF801C1B28AC000E6D8C /* UIImage+CoreGraphics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+CoreGraphics.h"; sourceTree = "<group>"; };
+		5938BF811C1B28AC000E6D8C /* UIImage+CoreGraphics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+CoreGraphics.m"; sourceTree = "<group>"; };
+		5938BF8B1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemeCreatorTableViewController.h; sourceTree = "<group>"; };
+		5938BF8C1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemeCreatorTableViewController.m; sourceTree = "<group>"; };
+		5938BF8F1C1B2CA4000E6D8C /* HRSampleColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HRSampleColorPickerViewController.h; sourceTree = "<group>"; };
+		5938BF901C1B2CA4000E6D8C /* HRSampleColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HRSampleColorPickerViewController.m; sourceTree = "<group>"; };
 		5955D0581C142E23000BD806 /* defaultCommands.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultCommands.json; sourceTree = "<group>"; };
 		5955D0611C144B8D000BD806 /* Themes+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Themes+CoreDataProperties.h"; sourceTree = "<group>"; };
 		5955D0621C144B8D000BD806 /* Themes+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Themes+CoreDataProperties.m"; sourceTree = "<group>"; };
@@ -181,11 +211,11 @@
 			isa = PBXGroup;
 			children = (
 				592192C91C0B298200E93480 /* Assets.xcassets */,
-				5988FF901C16E25E00223FD3 /* Middle Out Segue */,
 				592192D61C0B29CA00E93480 /* App Delegate */,
 				592192D91C0B29E400E93480 /* Model */,
 				592192DA1C0B29F200E93480 /* Views */,
 				592192D71C0B29D100E93480 /* Controllers */,
+				5938BF8A1C1B28AF000E6D8C /* Libraries */,
 				592192BA1C0B298200E93480 /* Supporting Files */,
 			);
 			path = Samaritan;
@@ -274,6 +304,57 @@
 			name = SamaritanView;
 			sourceTree = "<group>";
 		};
+		5938BF711C1B28AC000E6D8C /* ColorPicker */ = {
+			isa = PBXGroup;
+			children = (
+				5938BF721C1B28AC000E6D8C /* HRBrightnessCursor.h */,
+				5938BF731C1B28AC000E6D8C /* HRBrightnessCursor.m */,
+				5938BF741C1B28AC000E6D8C /* HRBrightnessSlider.h */,
+				5938BF751C1B28AC000E6D8C /* HRBrightnessSlider.m */,
+				5938BF761C1B28AC000E6D8C /* HRColorCursor.h */,
+				5938BF771C1B28AC000E6D8C /* HRColorCursor.m */,
+				5938BF781C1B28AC000E6D8C /* HRColorInfoView.h */,
+				5938BF791C1B28AC000E6D8C /* HRColorInfoView.m */,
+				5938BF7A1C1B28AC000E6D8C /* HRColorMapView.h */,
+				5938BF7B1C1B28AC000E6D8C /* HRColorMapView.m */,
+				5938BF7C1C1B28AC000E6D8C /* HRColorPickerView.h */,
+				5938BF7D1C1B28AC000E6D8C /* HRColorPickerView.m */,
+				5938BF7E1C1B28AC000E6D8C /* HRHSVColorUtil.h */,
+				5938BF7F1C1B28AC000E6D8C /* HRHSVColorUtil.m */,
+				5938BF801C1B28AC000E6D8C /* UIImage+CoreGraphics.h */,
+				5938BF811C1B28AC000E6D8C /* UIImage+CoreGraphics.m */,
+			);
+			path = ColorPicker;
+			sourceTree = "<group>";
+		};
+		5938BF8A1C1B28AF000E6D8C /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				5988FF901C16E25E00223FD3 /* Middle Out Segue */,
+				5938BF711C1B28AC000E6D8C /* ColorPicker */,
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		5938BF8E1C1B2ACB000E6D8C /* Theme Creator */ = {
+			isa = PBXGroup;
+			children = (
+				5938BF8B1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.h */,
+				5938BF8C1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.m */,
+				5938BF921C1B2CAF000E6D8C /* Color Picker */,
+			);
+			name = "Theme Creator";
+			sourceTree = "<group>";
+		};
+		5938BF921C1B2CAF000E6D8C /* Color Picker */ = {
+			isa = PBXGroup;
+			children = (
+				5938BF8F1C1B2CA4000E6D8C /* HRSampleColorPickerViewController.h */,
+				5938BF901C1B2CA4000E6D8C /* HRSampleColorPickerViewController.m */,
+			);
+			name = "Color Picker";
+			sourceTree = "<group>";
+		};
 		5955D05A1C144B20000BD806 /* SamaritanData */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +383,7 @@
 				5955D0701C145921000BD806 /* SettingsTableViewController.h */,
 				5955D0711C145921000BD806 /* SettingsTableViewController.m */,
 				5955D0771C145938000BD806 /* Theme Picker */,
+				5938BF8E1C1B2ACB000E6D8C /* Theme Creator */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -482,25 +564,35 @@
 			buildActionMask = 2147483647;
 			files = (
 				5988FF771C16E0F000223FD3 /* MiddleOutSegue.m in Sources */,
+				5938BF891C1B28AC000E6D8C /* UIImage+CoreGraphics.m in Sources */,
 				592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */,
 				5988FF861C16E12100223FD3 /* IntelligenceData.m in Sources */,
+				5938BF8D1C1B2AC7000E6D8C /* ThemeCreatorTableViewController.m in Sources */,
 				59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */,
+				5938BF911C1B2CA4000E6D8C /* HRSampleColorPickerViewController.m in Sources */,
+				5938BF851C1B28AC000E6D8C /* HRColorInfoView.m in Sources */,
 				592192C21C0B298200E93480 /* ViewController.m in Sources */,
+				5938BF831C1B28AC000E6D8C /* HRBrightnessSlider.m in Sources */,
+				5938BF841C1B28AC000E6D8C /* HRColorCursor.m in Sources */,
 				5988FF811C16E11300223FD3 /* StartupViewController.m in Sources */,
 				59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */,
 				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,
 				5955D06F1C14585C000BD806 /* SamatitanViewTableViewCell.m in Sources */,
+				5938BF821C1B28AC000E6D8C /* HRBrightnessCursor.m in Sources */,
 				5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */,
 				18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */,
 				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
 				5988FF871C16E12100223FD3 /* LoadingData.m in Sources */,
 				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
+				5938BF871C1B28AC000E6D8C /* HRColorPickerView.m in Sources */,
 				5988FF801C16E11300223FD3 /* StartupFullAccessViewController.m in Sources */,
+				5938BF861C1B28AC000E6D8C /* HRColorMapView.m in Sources */,
 				1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
 				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
+				5938BF881C1B28AC000E6D8C /* HRHSVColorUtil.m in Sources */,
 				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,
 				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,
 			);
