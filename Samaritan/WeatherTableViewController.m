@@ -9,13 +9,21 @@
 #import "WeatherTableViewController.h"
 #import "SSJSONModel.h"
 #import "WeatherTableViewCell.h"
+#import "Themes.h"
+#import "AppDelegate.h"
 
 @interface WeatherTableViewController () <SSJSONModelDelegate>
 {
     
     NSDictionary *weatherData;
+    NSDictionary *mainKeyData;
+    NSDictionary *weatherKeyDataDictionary;
+    
+    NSArray *weatherKeyData;
     
     SSJSONModel *jsonResponse;
+    
+    Themes *currentTheme;
     
 }
 @end
@@ -38,6 +46,14 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    currentTheme = [AppDelegate currentTheme];
+    [self setTheme:currentTheme];
+    [self.tableView reloadData];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -50,10 +66,29 @@
     {
         
         weatherData = jsonResponse.parsedJsonData;
+        mainKeyData = [weatherData objectForKey:@"main"];
+        weatherKeyData = [weatherData objectForKey:@"weather"];
+        weatherKeyDataDictionary = [weatherKeyData objectAtIndex:0];
         
         NSLog(@"%@", weatherData);
         
     }
+    
+}
+
+- (void) setTheme:(Themes *)theme
+{
+    
+    self.view.backgroundColor = theme.backgroundColor;
+    [[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+    [[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
+    [[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]} forState:UIControlStateNormal];
+    self.navigationController.navigationBar.barTintColor = theme.backgroundColor;
+    self.navigationController.navigationBar.backgroundColor = theme.backgroundColor;
+    self.navigationController.navigationBar.titleTextAttributes = @{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]};
+    [[UINavigationBar appearance] setBackgroundColor:theme.backgroundColor];
+    [[UINavigationBar appearance] setBarTintColor:theme.backgroundColor];
+    [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]}];
     
 }
 
@@ -77,7 +112,36 @@
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WeatherTableViewCell" owner:self options:nil];
     cell = [nib objectAtIndex:0];
     
+    cell.temperatureOnImage.text = [NSString stringWithFormat:@"%@ C", [mainKeyData objectForKey:@"temp"]];
+    cell.temperature.text = [NSString stringWithFormat:@"Temperature : %@ C", [mainKeyData objectForKey:@"temp"]];
+    cell.minTemperature.text = [NSString stringWithFormat:@"Minimum : %@ C", [mainKeyData objectForKey:@"temp_min"]];
+    cell.maxTemperature.text = [NSString stringWithFormat:@"Maximum : %@ C", [mainKeyData objectForKey:@"temp_max"]];
+    cell.typeOfWeather.text = [NSString stringWithFormat:@"%@", [weatherKeyDataDictionary objectForKey:@"description"]];
+    
+    cell.temperature.backgroundColor = currentTheme.backgroundColor;
+    cell.typeOfWeather.backgroundColor = currentTheme.backgroundColor;
+    cell.minTemperature.backgroundColor = currentTheme.backgroundColor;
+    cell.maxTemperature.backgroundColor = currentTheme.backgroundColor;
+    
+    cell.temperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.temperatureOnImage.font = [UIFont fontWithName:currentTheme.fontName size:28.f];;
+    cell.minTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
+    cell.maxTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
+    cell.typeOfWeather.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
+    
+    
+    // set image view according to type of weather
+    
     return  cell;
+    
+}
+
+- (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
+{
+    
+    UIView *blankView = [[UIView alloc] initWithFrame:CGRectZero];
+    blankView.backgroundColor = currentTheme.backgroundColor;
+    return blankView;
     
 }
 

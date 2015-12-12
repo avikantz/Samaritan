@@ -9,8 +9,11 @@
 #import "ViewController.h"
 #import "SamaritanData.h"
 #import "Themes.h"
+#import "WeatherTableViewController.h"
+#import <CoreLocation/CoreLocation.h>
+#import "Reachability.h"
 
-@interface ViewController ()
+@interface ViewController () <CLLocationManagerDelegate>
 
 @end
 // /*              UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
@@ -29,11 +32,16 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	NSMutableArray *commands;
     
     NSString *recordedString;
+    NSString *place;
 	
 	NSManagedObjectContext *managedObjectContext;
 	NSFetchRequest *fetchRequest;
 	
 	Themes *currentTheme;
+    
+    CLLocationManager *manager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
 
 }
 
@@ -133,13 +141,21 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	// Dispose of any resources that can be recreated.
 }
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    WeatherTableViewController *destination = [[WeatherTableViewController alloc] init];
+    destination.city = place;
+    
+}
+
 #pragma mark - OEEventsObserver delegate
 
 - (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
 	// Return if score is less than specified value
-	if ([recognitionScore floatValue] < -200000) {
+	if ([recognitionScore floatValue] < -20000) {
 		return;
 	}
 	
@@ -147,9 +163,34 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     
     //algorithm to return command from recorded audio, after recognition
     
+    
+    
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
-    NSLog(@"TAGS: %@", extractedTags);
+    //NSLog(@"TAGS: %@", extractedTags);
+    
+    if ([self isInternetAvailable])
+    {
+    
+        for (NSString *strCheck in extractedTags)
+        {
+        
+            if ([strCheck isEqualToString:@"WEATHER"])
+            {
+            
+                manager = [[CLLocationManager alloc] init];
+                geocoder = [[CLGeocoder alloc] init];
+                manager.delegate = self;
+                manager.desiredAccuracy = kCLLocationAccuracyBest;
+                [manager startUpdatingLocation];
+                [self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
+            
+            }
+        
+        }
+        
+    }
+    
     NSInteger highestNumberOfMatches = 0;
 	for (SamaritanData *data in commands)
     {
@@ -265,6 +306,44 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 {
     
     //NSLog(@"Error in recording %@", error.localizedDescription);
+    
+}
+
+# pragma mark - CLLocationManager Delegate Methods
+
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    
+    NSLog(@"failed to get location because of %@", error);
+    
+}
+
+- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    
+    CLLocation *currentLocation = newLocation;
+    
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
+        
+        if (error == nil && [placemarks count] > 0)
+        {
+            
+            placemark = [placemarks lastObject];
+            place = placemark.locality;
+            
+        }
+    }];
+    
+}
+
+# pragma mark Connection Check
+
+- (BOOL) isInternetAvailable
+{
+    
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return !(networkStatus == NotReachable);
     
 }
 

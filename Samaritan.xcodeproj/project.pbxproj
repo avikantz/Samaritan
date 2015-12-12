@@ -16,6 +16,8 @@
 		18E8A5DC1C1C944C0043D205 /* SSJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5DB1C1C944C0043D205 /* SSJSONModel.m */; };
 		18E8A5DE1C1C98790043D205 /* WeatherCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E8A5DD1C1C98790043D205 /* WeatherCell.xib */; };
 		18E8A5E11C1C9A620043D205 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5E01C1C9A620043D205 /* WeatherTableViewCell.m */; };
+		18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */; };
+		18E8A5E81C1CBA8D0043D205 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5E71C1CBA8D0043D205 /* Reachability.m */; };
 		592192BC1C0B298200E93480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BB1C0B298200E93480 /* main.m */; };
 		592192BF1C0B298200E93480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BE1C0B298200E93480 /* AppDelegate.m */; };
 		592192C21C0B298200E93480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192C11C0B298200E93480 /* ViewController.m */; };
@@ -82,6 +84,9 @@
 		18E8A5DD1C1C98790043D205 /* WeatherCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeatherCell.xib; sourceTree = "<group>"; };
 		18E8A5DF1C1C9A620043D205 /* WeatherTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewCell.h; sourceTree = "<group>"; };
 		18E8A5E01C1C9A620043D205 /* WeatherTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTableViewCell.m; sourceTree = "<group>"; };
+		18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		18E8A5E61C1CBA8D0043D205 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		18E8A5E71C1CBA8D0043D205 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		592192B71C0B298200E93480 /* Samaritan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaritan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592192BB1C0B298200E93480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592192BD1C0B298200E93480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -168,6 +173,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */,
 				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
 				59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */,
 				59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */,
@@ -227,6 +233,15 @@
 				18E8A5DB1C1C944C0043D205 /* SSJSONModel.m */,
 			);
 			name = "JSON Parse";
+			sourceTree = "<group>";
+		};
+		18E8A5E91C1CBA920043D205 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				18E8A5E61C1CBA8D0043D205 /* Reachability.h */,
+				18E8A5E71C1CBA8D0043D205 /* Reachability.m */,
+			);
+			name = Reachability;
 			sourceTree = "<group>";
 		};
 		592192AE1C0B298200E93480 = {
@@ -371,6 +386,7 @@
 		5938BF8A1C1B28AF000E6D8C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				18E8A5E91C1CBA920043D205 /* Reachability */,
 				18E8A5E31C1C9B970043D205 /* JSON Parse */,
 				5988FF901C16E25E00223FD3 /* Middle Out Segue */,
 				5938BF711C1B28AC000E6D8C /* ColorPicker */,
@@ -498,6 +514,7 @@
 		59A302D71C186B7E001E55F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */,
 				59ED10811C19DBBB00C81793 /* Open Ears */,
 				59A302CD1C18698C001E55F9 /* SpeechKit.framework */,
 				18635B2A1C175743006F10B1 /* earcon_cancel.wav */,
@@ -640,6 +657,7 @@
 				18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */,
 				5938BF881C1B28AC000E6D8C /* HRHSVColorUtil.m in Sources */,
 				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,
+				18E8A5E81C1CBA8D0043D205 /* Reachability.m in Sources */,
 				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
