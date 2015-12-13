@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @interface WeatherTableViewController : UITableViewController
+
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) NSString *city;
 

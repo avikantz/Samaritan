@@ -30,10 +30,38 @@
 {
     NSURLRequest * request = [NSURLRequest requestWithURL:Url];
     currentUrl = Url;
-    // Create url connection and fire request
-    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [conn start];
-    
+    // Create url connection and fire request 
+	NSURLSession *urlSession = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+	
+	[urlSession dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+		responseData = [[NSMutableData alloc] init];
+		[responseData appendData:data];
+		
+		_parsedJsonData = [NSJSONSerialization JSONObjectWithData:responseData options:kNilOptions error:nil];
+		
+		//Check for Valid JSON
+		if (_parsedJsonData == nil) {
+			NSLog(@"For %@ ,the response is not a valid JSON\nCheck your URL or API response over a browser",(NSString*)currentUrl);
+		}
+		
+		//Check for JSON Array or Object
+		else{
+			if ([_parsedJsonData isKindOfClass:[NSArray class]]) {
+				NSLog(@"For %@ ,the Response JSON Data is an Array.\nAssign it to a NSArray",(NSString*)currentUrl);
+			}
+			else if([_parsedJsonData isKindOfClass:[NSDictionary class]]) {
+				NSLog(@"For %@ ,the Response JSON Data is a JSON Object or Dicitionary.\nAssign it to a NSDictionary",(NSString*)currentUrl);
+			}
+			
+			[self.delegate jsonRequestDidCompleteWithResponse:_parsedJsonData model:self];
+		}
+
+		
+	}];
+	
+//    NSURLConnection *conn = [[NSURLConnection alloc] initWithRequest:request delegate:self];
+//    [conn start];
+	
 }
 
 #pragma mark NSURLConnection Delegate Methods

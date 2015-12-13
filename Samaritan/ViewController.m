@@ -26,22 +26,19 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 //*/
 @implementation ViewController
 {
-//	SamaritanView *samaritanView;
 	
 	NSMutableArray *texts;
 	NSMutableArray *commands;
     
     NSString *recordedString;
-    NSString *place;
 	
 	NSManagedObjectContext *managedObjectContext;
 	NSFetchRequest *fetchRequest;
 	
 	Themes *currentTheme;
-    
-    CLLocationManager *manager;
-    CLGeocoder *geocoder;
-    CLPlacemark *placemark;
+	
+	CLLocation *currentLocation;
+    CLLocationManager *locationManager;
 
 }
 
@@ -58,8 +55,12 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 //		[self populateTextLabel];
 		[self.textLabel setText:@"What are your commands?"];
 	});
+	
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
+	});
     
-    // /*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
+/*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
     self.appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
     
     [self.appDelegate setupSpeechKitConnectionWithDelegate:self];
@@ -70,6 +71,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	[self.openEarsEventsObserver setDelegate:self];
 	
 	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+	
+	locationManager = [[CLLocationManager alloc]init];
+	locationManager.delegate = self;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+	[locationManager requestWhenInUseAuthorization];
+	[locationManager startUpdatingLocation];
+	currentLocation = [locationManager location];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -90,6 +98,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 			[wordsModel addObject:[string uppercaseString]];
 		}
 	}
+	[wordsModel addObject:@"WEATHER"];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
@@ -141,12 +150,16 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	// Dispose of any resources that can be recreated.
 }
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    
-    WeatherTableViewController *destination = [[WeatherTableViewController alloc] init];
-    destination.city = place;
-    
+#pragma mark - Navigation
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	
+	if ([segue.identifier isEqualToString:@"SwitchToWeather"]) {
+		UINavigationController *navc = [segue destinationViewController];
+		WeatherTableViewController *wtvc = [navc.viewControllers firstObject];
+		wtvc.currentLocation = currentLocation;
+	}
+	
 }
 
 #pragma mark - OEEventsObserver delegate
@@ -155,7 +168,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
 	// Return if score is less than specified value
-	if ([recognitionScore floatValue] < -20000) {
+	if ([recognitionScore floatValue] < -500000) {
 		return;
 	}
 	
@@ -171,26 +184,14 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     
     if ([self isInternetAvailable])
     {
-    
-        for (NSString *strCheck in extractedTags)
-        {
-        
-            if ([strCheck isEqualToString:@"WEATHER"])
-            {
-            
-                manager = [[CLLocationManager alloc] init];
-                geocoder = [[CLGeocoder alloc] init];
-                manager.delegate = self;
-                manager.desiredAccuracy = kCLLocationAccuracyBest;
-                [manager startUpdatingLocation];
-                [self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
-            
-            }
-        
-        }
-        
+	
+		if ([hypothesis containsString:@"WEATHER"]) {
+			[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
+			return;
+		}
+		
     }
-    
+	
     NSInteger highestNumberOfMatches = 0;
 	for (SamaritanData *data in commands)
     {
@@ -264,7 +265,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@", reasonForFailure);
 }
 
-// /*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
+/*
+//          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
 # pragma mark - SKRecognizer Delegate Methods
 
 - (void) recognizerDidBeginRecording:(SKRecognizer *)recognizer
@@ -308,8 +310,17 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     //NSLog(@"Error in recording %@", error.localizedDescription);
     
 }
+ */
 
-# pragma mark - CLLocationManager Delegate Methods
+#pragma mark - CLLocationManager Delegate Methods
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+	currentLocation = [locations lastObject];
+}
+
+- (void)startLocations {
+	[locationManager startUpdatingLocation];
+}
 
 - (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
@@ -318,25 +329,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     
 }
 
-- (void) locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
-{
-    
-    CLLocation *currentLocation = newLocation;
-    
-    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray<CLPlacemark *> * _Nullable placemarks, NSError * _Nullable error) {
-        
-        if (error == nil && [placemarks count] > 0)
-        {
-            
-            placemark = [placemarks lastObject];
-            place = placemark.locality;
-            
-        }
-    }];
-    
-}
-
-# pragma mark Connection Check
+# pragma mark - Connection Check
 
 - (BOOL) isInternetAvailable
 {

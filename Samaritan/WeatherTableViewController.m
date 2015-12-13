@@ -39,11 +39,34 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    NSURL *weatherUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?q=%@&APPID=f689d3ca074cdcc029cd042eecc7ffdc", _city]];
-    jsonResponse = [[SSJSONModel alloc] init];
-    [jsonResponse sendRequestWithUrl:weatherUrl];
-    
+	
+	CLLocationCoordinate2D coord = self.currentLocation.coordinate;
+	
+//	printf("\nCoordinate: { %.6f, %.6f}\n", coord.latitude, coord.longitude);
+	
+    NSURL *weatherUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%.6f&lon=%.6f&appid=2de143494c0b295cca9337e1e96b00e0", coord.latitude, coord.longitude]];
+	
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+		NSData *data = [NSData dataWithContentsOfURL:weatherUrl];
+		NSError *error;
+		if (data != nil) {
+			weatherData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+//			 NSLog(@"%@", weatherData);
+		}
+		if (weatherData != nil) {
+			mainKeyData = [weatherData objectForKey:@"main"];
+			weatherKeyData = [weatherData objectForKey:@"weather"];
+			weatherKeyDataDictionary = [weatherKeyData objectAtIndex:0];
+		}
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.tableView reloadData];
+		});
+	});
+	
+//    jsonResponse = [[SSJSONModel alloc] init];
+//	jsonResponse.delegate = self;
+//    [jsonResponse sendRequestWithUrl:weatherUrl];
+	
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -104,19 +127,27 @@
     return 1;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return SWidth;
+}
+
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *cellIdentifier = @"Cell";
+    static NSString *cellIdentifier = @"weatherCell";
     WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WeatherTableViewCell" owner:self options:nil];
+    NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WeatherCell" owner:self options:nil];
     cell = [nib objectAtIndex:0];
-    
-    cell.temperatureOnImage.text = [NSString stringWithFormat:@"%@ C", [mainKeyData objectForKey:@"temp"]];
-    cell.temperature.text = [NSString stringWithFormat:@"Temperature : %@ C", [mainKeyData objectForKey:@"temp"]];
-    cell.minTemperature.text = [NSString stringWithFormat:@"Minimum : %@ C", [mainKeyData objectForKey:@"temp_min"]];
-    cell.maxTemperature.text = [NSString stringWithFormat:@"Maximum : %@ C", [mainKeyData objectForKey:@"temp_max"]];
-    cell.typeOfWeather.text = [NSString stringWithFormat:@"%@", [weatherKeyDataDictionary objectForKey:@"description"]];
+	
+	CGFloat ctemp = [[mainKeyData objectForKey:@"temp"] floatValue] - 273.15;
+	CGFloat mtemp = [[mainKeyData objectForKey:@"temp_min"] floatValue] - 273.15;
+	CGFloat Mtemp = [[mainKeyData objectForKey:@"temp_max"] floatValue] - 273.15;
+	
+    cell.temperatureOnImage.text = [NSString stringWithFormat:@"%.2f ºC", ctemp];
+    cell.temperature.text = [NSString stringWithFormat:@"TEMPERATURE : %.2f ºC", ctemp];
+    cell.minTemperature.text = [NSString stringWithFormat:@"MINIMUM : %.2f ºC", mtemp];
+    cell.maxTemperature.text = [NSString stringWithFormat:@"MAXIMUM : %.2f ºC", Mtemp];
+    cell.typeOfWeather.text = [NSString stringWithFormat:@"%@ | %@", [weatherData[@"name"] uppercaseString], [[weatherKeyDataDictionary objectForKey:@"description"] uppercaseString]];
     
     cell.temperature.backgroundColor = currentTheme.backgroundColor;
     cell.typeOfWeather.backgroundColor = currentTheme.backgroundColor;
@@ -188,6 +219,10 @@
     return YES;
 }
 */
+
+- (IBAction)doneAction:(id)sender {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
 
 /*
 #pragma mark - Navigation
