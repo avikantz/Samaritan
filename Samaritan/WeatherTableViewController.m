@@ -12,7 +12,7 @@
 #import "Themes.h"
 #import "AppDelegate.h"
 
-@interface WeatherTableViewController () <SSJSONModelDelegate>
+@interface WeatherTableViewController ()// <SSJSONModelDelegate>
 {
     
     NSDictionary *weatherData;
@@ -81,7 +81,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+/*
 - (void) jsonRequestDidCompleteWithResponse:(id)response model:(SSJSONModel *)JSONModel
 {
     
@@ -98,7 +98,7 @@
     }
     
 }
-
+*/
 - (void) setTheme:(Themes *)theme
 {
     
@@ -138,6 +138,8 @@
     WeatherTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"WeatherCell" owner:self options:nil];
     cell = [nib objectAtIndex:0];
+    
+    cell.backgroundColor = currentTheme.backgroundColor;
 	
 	CGFloat ctemp = [[mainKeyData objectForKey:@"temp"] floatValue] - 273.15;
 	CGFloat mtemp = [[mainKeyData objectForKey:@"temp_min"] floatValue] - 273.15;
@@ -155,13 +157,39 @@
     cell.maxTemperature.backgroundColor = currentTheme.backgroundColor;
     
     cell.temperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
-    cell.temperatureOnImage.font = [UIFont fontWithName:currentTheme.fontName size:28.f];;
-    cell.minTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
-    cell.maxTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
-    cell.typeOfWeather.font = [UIFont fontWithName:currentTheme.fontName size:18.f];;
-    
-    
+    cell.temperatureOnImage.font = [UIFont fontWithName:currentTheme.fontName size:28.f];
+    cell.minTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.maxTemperature.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+    cell.typeOfWeather.font = [UIFont fontWithName:currentTheme.fontName size:18.f];
+
+    cell.typeOfWeather.textColor = currentTheme.foregroundColor;
+    cell.temperature.textColor = currentTheme.foregroundColor;
+    cell.temperatureOnImage.textColor = currentTheme.foregroundColor;
+    cell.minTemperature.textColor = currentTheme.foregroundColor;
+    cell.maxTemperature.textColor = currentTheme.foregroundColor;
+
     // set image view according to type of weather
+    
+    if ([[[weatherKeyDataDictionary objectForKey:@"main"] lowercaseString] isEqualToString:@"rain"])
+    {
+        
+        cell.typeOfWeatherImage.image = [UIImage imageNamed:@"rain.jpeg"];
+        
+    }
+    
+    else if ([[[weatherKeyDataDictionary objectForKey:@"main"] lowercaseString] isEqualToString:@"clouds"])
+    {
+        
+        cell.typeOfWeatherImage.image = [UIImage imageNamed:@"clouds.jpeg"];
+        
+    }
+    
+    else if ([[[weatherKeyDataDictionary objectForKey:@"main"] lowercaseString] isEqualToString:@"clear"])
+    {
+        
+        cell.typeOfWeatherImage.image = [UIImage imageNamed:@"sun.jpeg"];
+        
+    }
     
     return  cell;
     

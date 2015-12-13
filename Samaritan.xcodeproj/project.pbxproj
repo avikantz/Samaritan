@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */; };
+		18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB41C1DAB24002A5536 /* rain.jpeg */; };
+		18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB51C1DAB24002A5536 /* sun.jpeg */; };
+		18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB61C1DAB24002A5536 /* clouds.jpeg */; };
 		18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2A1C175743006F10B1 /* earcon_cancel.wav */; };
 		18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2B1C175743006F10B1 /* earcon_done_listening.wav */; };
 		18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2C1C175743006F10B1 /* earcon_listening.wav */; };
@@ -72,6 +75,9 @@
 /* Begin PBXFileReference section */
 		1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandTableViewController.h; path = Samaritan/AddCommandTableViewController.h; sourceTree = "<group>"; };
 		1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandTableViewController.m; path = Samaritan/AddCommandTableViewController.m; sourceTree = "<group>"; };
+		18486BB41C1DAB24002A5536 /* rain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpeg; sourceTree = "<group>"; };
+		18486BB51C1DAB24002A5536 /* sun.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun.jpeg; sourceTree = "<group>"; };
+		18486BB61C1DAB24002A5536 /* clouds.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clouds.jpeg; sourceTree = "<group>"; };
 		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_cancel.wav; path = Samaritan/earcon_cancel.wav; sourceTree = "<group>"; };
 		18635B2B1C175743006F10B1 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_done_listening.wav; path = Samaritan/earcon_done_listening.wav; sourceTree = "<group>"; };
 		18635B2C1C175743006F10B1 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_listening.wav; path = Samaritan/earcon_listening.wav; sourceTree = "<group>"; };
@@ -278,6 +284,9 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18486BB41C1DAB24002A5536 /* rain.jpeg */,
+				18486BB51C1DAB24002A5536 /* sun.jpeg */,
+				18486BB61C1DAB24002A5536 /* clouds.jpeg */,
 				5988FF881C16E12800223FD3 /* execSystemsData.json */,
 				5988FF891C16E12800223FD3 /* intelligenceData.json */,
 				5988FF8A1C16E12800223FD3 /* loadingData.json */,
@@ -602,12 +611,15 @@
 				59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */,
 				18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */,
 				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
+				18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
 				5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */,
+				18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */,
 				5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */,
 				5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */,
 				18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
+				18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */,
 				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,

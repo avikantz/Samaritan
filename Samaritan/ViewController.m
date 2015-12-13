@@ -51,15 +51,15 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	self.textLabel.delegate = self;
 	[self.textLabel setDefaultText:@"______"];
 	
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 //		[self populateTextLabel];
 		[self.textLabel setText:@"What are your commands?"];
 	});
-	
+	/*
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
 	});
-    
+    */
 /*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
     self.appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
     
@@ -99,6 +99,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 		}
 	}
 	[wordsModel addObject:@"WEATHER"];
+    [wordsModel addObject:@"MOVIES"];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
