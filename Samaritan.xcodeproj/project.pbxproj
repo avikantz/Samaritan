@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18105C2F1C1EF9700086D6BB /* ListingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18105C2E1C1EF9700086D6BB /* ListingTableViewCell.m */; };
+		18105C321C1EF9A70086D6BB /* ListingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18105C311C1EF9A70086D6BB /* ListingCell.xib */; };
+		18105C351C1EFD990086D6BB /* ListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18105C341C1EFD990086D6BB /* ListingTableViewController.m */; };
 		1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */; };
 		18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB41C1DAB24002A5536 /* rain.jpeg */; };
 		18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB51C1DAB24002A5536 /* sun.jpeg */; };
@@ -14,6 +17,7 @@
 		18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2A1C175743006F10B1 /* earcon_cancel.wav */; };
 		18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2B1C175743006F10B1 /* earcon_done_listening.wav */; };
 		18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2C1C175743006F10B1 /* earcon_listening.wav */; };
+		1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */; };
 		18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */; };
 		18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5D71C1C8C950043D205 /* WeatherTableViewController.m */; };
 		18E8A5DC1C1C944C0043D205 /* SSJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5DB1C1C944C0043D205 /* SSJSONModel.m */; };
@@ -73,6 +77,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18105C2D1C1EF9700086D6BB /* ListingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListingTableViewCell.h; sourceTree = "<group>"; };
+		18105C2E1C1EF9700086D6BB /* ListingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingTableViewCell.m; sourceTree = "<group>"; };
+		18105C311C1EF9A70086D6BB /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingCell.xib; sourceTree = "<group>"; };
+		18105C331C1EFD990086D6BB /* ListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListingTableViewController.h; sourceTree = "<group>"; };
+		18105C341C1EFD990086D6BB /* ListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingTableViewController.m; sourceTree = "<group>"; };
 		1836A64B1C15C458006DE467 /* AddCommandTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddCommandTableViewController.h; path = Samaritan/AddCommandTableViewController.h; sourceTree = "<group>"; };
 		1836A64C1C15C458006DE467 /* AddCommandTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddCommandTableViewController.m; path = Samaritan/AddCommandTableViewController.m; sourceTree = "<group>"; };
 		18486BB41C1DAB24002A5536 /* rain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpeg; sourceTree = "<group>"; };
@@ -81,6 +90,8 @@
 		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_cancel.wav; path = Samaritan/earcon_cancel.wav; sourceTree = "<group>"; };
 		18635B2B1C175743006F10B1 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_done_listening.wav; path = Samaritan/earcon_done_listening.wav; sourceTree = "<group>"; };
 		18635B2C1C175743006F10B1 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_listening.wav; path = Samaritan/earcon_listening.wav; sourceTree = "<group>"; };
+		1866A54D1C1F17AA005A7BA2 /* SearchListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListingTableViewController.h; sourceTree = "<group>"; };
+		1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListingTableViewController.m; sourceTree = "<group>"; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
 		18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllCommandsTableViewController.m; path = Samaritan/AllCommandsTableViewController.m; sourceTree = "<group>"; };
 		18E8A5D61C1C8C950043D205 /* WeatherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewController.h; sourceTree = "<group>"; };
@@ -193,6 +204,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18105C301C1EF97F0086D6BB /* Listing Cell */ = {
+			isa = PBXGroup;
+			children = (
+				18105C311C1EF9A70086D6BB /* ListingCell.xib */,
+				18105C2D1C1EF9700086D6BB /* ListingTableViewCell.h */,
+				18105C2E1C1EF9700086D6BB /* ListingTableViewCell.m */,
+			);
+			name = "Listing Cell";
+			sourceTree = "<group>";
+		};
+		18105C361C1EFDA10086D6BB /* Listings */ = {
+			isa = PBXGroup;
+			children = (
+				18105C331C1EFD990086D6BB /* ListingTableViewController.h */,
+				18105C341C1EFD990086D6BB /* ListingTableViewController.m */,
+				1866A54D1C1F17AA005A7BA2 /* SearchListingTableViewController.h */,
+				1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */,
+			);
+			name = Listings;
+			sourceTree = "<group>";
+		};
 		18D51F861C14F9E80083A3FD /* New Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +350,7 @@
 				18D51F861C14F9E80083A3FD /* New Commands */,
 				5955D0761C145931000BD806 /* Settings */,
 				18E8A5D91C1C8C9E0043D205 /* Weather */,
+				18105C361C1EFDA10086D6BB /* Listings */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +388,7 @@
 				5988FF921C16E98500223FD3 /* Dynamic Label */,
 				592192E31C0B2D5600E93480 /* SamaritanView */,
 				18E8A5E21C1C9B770043D205 /* Weather Cell */,
+				18105C301C1EF97F0086D6BB /* Listing Cell */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -620,6 +654,7 @@
 				18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
 				18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */,
+				18105C321C1EF9A70086D6BB /* ListingCell.xib in Resources */,
 				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
@@ -649,6 +684,7 @@
 				5988FF811C16E11300223FD3 /* StartupViewController.m in Sources */,
 				59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */,
 				592192DF1C0B2AD200E93480 /* SamaritanData+CoreDataProperties.m in Sources */,
+				1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				18E8A5E11C1C9A620043D205 /* WeatherTableViewCell.m in Sources */,
 				18E8A5DC1C1C944C0043D205 /* SSJSONModel.m in Sources */,
@@ -657,6 +693,7 @@
 				5938BF821C1B28AC000E6D8C /* HRBrightnessCursor.m in Sources */,
 				5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */,
 				18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */,
+				18105C2F1C1EF9700086D6BB /* ListingTableViewCell.m in Sources */,
 				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
 				5988FF871C16E12100223FD3 /* LoadingData.m in Sources */,
 				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
@@ -666,6 +703,7 @@
 				1836A64D1C15C458006DE467 /* AddCommandTableViewController.m in Sources */,
 				592192BC1C0B298200E93480 /* main.m in Sources */,
 				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
+				18105C351C1EFD990086D6BB /* ListingTableViewController.m in Sources */,
 				18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */,
 				5938BF881C1B28AC000E6D8C /* HRHSVColorUtil.m in Sources */,
 				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,

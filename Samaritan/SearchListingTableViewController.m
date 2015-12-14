@@ -1,24 +1,18 @@
 //
-//  AddCommandTableViewController.m
+//  SearchListingTableViewController.m
 //  Samaritan
 //
-//  Created by YASH on 07/12/15.
+//  Created by YASH on 14/12/15.
 //  Copyright © 2015 Dark Army. All rights reserved.
 //
 
-#import "AddCommandTableViewController.h"
-#import "AppDelegate.h"
+#import "SearchListingTableViewController.h"
 #import "Themes.h"
-#import "AllCommandsTableViewController.h"
+#import "AppDelegate.h"
+#import "ListingTableViewController.h"
 
-@interface AddCommandTableViewController ()
+@interface SearchListingTableViewController ()
 {
-    
-    NSString *command;
-    NSString *tag;
-    
-    NSManagedObjectContext *managedObjectContext;
-    NSFetchRequest *fetchRequest;
     
     Themes *currentTheme;
     
@@ -26,9 +20,10 @@
 
 @end
 
-@implementation AddCommandTableViewController
+@implementation SearchListingTableViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -36,18 +31,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    // self.tableView.contentInset = UIEdgeInsetsMake(40, 0, 0, 0);
-	
-	if (self.passedData) {
-		self.commandEntry.text = self.passedData.displayString;
-		self.tagEntry.text = self.passedData.tags;
-	}
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -60,21 +43,37 @@
 -(void)setTheme:(Themes *)theme
 {
     self.view.backgroundColor = theme.backgroundColor;
-    self.commandEntry.textColor = theme.foregroundColor;
-    self.commandEntry.font = [UIFont fontWithName:theme.fontName size:18.f];
-    self.commandEntry.backgroundColor = theme.backgroundColor;
-    self.tagEntry.textColor = theme.foregroundColor;
-    self.tagEntry.font = [UIFont fontWithName:theme.fontName size:18.f];
-    self.tagEntry.backgroundColor = theme.backgroundColor;
-    self.buttonLabel.textColor = theme.foregroundColor;
-    self.buttonLabel.backgroundColor = theme.backgroundColor;
-    self.buttonLabel.font = [UIFont fontWithName:theme.fontName size:24.f];
+    self.searchQueryTextView.textColor = theme.foregroundColor;
+    self.searchQueryTextView.font = [UIFont fontWithName:theme.fontName size:18.f];
+    self.searchQueryTextView.backgroundColor = theme.backgroundColor;
+    self.typeOfQueryTextView.textColor = theme.foregroundColor;
+    self.typeOfQueryTextView.font = [UIFont fontWithName:theme.fontName size:18.f];
+    self.typeOfQueryTextView.backgroundColor = theme.backgroundColor;
+    self.searchLabel.textColor = theme.foregroundColor;
+    self.searchLabel.backgroundColor = theme.backgroundColor;
+    self.searchLabel.font = [UIFont fontWithName:theme.fontName size:24.f];
     self.tableView.separatorColor = theme.foregroundColor;
-	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
-	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
+    [[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
+    [[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
 }
 
-#pragma mark - Table view methods
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) performSearch
+{
+    
+    ListingTableViewController *dest = [[ListingTableViewController alloc] init];
+    dest.searchFor = self.searchQueryTextView.text;
+    dest.typeOf = self.typeOfQueryTextView.text;
+    [self performSegueWithIdentifier:@"ShowListing" sender:self];
+    
+}
+
+# pragma mark - Table view data source
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -85,7 +84,7 @@
         if (indexPath.row == 0)
         {
             
-            [self.commandEntry becomeFirstResponder];
+            [self.searchQueryTextView becomeFirstResponder];
             
         }
         
@@ -97,7 +96,7 @@
         if (indexPath.row ==0)
         {
             
-            [self.tagEntry becomeFirstResponder];
+            [self.typeOfQueryTextView becomeFirstResponder];
             
         }
         
@@ -106,7 +105,7 @@
     if (indexPath.section == tableView.numberOfSections - 1)
     {
         
-        [self saveNewCommand];
+        [self performSearch];
         [self resignFirstResponder];
         
     }
@@ -115,77 +114,15 @@
     
 }
 
-- (void) saveNewCommand
-{
-    
-    command = self.commandEntry.text;
-    tag = self.tagEntry.text;
-	
-	if (command.length < 5) {
-		SHOW_ALERT(@"Commands must be atleast 5 characters long.");
-		return;
-	}
-	if (tag.length < 3) {
-		SHOW_ALERT(@"Tags must be atleast 3 characters long.");
-		return;
-	}
-	
-	NSManagedObjectContext *context = [AppDelegate managedObjectContext];
-	
-	if (self.passedData) {
-		self.passedData.displayString = self.commandEntry.text;
-		self.passedData.tags = self.tagEntry.text;
-		NSError *error;
-		if (![context save:&error]) {
-			NSLog(@"Save error: %@", error);
-		}
-	}
-	else {
-		
-		NSFetchRequest *fetchReq = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
-		[fetchReq setPredicate:[NSPredicate predicateWithFormat:@"displayString contains[cd] @%", tag]];
-		NSError *err = nil;
-		
-		NSArray *dataArray = [context executeFetchRequest:fetchReq error:&err];
-		if (dataArray.count > 0) {
-			SHOW_ALERT(@"Command already present!");
-			return;
-		}
-		
-        SamaritanData *data = [NSEntityDescription insertNewObjectForEntityForName:@"SamaritanData" inManagedObjectContext:context];
-        data.displayString = command;
-        data.tags = tag;
-        
-        if (![context save:&err])
-        {
-            
-            NSLog(@"%@",err);
-            
-        }
-        
-    }
-	
-	[self.navigationController popViewControllerAnimated:YES];
-    
-}
-
-- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if (indexPath.section == 0 || indexPath.section == 1)
-		return 120.f;
-    return 40.f;
-    
-}
-
-#pragma mark - Scroll view delegate
+# pragma mark - Scroll view delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-	[self.commandEntry resignFirstResponder];
-	[self.tagEntry resignFirstResponder];
+    
+    [self.searchQueryTextView resignFirstResponder];
+    [self.typeOfQueryTextView resignFirstResponder];
+    
 }
-
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
@@ -195,7 +132,8 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
     return 0;
-}*/
+}
+ */
 
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -245,12 +183,9 @@
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
- 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    
 }
 */
 

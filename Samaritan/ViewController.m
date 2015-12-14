@@ -16,14 +16,9 @@
 @interface ViewController () <CLLocationManagerDelegate>
 
 @end
-// /*              UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
-//const unsigned char SpeechKitApplicationKey[] = {0x61, 0x26, 0xd5, 0x22, 0xf7, 0x97, 0x88, 0x82, 0x68, 0xcc, 0x0b, 0xf2, 0xd0, 0x6b, 0xfa, 0x2b, 0xee, 0xa7,
-//    0x21, 0xda, 0xf1, 0xa3, 0x8e, 0x87, 0xf7, 0x2c, 0x03, 0x16, 0xf9, 0x28, 0x11, 0x5b, 0x4e, 0xe7, 0x7d, 0x45,
-//    0x7e, 0x05, 0xc7, 0xe6, 0xd2, 0xd2, 0xd8, 0xa2, 0x3d, 0xd2, 0xcd, 0x2b, 0x7a, 0xee, 0x05, 0x6b, 0x92, 0x93,
-//    0xf2, 0x89, 0xbf, 0xf6, 0xa0, 0xb9, 0x1e, 0xb1, 0x14, 0x6c};
 
 const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0x78, 0x8f, 0x29, 0x92, 0x7e, 0x27, 0xdf, 0x54, 0x7c, 0x39, 0xd9, 0xcf, 0x91, 0xb5, 0x24, 0x0e, 0x30, 0x08, 0x0f, 0x52, 0x55, 0x10, 0x92, 0x58, 0x2b, 0x27, 0xdd, 0xb8, 0xc9, 0x44, 0x42, 0x41, 0xd4, 0x6b, 0xd3, 0x52, 0x92, 0xb2, 0xa7, 0x0e, 0xeb, 0x80, 0xde, 0x7c, 0x35, 0x02, 0x8a, 0x65, 0x0b, 0x99, 0xb7, 0x60, 0xa9, 0x49, 0xb8, 0xd4, 0x70, 0x95, 0x8c};
-//*/
+
 @implementation ViewController
 {
 	
@@ -52,7 +47,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	[self.textLabel setDefaultText:@"______"];
 	
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//		[self populateTextLabel];
 		[self.textLabel setText:@"What are your commands?"];
 	});
 	/*
@@ -60,12 +54,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 		[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
 	});
     */
-/*          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
-    self.appDelegate = (AppDelegate *) [UIApplication sharedApplication].delegate;
-    
-    [self.appDelegate setupSpeechKitConnectionWithDelegate:self];
-    self.voiceSearch = [[SKRecognizer alloc] initWithType:SKSearchRecognizerType detection:SKShortEndOfSpeechDetection language:@"en-US" delegate:self];
-//     */
 	
 	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
 	[self.openEarsEventsObserver setDelegate:self];
@@ -100,6 +88,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	}
 	[wordsModel addObject:@"WEATHER"];
     [wordsModel addObject:@"MOVIES"];
+    [wordsModel addObject:@"EPISODE"];
+    [wordsModel addObject:@"SERIES"];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
@@ -186,10 +176,17 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
     if ([self isInternetAvailable])
     {
 	
-		if ([hypothesis containsString:@"WEATHER"]) {
+		if ([hypothesis containsString:@"WEATHER"])
+        {
 			[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
 			return;
 		}
+        
+        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"EPISODE"])
+        {
+            [self performSegueWithIdentifier:@"SwitchToListing" sender:self];
+            return;
+        }
 		
     }
 	
@@ -265,53 +262,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 - (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure {
 	NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@", reasonForFailure);
 }
-
-/*
-//          UNCOMMENT THIS AFTER SPEECHKIT FRAMEWORK ADDITION
-# pragma mark - SKRecognizer Delegate Methods
-
-- (void) recognizerDidBeginRecording:(SKRecognizer *)recognizer
-{
-    
-   // NSLog(@"Listening...start of recording works");
-    
-}
-
-- (void) recognizerDidFinishRecording:(SKRecognizer *)recognizer
-{
-    
-    //NSLog(@"Recorded");
-    
-}
-
-- (void) recognizer:(SKRecognizer *)recognizer didFinishWithResults:(SKRecognition *)results
-{
-    
-    long numOfResults = [results.results count];
-    if (numOfResults > 0)
-    {
-        
-        recordedString = [results firstResult];
-        
-    }
-    
-    if (self.voiceSearch)
-    {
-        
-        [self.voiceSearch cancel];
-        
-    }
-	//NSLog(@"Speech results: %@", results.results);
-    
-}
-
-- (void) recognizer:(SKRecognizer *)recognizer didFinishWithError:(NSError *)error suggestion:(NSString *)suggestion
-{
-    
-    //NSLog(@"Error in recording %@", error.localizedDescription);
-    
-}
- */
 
 #pragma mark - CLLocationManager Delegate Methods
 

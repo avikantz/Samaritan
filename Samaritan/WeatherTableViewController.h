@@ -13,6 +13,4 @@
 
 @property (strong, nonatomic) CLLocation *currentLocation;
 
-@property (strong, nonatomic) NSString *city;
-
 @end

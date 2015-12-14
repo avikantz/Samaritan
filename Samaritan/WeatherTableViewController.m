@@ -7,12 +7,11 @@
 //
 
 #import "WeatherTableViewController.h"
-#import "SSJSONModel.h"
 #import "WeatherTableViewCell.h"
 #import "Themes.h"
 #import "AppDelegate.h"
 
-@interface WeatherTableViewController ()// <SSJSONModelDelegate>
+@interface WeatherTableViewController ()
 {
     
     NSDictionary *weatherData;
@@ -20,8 +19,6 @@
     NSDictionary *weatherKeyDataDictionary;
     
     NSArray *weatherKeyData;
-    
-    SSJSONModel *jsonResponse;
     
     Themes *currentTheme;
     
@@ -33,16 +30,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 	
 	CLLocationCoordinate2D coord = self.currentLocation.coordinate;
-	
-//	printf("\nCoordinate: { %.6f, %.6f}\n", coord.latitude, coord.longitude);
 	
     NSURL *weatherUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://api.openweathermap.org/data/2.5/weather?lat=%.6f&lon=%.6f&appid=2de143494c0b295cca9337e1e96b00e0", coord.latitude, coord.longitude]];
 	
@@ -51,7 +40,6 @@
 		NSError *error;
 		if (data != nil) {
 			weatherData = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-//			 NSLog(@"%@", weatherData);
 		}
 		if (weatherData != nil) {
 			mainKeyData = [weatherData objectForKey:@"main"];
@@ -62,10 +50,6 @@
 			[self.tableView reloadData];
 		});
 	});
-	
-//    jsonResponse = [[SSJSONModel alloc] init];
-//	jsonResponse.delegate = self;
-//    [jsonResponse sendRequestWithUrl:weatherUrl];
 	
 }
 
