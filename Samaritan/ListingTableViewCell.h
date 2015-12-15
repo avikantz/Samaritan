@@ -16,7 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *imdbRatingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *genreLabel;
 // director for movie, series name for episode, think of something for series
-@property (strong, nonatomic) IBOutlet UILabel *infoLabel;
+@property (strong, nonatomic) IBOutlet UILabel *castLabel;
 @property (strong, nonatomic) IBOutlet UITextView *description;
 
 @end

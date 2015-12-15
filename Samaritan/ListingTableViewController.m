@@ -18,6 +18,7 @@
     
     NSDictionary *searchData;
     NSDictionary *listingData;
+    NSDictionary *dataToBeDisplayed;
     
     NSArray *searchKeyArray;
     
@@ -62,7 +63,16 @@
     listingData = [searchKeyArray objectAtIndex:0];
     imdbId = [listingData objectForKey:@"imdbID"];
     
-    // use this imdbID to query other url which will give all data
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
+        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.omdbapi.com/?i=%@&y=&plot=short&r=json", imdbId]]];
+        NSError *error;
+        
+        if (data != nil)
+        {
+            dataToBeDisplayed = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+            NSLog(@"%@", dataToBeDisplayed);
+        }
+    });
     
 }
 
@@ -110,7 +120,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return SWidth;
+    return 490;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,6 +134,14 @@
     {
         cell = [[ListingTableViewCell alloc] init];
     }
+    cell.nameLabel.text = @"Doctor Who";
+    cell.description.text = [dataToBeDisplayed objectForKey:@"Plot"];
+    cell.imdbRatingLabel.text = [dataToBeDisplayed objectForKey:@"imdbRating"];
+    cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
+    cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
+    cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
+    // image is at key Poster
+    
     return cell;
     
 }

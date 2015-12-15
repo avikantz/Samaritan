@@ -16,6 +16,14 @@
     
     Themes *currentTheme;
     
+    NSDictionary *searchData;
+    NSDictionary *listingData;
+    NSDictionary *dataToBeDisplayed;
+    
+    NSArray *searchKeyArray;
+    
+    NSString *imdbId;
+    
 }
 
 @end
@@ -66,9 +74,7 @@
 - (void) performSearch
 {
     
-    ListingTableViewController *dest = [[ListingTableViewController alloc] init];
-    dest.searchFor = self.searchQueryTextView.text;
-    dest.typeOf = self.typeOfQueryTextView.text;
+    NSLog(@"%@ %@", self.searchQueryTextView.text, self.typeOfQueryTextView.text);
     [self performSegueWithIdentifier:@"ShowListing" sender:self];
     
 }
@@ -121,6 +127,15 @@
     
     [self.searchQueryTextView resignFirstResponder];
     [self.typeOfQueryTextView resignFirstResponder];
+    
+}
+
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    ListingTableViewController *ltvc = [segue destinationViewController];
+    ltvc.searchFor = self.searchQueryTextView.text;;
+    ltvc.typeOf = self.typeOfQueryTextView.text;
     
 }
 /*
