@@ -34,6 +34,9 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	
 	CLLocation *currentLocation;
     CLLocationManager *locationManager;
+	
+	NSString *lmPath;
+	NSString *dicPath;
 
 }
 
@@ -49,11 +52,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self.textLabel setText:@"What are your commands?"];
 	});
-	/*
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(20 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
+	
+	/* 
+	// Test other view controllers here.
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self performSegueWithIdentifier:@"SwitchToListing" sender:self];
 	});
-    */
+	*/
 	
 	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
 	[self.openEarsEventsObserver setDelegate:self];
@@ -86,15 +91,12 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 			[wordsModel addObject:[string uppercaseString]];
 		}
 	}
-	[wordsModel addObject:@"WEATHER"];
-    [wordsModel addObject:@"MOVIES"];
-    [wordsModel addObject:@"EPISODE"];
-    [wordsModel addObject:@"SERIES"];
+	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV"]];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
-	NSString *lmPath = nil;
-	NSString *dicPath = nil;
+	lmPath = nil;
+	dicPath = nil;
 	
 	if(err == nil) {
 		lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:LANGUAGE_MODEL_FILE_NAME];
@@ -104,9 +106,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 		NSLog(@"Error: %@",[err localizedDescription]);
 	}
 	
-//	if ([[OEPocketsphinxController sharedInstance] isListening])
-//		[[OEPocketsphinxController sharedInstance] stopListening];
-	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO]; // Change "AcousticModelEnglish" to "AcousticModelSpanish" to perform Spanish recognition instead of English.
+	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
 	
 }
 
@@ -126,6 +126,8 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 
 -(void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
+	[[OEPocketsphinxController sharedInstance] stopListening];
+	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
 }
 
 -(void)setTheme:(Themes *)theme {
@@ -221,6 +223,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 	if (matchedData != nil) {
 		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
 		[self.textLabel setText:matchedData.displayString];
+		[[OEPocketsphinxController sharedInstance] stopListening];
 		[self.redTriangleImageView stopBlinking];
 	}
 }

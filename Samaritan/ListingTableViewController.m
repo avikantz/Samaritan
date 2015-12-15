@@ -8,6 +8,7 @@
 
 #import "ListingTableViewController.h"
 #import "ListingTableViewCell.h"
+#import "UIImage+ImageEffects.h"
 #import "AppDelegate.h"
 #import "Themes.h"
 
@@ -40,11 +41,13 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    NSString *searchQuery = @"doctor+who";
-    NSString *typeToQuery = @"series";
-    
+    NSString *searchQuery = [self.searchFor stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    NSString *typeToQuery = self.typeOf;
+	
     NSString *listingUrlString = [NSString stringWithFormat:@"http://www.omdbapi.com/?s=%@&type=%@&r=json", searchQuery, typeToQuery];      // split _searchFor at " " and replace with +
     NSURL *listingUrl = [NSURL URLWithString:listingUrlString];
+	
+	[SVProgressHUD showWithStatus:@"Loading"];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
         NSData *data = [NSData dataWithContentsOfURL:listingUrl];
@@ -57,23 +60,27 @@
             NSLog(@"%@", searchData);
             
         }
+		
+		searchKeyArray = [searchData objectForKey:@"Search"];
+		listingData = [searchKeyArray firstObject];
+		imdbId = [listingData objectForKey:@"imdbID"];
+		
+		NSData *dispData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.omdbapi.com/?i=%@&y=&plot=short&r=json", imdbId]]];
+		
+		if (dispData != nil)
+		{
+			dataToBeDisplayed = [NSJSONSerialization JSONObjectWithData:dispData options:kNilOptions error:&error];
+			NSLog(@"%@", dataToBeDisplayed);
+		}
+		
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.tableView reloadData];
+			[SVProgressHUD dismiss];
+		});
+		
+		
     });
-    
-    searchKeyArray = [searchData objectForKey:@"Search"];
-    listingData = [searchKeyArray objectAtIndex:0];
-    imdbId = [listingData objectForKey:@"imdbID"];
-    
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://www.omdbapi.com/?i=%@&y=&plot=short&r=json", imdbId]]];
-        NSError *error;
-        
-        if (data != nil)
-        {
-            dataToBeDisplayed = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-            NSLog(@"%@", dataToBeDisplayed);
-        }
-    });
-    
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -120,7 +127,7 @@
 
 - (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 490;
+    return SHeight - 66;
 }
 
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -134,25 +141,37 @@
     {
         cell = [[ListingTableViewCell alloc] init];
     }
-    cell.nameLabel.text = @"Doctor Who";
-    cell.description.text = [dataToBeDisplayed objectForKey:@"Plot"];
+    cell.nameLabel.text =  [dataToBeDisplayed objectForKey:@"Title"];
+    cell.descriptionTextView.text = [dataToBeDisplayed objectForKey:@"Plot"];
     cell.imdbRatingLabel.text = [dataToBeDisplayed objectForKey:@"imdbRating"];
     cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
     cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
     cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
+	cell.backgroundColor = currentTheme.backgroundColor;
+	[cell setTintColor:currentTheme.foregroundColor];
+	
     // image is at key Poster
+	
+	cell.listingImage.image = nil;
+	cell.listingImage.alpha = 0.0;
+	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[dataToBeDisplayed objectForKey:@"Poster"]]];
+		UIImage *image = [[UIImage imageWithData:imageData] applyDarkEffect];
+		dispatch_async(dispatch_get_main_queue(), ^{
+			cell.listingImage.image = image;
+			[cell setTintColor:[UIColor whiteColor]];
+			[UIView animateWithDuration:0.3 animations:^{
+				cell.listingImage.alpha = 1.f;
+			}];
+		});
+	});
     
     return cell;
     
 }
 
-- (UIView *) tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section
-{
-    
-    UIView *blankView = [[UIView alloc] initWithFrame:CGRectZero];
-    blankView.backgroundColor = currentTheme.backgroundColor;
-    return blankView;
-    
+-(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+	return NO;
 }
 
 - (IBAction)backAction:(id)sender

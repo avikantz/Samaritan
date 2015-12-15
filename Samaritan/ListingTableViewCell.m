@@ -20,4 +20,13 @@
     // Configure the view for the selected state
 }
 
+-(void)setTintColor:(UIColor *)tintColor {
+	self.nameLabel.textColor = tintColor;
+	self.metascoreLabel.textColor = tintColor;
+	self.imdbRatingLabel.textColor = tintColor;
+	self.genreLabel.textColor = tintColor;
+	self.castLabel.textColor = tintColor;
+	self.descriptionTextView.textColor = tintColor;
+}
+
 @end

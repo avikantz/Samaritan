@@ -59,6 +59,9 @@
                                                     <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="drawsUnderline" value="YES"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="zAo-MK-fIB">
                                                     <rect key="frame" x="261" y="88" width="44" height="44"/>
@@ -176,6 +179,9 @@
                                             <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="32"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="boolean" keyPath="drawsUnderline" value="YES"/>
+                                            </userDefinedRuntimeAttributes>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RedTriangle" translatesAutoresizingMaskIntoConstraints="NO" id="X9N-My-KWz">
                                             <rect key="frame" x="259" y="88" width="44" height="44"/>
@@ -433,39 +439,37 @@
             </objects>
             <point key="canvasLocation" x="1656" y="1826"/>
         </scene>
-        <!--Search Listing Table View Controller-->
+        <!--SEARCH MOVIES/TV SERIES-->
         <scene sceneID="MJA-02-lRx">
             <objects>
                 <tableViewController id="6xm-qI-q4I" customClass="SearchListingTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="mUs-rL-2Vu">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="mUs-rL-2Vu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection headerTitle="Search" id="8iy-uf-tJE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="kvL-Hx-mDk">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="kvL-Hx-mDk">
+                                        <rect key="frame" x="0.0" y="114" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kvL-Hx-mDk" id="4ls-ID-Ib9">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kpN-Cz-SVZ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
+                                                <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-vC-gcP">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </searchBar>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="kpN-Cz-SVZ" firstAttribute="leading" secondItem="4ls-ID-Ib9" secondAttribute="leading" id="DSi-yy-PHU"/>
-                                                <constraint firstAttribute="trailing" secondItem="kpN-Cz-SVZ" secondAttribute="trailing" id="X6g-50-z66"/>
-                                                <constraint firstItem="kpN-Cz-SVZ" firstAttribute="top" secondItem="4ls-ID-Ib9" secondAttribute="top" id="oJe-l6-1U0"/>
-                                                <constraint firstItem="kpN-Cz-SVZ" firstAttribute="centerY" secondItem="4ls-ID-Ib9" secondAttribute="centerY" id="rNA-MC-Y2m"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="xVd-vC-gcP" secondAttribute="bottom" constant="-9" id="5EG-kI-sW4"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xVd-vC-gcP" secondAttribute="trailing" constant="-8" id="LCZ-Yn-9CB"/>
+                                                <constraint firstItem="xVd-vC-gcP" firstAttribute="leading" secondItem="4ls-ID-Ib9" secondAttribute="leadingMargin" constant="-8" id="niw-C2-kUa"/>
+                                                <constraint firstItem="xVd-vC-gcP" firstAttribute="top" secondItem="4ls-ID-Ib9" secondAttribute="topMargin" constant="-8" id="ze4-cA-Cdh"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -474,27 +478,29 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Type" id="2mK-H0-GTX">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="fWS-1D-w1W">
-                                        <rect key="frame" x="0.0" y="170" width="600" height="50"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="44" id="fWS-1D-w1W">
+                                        <rect key="frame" x="0.0" y="209" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fWS-1D-w1W" id="LXm-kC-mLV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UyM-Qr-HeJ">
-                                                    <rect key="frame" x="0.0" y="-2" width="600" height="53"/>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ajn-nq-EMl">
+                                                    <rect key="frame" x="8" y="8" width="584" height="29"/>
                                                     <animations/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                </textView>
+                                                    <segments>
+                                                        <segment title="MOVIE"/>
+                                                        <segment title="SERIES"/>
+                                                        <segment title="EPISODE"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="UyM-Qr-HeJ" firstAttribute="leading" secondItem="LXm-kC-mLV" secondAttribute="leading" id="Aj8-Yj-Fi7"/>
-                                                <constraint firstItem="UyM-Qr-HeJ" firstAttribute="top" secondItem="LXm-kC-mLV" secondAttribute="topMargin" constant="-10" id="HZV-gk-sf0"/>
-                                                <constraint firstAttribute="trailing" secondItem="UyM-Qr-HeJ" secondAttribute="trailing" id="fz1-1n-PLO"/>
-                                                <constraint firstItem="UyM-Qr-HeJ" firstAttribute="centerY" secondItem="LXm-kC-mLV" secondAttribute="centerY" id="knE-S3-pmw"/>
+                                                <constraint firstAttribute="topMargin" secondItem="ajn-nq-EMl" secondAttribute="top" id="RbL-9M-l6K"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ajn-nq-EMl" secondAttribute="trailing" id="TFI-RX-g9I"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ajn-nq-EMl" secondAttribute="leading" id="WxR-JC-zbC"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ajn-nq-EMl" secondAttribute="bottom" constant="-1" id="y3Y-ua-OjE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -504,7 +510,7 @@
                             <tableViewSection headerTitle="" id="UhS-Bc-6yJ">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="50" id="yUY-eg-Cc3">
-                                        <rect key="frame" x="0.0" y="220" width="600" height="50"/>
+                                        <rect key="frame" x="0.0" y="289" width="600" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="yUY-eg-Cc3" id="iZt-YY-K5w">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
@@ -514,7 +520,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -539,9 +545,20 @@
                             <outlet property="delegate" destination="6xm-qI-q4I" id="v6P-Av-vM7"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="2oX-Wc-XsW">
-                        <barButtonItem key="leftBarButtonItem" title="DONE" id="C4F-MR-kaO"/>
+                    <navigationItem key="navigationItem" title="SEARCH MOVIES/TV SERIES" id="2oX-Wc-XsW">
+                        <barButtonItem key="backBarButtonItem" title=" " id="wVs-XB-VLS"/>
+                        <barButtonItem key="leftBarButtonItem" title="DONE" id="C4F-MR-kaO">
+                            <connections>
+                                <action selector="doneAction:" destination="6xm-qI-q4I" id="omW-So-he6"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="searchLabel" destination="aZS-PU-qvI" id="alL-mc-x5f"/>
+                        <outlet property="searchQueryBar" destination="xVd-vC-gcP" id="xAE-gg-agc"/>
+                        <outlet property="typeOfSearchCell" destination="fWS-1D-w1W" id="bLv-rR-957"/>
+                        <outlet property="typeOfSearchSegmentedControl" destination="ajn-nq-EMl" id="bFm-fS-mIg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C7g-pC-hwM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -551,7 +568,7 @@
         <scene sceneID="tdR-bk-WAL">
             <objects>
                 <tableViewController id="PId-UE-KXo" customClass="ListingTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="unx-Lr-Owx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="unx-Lr-Owx">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
@@ -561,7 +578,7 @@
                                 <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="q6z-yT-q3n" id="6bZ-Oj-4nj">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <animations/>
                                 </tableViewCellContentView>
@@ -574,11 +591,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="LISTING" id="pYc-LA-jms">
-                        <barButtonItem key="leftBarButtonItem" title="BACK" id="fjQ-L2-SgA">
-                            <connections>
-                                <action selector="backAction:" destination="PId-UE-KXo" id="FFx-Bx-LbZ"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="backBarButtonItem" title=" " id="Nuj-w6-SO0"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOn-Io-S6G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -927,12 +940,18 @@ drive status
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8R-m9-kjG">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIA" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D8R-m9-kjG" customClass="UnderlinedLabel">
                                         <rect key="frame" x="20" y="72" width="448" height="20"/>
                                         <animations/>
                                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="drawsUnderline" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <animations/>
@@ -1063,7 +1082,7 @@ drive status
                                             </mask>
                                         </variation>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MACHINE LEARNING: ACTIVE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jkx-Ws-eOD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MACHINE LEARNING: ACTIVE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jkx-Ws-eOD" customClass="UnderlinedLabel">
                                         <rect key="frame" x="16" y="48" width="528" height="24"/>
                                         <animations/>
                                         <constraints>
@@ -1072,6 +1091,12 @@ drive status
                                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="19"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="drawsUnderline" value="YES"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <animations/>

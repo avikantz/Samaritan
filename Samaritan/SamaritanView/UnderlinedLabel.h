@@ -12,4 +12,7 @@ IB_DESIGNABLE
 
 @interface UnderlinedLabel : UILabel
 
+@property IBInspectable BOOL drawsUnderline;
+@property IBInspectable CGFloat lineWidth;
+
 @end

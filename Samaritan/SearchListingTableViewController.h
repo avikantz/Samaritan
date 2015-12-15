@@ -10,8 +10,9 @@
 
 @interface SearchListingTableViewController : UITableViewController
 
-@property (strong, nonatomic) IBOutlet UITextView *searchQueryTextView;
-@property (strong, nonatomic) IBOutlet UITextView *typeOfQueryTextView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchQueryBar;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *typeOfSearchSegmentedControl;
+@property (weak, nonatomic) IBOutlet UITableViewCell *typeOfSearchCell;
 @property (strong, nonatomic) IBOutlet UILabel *searchLabel;
 
 @end

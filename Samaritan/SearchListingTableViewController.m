@@ -33,7 +33,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+	
+	[self.searchQueryBar becomeFirstResponder];
+	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -51,32 +53,29 @@
 -(void)setTheme:(Themes *)theme
 {
     self.view.backgroundColor = theme.backgroundColor;
-    self.searchQueryTextView.textColor = theme.foregroundColor;
-    self.searchQueryTextView.font = [UIFont fontWithName:theme.fontName size:18.f];
-    self.searchQueryTextView.backgroundColor = theme.backgroundColor;
-    self.typeOfQueryTextView.textColor = theme.foregroundColor;
-    self.typeOfQueryTextView.font = [UIFont fontWithName:theme.fontName size:18.f];
-    self.typeOfQueryTextView.backgroundColor = theme.backgroundColor;
+	self.searchQueryBar.barTintColor = theme.foregroundColor;
+	self.searchQueryBar.backgroundColor = theme.backgroundColor;
+	self.searchQueryBar.tintColor = theme.foregroundColor;
+	self.typeOfSearchSegmentedControl.tintColor = theme.foregroundColor;
+	self.typeOfSearchCell.backgroundColor = theme.backgroundColor;
     self.searchLabel.textColor = theme.foregroundColor;
     self.searchLabel.backgroundColor = theme.backgroundColor;
     self.searchLabel.font = [UIFont fontWithName:theme.fontName size:24.f];
     self.tableView.separatorColor = theme.foregroundColor;
     [[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
     [[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
+	[[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setTextColor:theme.foregroundColor];
+	[[UITextField appearanceWhenContainedInInstancesOfClasses:@[[UISearchBar class]]] setFont:[UIFont fontWithName:theme.fontName size:18.f]];
+	self.tableView.backgroundColor = theme.backgroundColor;
+	self.tableView.backgroundView.backgroundColor = theme.backgroundColor;
+	[SVProgressHUD setBackgroundColor:theme.backgroundColor];
+	[SVProgressHUD setForegroundColor:theme.foregroundColor];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) performSearch
-{
-    
-    NSLog(@"%@ %@", self.searchQueryTextView.text, self.typeOfQueryTextView.text);
-    [self performSegueWithIdentifier:@"ShowListing" sender:self];
-    
 }
 
 # pragma mark - Table view data source
@@ -90,19 +89,7 @@
         if (indexPath.row == 0)
         {
             
-            [self.searchQueryTextView becomeFirstResponder];
-            
-        }
-        
-    }
-    
-    if (indexPath.section == 1)
-    {
-        
-        if (indexPath.row ==0)
-        {
-            
-            [self.typeOfQueryTextView becomeFirstResponder];
+            [self.searchQueryBar becomeFirstResponder];
             
         }
         
@@ -111,7 +98,6 @@
     if (indexPath.section == tableView.numberOfSections - 1)
     {
         
-        [self performSearch];
         [self resignFirstResponder];
         
     }
@@ -125,8 +111,7 @@
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     
-    [self.searchQueryTextView resignFirstResponder];
-    [self.typeOfQueryTextView resignFirstResponder];
+    [self.searchQueryBar resignFirstResponder];
     
 }
 
@@ -134,10 +119,26 @@
 {
     
     ListingTableViewController *ltvc = [segue destinationViewController];
-    ltvc.searchFor = self.searchQueryTextView.text;;
-    ltvc.typeOf = self.typeOfQueryTextView.text;
+    ltvc.searchFor = self.searchQueryBar.text;
+	switch (self.typeOfSearchSegmentedControl.selectedSegmentIndex) {
+		case 1:
+			ltvc.typeOf = @"series";
+			break;
+		case 2:
+			ltvc.typeOf = @"episode";
+			break;
+		default:
+			ltvc.typeOf = @"movie";
+			break;
+	}
     
 }
+
+- (IBAction)doneAction:(id)sender {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 /*
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections

@@ -69,6 +69,10 @@
 		[[UINavigationBar appearance] setBarTintColor:selectedTheme.backgroundColor];
 		[[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]}];
 		[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: selectedTheme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:selectedTheme.fontName size:18.f]} forState:UIControlStateNormal];
+		[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+		[SVProgressHUD setBackgroundColor:selectedTheme.backgroundColor];
+		[SVProgressHUD setForegroundColor:selectedTheme.foregroundColor];
+		[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeGradient];
 	}
 	
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
