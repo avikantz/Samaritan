@@ -145,22 +145,24 @@
     {
         cell.nameLabel.text =  [dataToBeDisplayed objectForKey:@"Title"];
         cell.descriptionTextView.text = [dataToBeDisplayed objectForKey:@"Plot"];
-        cell.imdbRatingLabel.text = [NSString stringWithFormat:@"Rated %@ with %@ votes cast",[dataToBeDisplayed objectForKey:@"imdbRating"], [dataToBeDisplayed objectForKey:@"imdbVotes"]];
+        cell.imdbRatingLabel.text = [NSString stringWithFormat:@"IMDb %@ | %@ votes",[dataToBeDisplayed objectForKey:@"imdbRating"], [dataToBeDisplayed objectForKey:@"imdbVotes"]];
         cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
         cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
         cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
-        cell.runtimeAndRatingLabel.text = [NSString stringWithFormat:@"Rated : %@ Runs for %@", [dataToBeDisplayed objectForKey:@"Rated"], [dataToBeDisplayed objectForKey:@"Runtime"]];
+        cell.runtimeAndRatingLabel.text = [NSString stringWithFormat:@"%@ | %@", [dataToBeDisplayed objectForKey:@"Rated"], [dataToBeDisplayed objectForKey:@"Runtime"]];
         cell.writersLabel.text = [NSString stringWithFormat:@"Written by %@",[dataToBeDisplayed objectForKey:@"Writer"]];
         cell.directorLabel.text = [NSString stringWithFormat:@"Directed by %@", [dataToBeDisplayed objectForKey:@"Director"]];
         cell.awardsListTextView.text = [dataToBeDisplayed objectForKey:@"Awards"];
         if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"movie"] || [[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"episode"])
         {
-            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"Released on %@", [dataToBeDisplayed objectForKey:@"Released"]];
+            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"%@", [dataToBeDisplayed objectForKey:@"Released"]];
         }
         else if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"series"])
         {
-            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"On Air %@", [dataToBeDisplayed objectForKey:@"Year"]];
+            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"%@", [dataToBeDisplayed objectForKey:@"Year"]];
         }
+		cell.awardsListTextView.font = [UIFont fontWithName:currentTheme.fontName size:16.f];
+		cell.descriptionTextView.font = [UIFont fontWithName:currentTheme.fontName size:16.f];
     }
     else
     {

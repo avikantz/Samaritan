@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,15 +23,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="775" id="WRs-Xm-qYw" customClass="ListingTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="775"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="711" id="WRs-Xm-qYw" customClass="ListingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="711"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WRs-Xm-qYw" id="AB2-8g-yYK">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="774"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="710"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0H-5w-rhd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="774"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0H-5w-rhd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="710"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="EUk-bs-fHk"/>
@@ -41,17 +42,23 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="releaseLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-mh-Cdb">
-                        <rect key="frame" x="8" y="314" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="releaseLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-mh-Cdb" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="74" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="gyG-SE-vcF"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="daV-JG-FSh" customClass="UnderlinedLabel">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="daV-JG-FSh" customClass="UnderlinedLabel">
                         <rect key="frame" x="8" y="26" width="304" height="35"/>
                         <animations/>
-                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="35" id="LvK-DP-qbv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="24"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
@@ -61,79 +68,191 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="writersLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-13-Jif">
-                        <rect key="frame" x="8" y="228" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="runtimeAndRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-Z8-KnX" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="114" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="dlE-pA-2dt"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtimeAndRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-Z8-KnX">
-                        <rect key="frame" x="8" y="185" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="castLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-EQ-sf5" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="228" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="Uxx-eD-htG"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="castLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-EQ-sf5">
-                        <rect key="frame" x="8" y="271" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imdbRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFX-xs-Uq1" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="194" width="304" height="26"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="Hen-zW-KdW"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="drawsUnderline" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="lineWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="69" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-fE-KF2" customClass="UnderlinedLabel">
+                        <rect key="frame" x="280" y="8" width="32" height="32"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="HKa-fE-KF2" secondAttribute="height" multiplier="1:1" id="beQ-rC-t0c"/>
+                            <constraint firstAttribute="height" constant="32" id="k2q-Ra-dDY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="imdbRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFX-xs-Uq1">
-                        <rect key="frame" x="8" y="357" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="directorLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-6t-Guf" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="268" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="70c-7T-UKe"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="metascoreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-fE-KF2">
-                        <rect key="frame" x="8" y="392" width="304" height="35"/>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPQ-Mq-Loi">
+                        <rect key="frame" x="0.0" y="590" width="320" height="120"/>
                         <animations/>
-                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="120" id="3Ax-hG-WOW"/>
+                        </constraints>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqB-iP-q1m">
-                        <rect key="frame" x="8" y="435" width="304" height="197"/>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqB-iP-q1m">
+                        <rect key="frame" x="0.0" y="348" width="320" height="234"/>
                         <animations/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="15"/>
                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                     </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="directorLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-6t-Guf">
-                        <rect key="frame" x="8" y="142" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genreLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="XhN-CP-3CS" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="154" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="ig3-2Z-zAQ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="genreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-Dt-yWC">
-                        <rect key="frame" x="8" y="99" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="writersLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-13-Jif" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="308" width="304" height="32"/>
                         <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="32" id="uIv-EX-bwe"/>
+                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPQ-Mq-Loi">
-                        <rect key="frame" x="8" y="640" width="304" height="128"/>
-                        <animations/>
-                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="15"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
                 </subviews>
                 <animations/>
                 <constraints>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="trailing" secondItem="PTJ-EQ-sf5" secondAttribute="trailing" id="2vg-12-Dft"/>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="top" secondItem="daV-JG-FSh" secondAttribute="bottom" constant="13" id="55g-Pt-EEy"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="leading" secondItem="Pcy-6t-Guf" secondAttribute="leading" id="5Kd-xL-smB"/>
                     <constraint firstItem="Y0H-5w-rhd" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" id="5Tu-ts-PoW"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="trailing" secondItem="DPr-13-Jif" secondAttribute="trailing" id="6ig-8g-aK4"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="daV-JG-FSh" secondAttribute="trailing" id="8sN-Dv-jys"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="leading" secondItem="DPr-13-Jif" secondAttribute="leading" id="Azi-cL-7AQ"/>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="leading" secondItem="daV-JG-FSh" secondAttribute="leading" id="Ctl-8F-8j3"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="trailing" secondItem="TRB-mh-Cdb" secondAttribute="trailing" id="DfP-ml-XwX"/>
+                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" constant="-8" id="DjU-sB-2LV"/>
+                    <constraint firstItem="daV-JG-FSh" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" constant="18" id="EkZ-Mv-mox"/>
+                    <constraint firstItem="HKa-fE-KF2" firstAttribute="top" secondItem="AFX-xs-Uq1" secondAttribute="bottom" constant="8" id="FhY-0Y-wmH"/>
+                    <constraint firstItem="eqB-iP-q1m" firstAttribute="top" secondItem="DPr-13-Jif" secondAttribute="bottom" constant="8" id="GKX-IA-V2m"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="leading" secondItem="Pcy-6t-Guf" secondAttribute="leading" id="GXC-o6-JJw"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="top" secondItem="TRB-mh-Cdb" secondAttribute="bottom" constant="8" id="IEi-TZ-jMu"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="leading" secondItem="TRB-mh-Cdb" secondAttribute="leading" id="IL0-tq-Vpz"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="HKa-fE-KF2" secondAttribute="trailing" id="Lqm-mW-o7W"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="trailing" secondItem="daV-JG-FSh" secondAttribute="trailing" id="MtH-FK-3gn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Y0H-5w-rhd" secondAttribute="bottom" constant="-8" id="PCP-I7-SY1"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="eqB-iP-q1m" secondAttribute="trailing" constant="-8" id="R2R-8T-Syb"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="WPQ-Mq-Loi" secondAttribute="bottom" constant="-8" id="RBt-90-7lg"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="WPQ-Mq-Loi" secondAttribute="trailing" constant="-8" id="Sm9-Rr-E3X"/>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="leading" secondItem="PTJ-EQ-sf5" secondAttribute="leading" id="TAF-rP-FDS"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="top" secondItem="XhN-CP-3CS" secondAttribute="bottom" constant="8" id="Tvb-A2-1Ih"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="top" secondItem="AFX-xs-Uq1" secondAttribute="bottom" constant="8" id="U5J-T6-Jla"/>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="trailing" secondItem="daV-JG-FSh" secondAttribute="trailing" id="URf-oH-se3"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="trailing" secondItem="HF0-Z8-KnX" secondAttribute="trailing" id="WFD-IN-lfL"/>
+                    <constraint firstItem="XhN-CP-3CS" firstAttribute="top" secondItem="HF0-Z8-KnX" secondAttribute="bottom" constant="8" id="Wdi-CI-B6N"/>
+                    <constraint firstItem="WPQ-Mq-Loi" firstAttribute="top" secondItem="eqB-iP-q1m" secondAttribute="bottom" constant="8" id="XUs-jp-5qS"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="top" secondItem="TRB-mh-Cdb" secondAttribute="bottom" constant="8" id="ZWZ-ek-lM4"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="top" secondItem="daV-JG-FSh" secondAttribute="bottom" constant="13" id="Zzx-0L-NUK"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="trailing" secondItem="AFX-xs-Uq1" secondAttribute="trailing" id="aBZ-aX-wzl"/>
+                    <constraint firstItem="TRB-mh-Cdb" firstAttribute="top" secondItem="PTJ-EQ-sf5" secondAttribute="bottom" constant="8" id="bZA-Ev-GD1"/>
+                    <constraint firstItem="XhN-CP-3CS" firstAttribute="leading" secondItem="HF0-Z8-KnX" secondAttribute="leading" id="bzb-AU-iUw"/>
+                    <constraint firstItem="eqB-iP-q1m" firstAttribute="top" secondItem="HKa-fE-KF2" secondAttribute="bottom" constant="8" id="dTp-Ac-A4W"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="top" secondItem="Pcy-6t-Guf" secondAttribute="bottom" constant="8" id="dkN-wJ-7ed"/>
+                    <constraint firstItem="HKa-fE-KF2" firstAttribute="trailing" secondItem="AFX-xs-Uq1" secondAttribute="trailing" id="eAN-4z-c13"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="daV-JG-FSh" secondAttribute="leading" id="fQn-dF-kdy"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="trailing" secondItem="TRB-mh-Cdb" secondAttribute="trailing" id="fcb-xZ-IEl"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="leading" secondItem="XhN-CP-3CS" secondAttribute="leading" id="g9y-aZ-gF7"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="trailing" secondItem="Pcy-6t-Guf" secondAttribute="trailing" id="gnk-K0-hbL"/>
+                    <constraint firstItem="XhN-CP-3CS" firstAttribute="trailing" secondItem="HF0-Z8-KnX" secondAttribute="trailing" id="hxC-D9-5DM"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="leading" secondItem="TRB-mh-Cdb" secondAttribute="leading" id="is0-yl-VpB"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="trailing" secondItem="PTJ-EQ-sf5" secondAttribute="trailing" id="k3K-1x-LS8"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="leading" secondItem="PTJ-EQ-sf5" secondAttribute="leading" id="mr4-R0-WyX"/>
+                    <constraint firstItem="HKa-fE-KF2" firstAttribute="leading" secondItem="AFX-xs-Uq1" secondAttribute="leading" id="nKU-47-vPj"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="top" secondItem="PTJ-EQ-sf5" secondAttribute="bottom" constant="8" id="pM3-rw-h4b"/>
+                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="leading" secondItem="AB2-8g-yYK" secondAttribute="leadingMargin" constant="-8" id="psW-TL-Xgy"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="leading" secondItem="HF0-Z8-KnX" secondAttribute="leading" id="rIg-0g-24R"/>
+                    <constraint firstItem="WPQ-Mq-Loi" firstAttribute="leading" secondItem="AB2-8g-yYK" secondAttribute="leadingMargin" constant="-8" id="rzO-Vs-xH3"/>
+                    <constraint firstAttribute="topMargin" secondItem="HKa-fE-KF2" secondAttribute="top" id="shc-cn-aLd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Y0H-5w-rhd" secondAttribute="trailing" constant="-8" id="tb1-vL-iil"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="top" secondItem="HF0-Z8-KnX" secondAttribute="bottom" constant="8" id="uEp-xb-osg"/>
+                    <constraint firstItem="eqB-iP-q1m" firstAttribute="leading" secondItem="AB2-8g-yYK" secondAttribute="leadingMargin" constant="-8" id="w9F-kI-sk4"/>
+                    <constraint firstItem="HF0-Z8-KnX" firstAttribute="top" secondItem="Pcy-6t-Guf" secondAttribute="bottom" constant="8" id="wkv-1y-ZzX"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="top" secondItem="DPr-13-Jif" secondAttribute="bottom" constant="8" id="wnH-z6-4bG"/>
+                    <constraint firstItem="DPr-13-Jif" firstAttribute="trailing" secondItem="Pcy-6t-Guf" secondAttribute="trailing" id="xg7-eu-RYs"/>
+                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="leading" secondItem="daV-JG-FSh" secondAttribute="leading" id="yHt-8N-CXi"/>
+                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="trailing" secondItem="XhN-CP-3CS" secondAttribute="trailing" id="z6N-GQ-6xe"/>
+                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="leading" secondItem="AFX-xs-Uq1" secondAttribute="leading" id="zSw-Rj-nqM"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="5Tu-ts-PoW"/>
+                        <exclude reference="2vg-12-Dft"/>
+                        <exclude reference="TAF-rP-FDS"/>
+                        <exclude reference="bZA-Ev-GD1"/>
+                        <exclude reference="GXC-o6-JJw"/>
+                        <exclude reference="gnk-K0-hbL"/>
+                        <exclude reference="wkv-1y-ZzX"/>
+                        <exclude reference="IL0-tq-Vpz"/>
+                        <exclude reference="ZWZ-ek-lM4"/>
+                        <exclude reference="fcb-xZ-IEl"/>
+                        <exclude reference="6ig-8g-aK4"/>
+                        <exclude reference="Azi-cL-7AQ"/>
+                        <exclude reference="wnH-z6-4bG"/>
+                        <exclude reference="MtH-FK-3gn"/>
+                        <exclude reference="Zzx-0L-NUK"/>
+                        <exclude reference="yHt-8N-CXi"/>
+                        <exclude reference="FhY-0Y-wmH"/>
+                        <exclude reference="eAN-4z-c13"/>
+                        <exclude reference="nKU-47-vPj"/>
+                        <exclude reference="WFD-IN-lfL"/>
+                        <exclude reference="rIg-0g-24R"/>
+                        <exclude reference="uEp-xb-osg"/>
+                        <exclude reference="dTp-Ac-A4W"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -144,7 +263,7 @@
                 <outlet property="castLabel" destination="PTJ-EQ-sf5" id="emr-32-g0s"/>
                 <outlet property="descriptionTextView" destination="eqB-iP-q1m" id="fOu-Iw-Q0Q"/>
                 <outlet property="directorLabel" destination="Pcy-6t-Guf" id="9NX-y3-crE"/>
-                <outlet property="genreLabel" destination="Pcy-6t-Guf" id="pz0-kg-J6B"/>
+                <outlet property="genreLabel" destination="XhN-CP-3CS" id="azU-9l-sDb"/>
                 <outlet property="imdbRatingLabel" destination="AFX-xs-Uq1" id="nli-Ld-WYT"/>
                 <outlet property="listingImage" destination="Y0H-5w-rhd" id="6Qc-rt-C1h"/>
                 <outlet property="metascoreLabel" destination="HKa-fE-KF2" id="Jdh-sT-Jwd"/>
@@ -153,7 +272,7 @@
                 <outlet property="writersLabel" destination="DPr-13-Jif" id="sZf-eh-6Va"/>
                 <outlet property="yrOfReleaseLabel" destination="TRB-mh-Cdb" id="dbh-Jr-oqb"/>
             </connections>
-            <point key="canvasLocation" x="619" y="586.5"/>
+            <point key="canvasLocation" x="619" y="554.5"/>
         </tableViewCell>
     </objects>
 </document>
