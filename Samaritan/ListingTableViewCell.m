@@ -27,6 +27,11 @@
 	self.genreLabel.textColor = tintColor;
 	self.castLabel.textColor = tintColor;
 	self.descriptionTextView.textColor = tintColor;
+    self.runtimeAndRatingLabel.textColor = tintColor;
+    self.directorLabel.textColor = tintColor;
+    self.writersLabel.textColor = tintColor;
+    self.yrOfReleaseLabel.textColor = tintColor;
+    self.awardsListTextView.textColor = tintColor;
 }
 
 @end

@@ -184,7 +184,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 			return;
 		}
         
-        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"EPISODE"])
+        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"EPISODE"] || [hypothesis containsString:@"TV"])
         {
             [self performSegueWithIdentifier:@"SwitchToListing" sender:self];
             return;

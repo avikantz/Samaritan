@@ -141,16 +141,43 @@
     {
         cell = [[ListingTableViewCell alloc] init];
     }
-    cell.nameLabel.text =  [dataToBeDisplayed objectForKey:@"Title"];
-    cell.descriptionTextView.text = [dataToBeDisplayed objectForKey:@"Plot"];
-    cell.imdbRatingLabel.text = [dataToBeDisplayed objectForKey:@"imdbRating"];
-    cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
-    cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
-    cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
-	cell.backgroundColor = currentTheme.backgroundColor;
+    if (dataToBeDisplayed != nil)
+    {
+        cell.nameLabel.text =  [dataToBeDisplayed objectForKey:@"Title"];
+        cell.descriptionTextView.text = [dataToBeDisplayed objectForKey:@"Plot"];
+        cell.imdbRatingLabel.text = [NSString stringWithFormat:@"Rated %@ with %@ votes cast",[dataToBeDisplayed objectForKey:@"imdbRating"], [dataToBeDisplayed objectForKey:@"imdbVotes"]];
+        cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
+        cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
+        cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
+        cell.runtimeAndRatingLabel.text = [NSString stringWithFormat:@"Rated : %@ Runs for %@", [dataToBeDisplayed objectForKey:@"Rated"], [dataToBeDisplayed objectForKey:@"Runtime"]];
+        cell.writersLabel.text = [NSString stringWithFormat:@"Written by %@",[dataToBeDisplayed objectForKey:@"Writer"]];
+        cell.directorLabel.text = [NSString stringWithFormat:@"Directed by %@", [dataToBeDisplayed objectForKey:@"Director"]];
+        cell.awardsListTextView.text = [dataToBeDisplayed objectForKey:@"Awards"];
+        if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"movie"] || [[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"episode"])
+        {
+            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"Released on %@", [dataToBeDisplayed objectForKey:@"Released"]];
+        }
+        else if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"series"])
+        {
+            cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"On Air %@", [dataToBeDisplayed objectForKey:@"Year"]];
+        }
+    }
+    else
+    {
+        cell.nameLabel.text = nil;
+        cell.descriptionTextView.text = nil;
+        cell.imdbRatingLabel.text = nil;
+        cell.metascoreLabel.text = nil;
+        cell.castLabel.text = nil;
+        cell.runtimeAndRatingLabel.text = nil;
+        cell.writersLabel.text = nil;
+        cell.directorLabel.text = nil;
+        cell.yrOfReleaseLabel.text = nil;
+        cell.genreLabel.text = nil;
+        cell.awardsListTextView.text = nil;
+    }
+    cell.backgroundColor = currentTheme.backgroundColor;
 	[cell setTintColor:currentTheme.foregroundColor];
-	
-    // image is at key Poster
 	
 	cell.listingImage.image = nil;
 	cell.listingImage.alpha = 0.0;

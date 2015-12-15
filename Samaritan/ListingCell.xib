@@ -12,20 +12,25 @@
             <string>MagdaCleanMono-Regular</string>
             <string>MagdaCleanMono-Regular</string>
             <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
+            <string>MagdaCleanMono-Regular</string>
         </mutableArray>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="490" id="WRs-Xm-qYw" customClass="ListingTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="490"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="775" id="WRs-Xm-qYw" customClass="ListingTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="775"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WRs-Xm-qYw" id="AB2-8g-yYK">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="489"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="774"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y0H-5w-rhd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="489"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y0H-5w-rhd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="774"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="128" id="EUk-bs-fHk"/>
@@ -36,12 +41,16 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="81V-me-DbA" customClass="UnderlinedLabel">
-                        <rect key="frame" x="8" y="48" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="releaseLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TRB-mh-Cdb">
+                        <rect key="frame" x="8" y="314" width="304" height="35"/>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="AEB-9e-EMZ"/>
-                        </constraints>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="daV-JG-FSh" customClass="UnderlinedLabel">
+                        <rect key="frame" x="8" y="26" width="304" height="35"/>
+                        <animations/>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="20"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
@@ -52,48 +61,65 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="genreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-6t-Guf">
-                        <rect key="frame" x="8" y="123" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="writersLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="DPr-13-Jif">
+                        <rect key="frame" x="8" y="228" width="304" height="35"/>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="bKP-Cd-fgc"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="castLabel" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-EQ-sf5">
-                        <rect key="frame" x="8" y="166" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="runtimeAndRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HF0-Z8-KnX">
+                        <rect key="frame" x="8" y="185" width="304" height="35"/>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="0Rs-xa-8RQ"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="imdbRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFX-xs-Uq1">
-                        <rect key="frame" x="8" y="203" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="castLabel" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PTJ-EQ-sf5">
+                        <rect key="frame" x="8" y="271" width="304" height="35"/>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="Mbc-6K-cOE"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="metascoreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-fE-KF2">
-                        <rect key="frame" x="8" y="240" width="304" height="35"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="imdbRatingLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="AFX-xs-Uq1">
+                        <rect key="frame" x="8" y="357" width="304" height="35"/>
                         <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="35" id="bGT-Eb-cmf"/>
-                        </constraints>
                         <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqB-iP-q1m">
-                        <rect key="frame" x="8" y="283" width="304" height="197"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="metascoreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HKa-fE-KF2">
+                        <rect key="frame" x="8" y="392" width="304" height="35"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqB-iP-q1m">
+                        <rect key="frame" x="8" y="435" width="304" height="197"/>
+                        <animations/>
+                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="15"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="directorLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Pcy-6t-Guf">
+                        <rect key="frame" x="8" y="142" width="304" height="35"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="genreLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="L2L-Dt-yWC">
+                        <rect key="frame" x="8" y="99" width="304" height="35"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="18"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPQ-Mq-Loi">
+                        <rect key="frame" x="8" y="640" width="304" height="128"/>
                         <animations/>
                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -104,54 +130,30 @@
                 <animations/>
                 <constraints>
                     <constraint firstItem="Y0H-5w-rhd" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" id="5Tu-ts-PoW"/>
-                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="leading" secondItem="81V-me-DbA" secondAttribute="leading" id="7ei-3Y-aYg"/>
-                    <constraint firstItem="HKa-fE-KF2" firstAttribute="leading" secondItem="eqB-iP-q1m" secondAttribute="leading" id="AiS-Y7-VQJ"/>
-                    <constraint firstItem="81V-me-DbA" firstAttribute="top" secondItem="Y0H-5w-rhd" secondAttribute="bottom" constant="13" id="ONv-89-aeG"/>
-                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="leading" secondItem="AB2-8g-yYK" secondAttribute="leadingMargin" constant="-8" id="OfT-nh-mwp"/>
-                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="trailing" secondItem="HKa-fE-KF2" secondAttribute="trailing" id="P2S-VR-Lfj"/>
-                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="top" secondItem="Pcy-6t-Guf" secondAttribute="bottom" constant="8" symbolic="YES" id="PEb-0t-1VU"/>
-                    <constraint firstItem="HKa-fE-KF2" firstAttribute="top" secondItem="AFX-xs-Uq1" secondAttribute="bottom" constant="2" id="R6f-8l-O1E"/>
-                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="trailing" secondItem="AFX-xs-Uq1" secondAttribute="trailing" id="TE9-DY-zYn"/>
-                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="leading" secondItem="Pcy-6t-Guf" secondAttribute="leading" id="Vis-R9-YeM"/>
-                    <constraint firstItem="eqB-iP-q1m" firstAttribute="top" secondItem="HKa-fE-KF2" secondAttribute="bottom" constant="8" symbolic="YES" id="Xoc-O2-0jS"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="eqB-iP-q1m" secondAttribute="bottom" constant="1" id="aMu-7M-9nP"/>
-                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="trailing" secondItem="AB2-8g-yYK" secondAttribute="trailingMargin" id="c5c-fw-6mb"/>
-                    <constraint firstItem="81V-me-DbA" firstAttribute="leading" secondItem="AB2-8g-yYK" secondAttribute="leadingMargin" id="dky-Ek-Fo2"/>
-                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="trailing" secondItem="PTJ-EQ-sf5" secondAttribute="trailing" id="gkt-fh-EhJ"/>
-                    <constraint firstItem="HKa-fE-KF2" firstAttribute="trailing" secondItem="eqB-iP-q1m" secondAttribute="trailing" id="h5J-0v-Y2D"/>
-                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" constant="-8" id="hyF-Yh-eiY"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="Y0H-5w-rhd" secondAttribute="bottom" constant="-8" id="iCB-Ix-Dcj"/>
-                    <constraint firstItem="HKa-fE-KF2" firstAttribute="leading" secondItem="AFX-xs-Uq1" secondAttribute="leading" id="iG3-tt-d14"/>
-                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="top" secondItem="81V-me-DbA" secondAttribute="bottom" constant="40" id="kr6-0K-viB"/>
-                    <constraint firstItem="PTJ-EQ-sf5" firstAttribute="leading" secondItem="AFX-xs-Uq1" secondAttribute="leading" id="n3o-KW-rLq"/>
-                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="leading" secondItem="81V-me-DbA" secondAttribute="leading" id="oZO-hh-STd"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="Y0H-5w-rhd" secondAttribute="trailing" constant="-8" id="qN5-p8-6TM"/>
-                    <constraint firstItem="81V-me-DbA" firstAttribute="top" secondItem="AB2-8g-yYK" secondAttribute="topMargin" constant="40" id="qWx-ju-f59"/>
-                    <constraint firstItem="Y0H-5w-rhd" firstAttribute="trailing" secondItem="81V-me-DbA" secondAttribute="trailing" id="r8w-Am-SCa"/>
-                    <constraint firstItem="Pcy-6t-Guf" firstAttribute="trailing" secondItem="81V-me-DbA" secondAttribute="trailing" id="sW9-l1-uqN"/>
-                    <constraint firstItem="AFX-xs-Uq1" firstAttribute="top" secondItem="PTJ-EQ-sf5" secondAttribute="bottom" constant="2" id="whi-37-Wev"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="5Tu-ts-PoW"/>
-                        <exclude reference="7ei-3Y-aYg"/>
-                        <exclude reference="r8w-Am-SCa"/>
-                        <exclude reference="ONv-89-aeG"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <animations/>
             <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="awardsListTextView" destination="WPQ-Mq-Loi" id="BRV-aE-TKE"/>
                 <outlet property="castLabel" destination="PTJ-EQ-sf5" id="emr-32-g0s"/>
                 <outlet property="descriptionTextView" destination="eqB-iP-q1m" id="fOu-Iw-Q0Q"/>
+                <outlet property="directorLabel" destination="Pcy-6t-Guf" id="9NX-y3-crE"/>
                 <outlet property="genreLabel" destination="Pcy-6t-Guf" id="pz0-kg-J6B"/>
                 <outlet property="imdbRatingLabel" destination="AFX-xs-Uq1" id="nli-Ld-WYT"/>
                 <outlet property="listingImage" destination="Y0H-5w-rhd" id="6Qc-rt-C1h"/>
                 <outlet property="metascoreLabel" destination="HKa-fE-KF2" id="Jdh-sT-Jwd"/>
-                <outlet property="nameLabel" destination="81V-me-DbA" id="oZn-aS-uAf"/>
+                <outlet property="nameLabel" destination="daV-JG-FSh" id="Jey-Uw-8zb"/>
+                <outlet property="runtimeAndRatingLabel" destination="HF0-Z8-KnX" id="nJy-jj-UwK"/>
+                <outlet property="writersLabel" destination="DPr-13-Jif" id="sZf-eh-6Va"/>
+                <outlet property="yrOfReleaseLabel" destination="TRB-mh-Cdb" id="dbh-Jr-oqb"/>
             </connections>
-            <point key="canvasLocation" x="619" y="462"/>
+            <point key="canvasLocation" x="619" y="586.5"/>
         </tableViewCell>
     </objects>
 </document>
