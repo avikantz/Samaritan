@@ -14,9 +14,6 @@
 		18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB41C1DAB24002A5536 /* rain.jpeg */; };
 		18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB51C1DAB24002A5536 /* sun.jpeg */; };
 		18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB61C1DAB24002A5536 /* clouds.jpeg */; };
-		18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2A1C175743006F10B1 /* earcon_cancel.wav */; };
-		18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2B1C175743006F10B1 /* earcon_done_listening.wav */; };
-		18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */ = {isa = PBXBuildFile; fileRef = 18635B2C1C175743006F10B1 /* earcon_listening.wav */; };
 		1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */; };
 		18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */; };
 		18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5D71C1C8C950043D205 /* WeatherTableViewController.m */; };
@@ -54,6 +51,8 @@
 		5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0711C145921000BD806 /* SettingsTableViewController.m */; };
 		5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */; };
 		5955D0791C146586000BD806 /* defaultThemes.json in Resources */ = {isa = PBXBuildFile; fileRef = 5955D0781C146586000BD806 /* defaultThemes.json */; };
+		5985C0EA1C208071008A4FC7 /* DoubleUnderlinedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985C0E91C208071008A4FC7 /* DoubleUnderlinedLabel.m */; };
+		5985C0ED1C20825B008A4FC7 /* StarLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5985C0EC1C20825B008A4FC7 /* StarLabel.m */; };
 		5988FF771C16E0F000223FD3 /* MiddleOutSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */; };
 		5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF791C16E0F700223FD3 /* OutlineProgressView.m */; };
 		5988FF801C16E11300223FD3 /* StartupFullAccessViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5988FF7D1C16E11300223FD3 /* StartupFullAccessViewController.m */; };
@@ -63,7 +62,6 @@
 		5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF881C16E12800223FD3 /* execSystemsData.json */; };
 		5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF891C16E12800223FD3 /* intelligenceData.json */; };
 		5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */ = {isa = PBXBuildFile; fileRef = 5988FF8A1C16E12800223FD3 /* loadingData.json */; };
-		59A302CE1C18698C001E55F9 /* SpeechKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302CD1C18698C001E55F9 /* SpeechKit.framework */; };
 		59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302CF1C186999001E55F9 /* AudioToolbox.framework */; };
 		59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D11C18699E001E55F9 /* SystemConfiguration.framework */; };
 		59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D31C1869A6001E55F9 /* CoreGraphics.framework */; };
@@ -92,9 +90,6 @@
 		18486BB41C1DAB24002A5536 /* rain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpeg; sourceTree = "<group>"; };
 		18486BB51C1DAB24002A5536 /* sun.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun.jpeg; sourceTree = "<group>"; };
 		18486BB61C1DAB24002A5536 /* clouds.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clouds.jpeg; sourceTree = "<group>"; };
-		18635B2A1C175743006F10B1 /* earcon_cancel.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_cancel.wav; path = Samaritan/earcon_cancel.wav; sourceTree = "<group>"; };
-		18635B2B1C175743006F10B1 /* earcon_done_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_done_listening.wav; path = Samaritan/earcon_done_listening.wav; sourceTree = "<group>"; };
-		18635B2C1C175743006F10B1 /* earcon_listening.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = earcon_listening.wav; path = Samaritan/earcon_listening.wav; sourceTree = "<group>"; };
 		1866A54D1C1F17AA005A7BA2 /* SearchListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListingTableViewController.h; sourceTree = "<group>"; };
 		1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListingTableViewController.m; sourceTree = "<group>"; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
@@ -160,6 +155,10 @@
 		5955D0731C14592C000BD806 /* ThemePickerTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThemePickerTableViewController.h; sourceTree = "<group>"; };
 		5955D0741C14592C000BD806 /* ThemePickerTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThemePickerTableViewController.m; sourceTree = "<group>"; };
 		5955D0781C146586000BD806 /* defaultThemes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = defaultThemes.json; sourceTree = "<group>"; };
+		5985C0E81C208071008A4FC7 /* DoubleUnderlinedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoubleUnderlinedLabel.h; sourceTree = "<group>"; };
+		5985C0E91C208071008A4FC7 /* DoubleUnderlinedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoubleUnderlinedLabel.m; sourceTree = "<group>"; };
+		5985C0EB1C20825B008A4FC7 /* StarLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarLabel.h; sourceTree = "<group>"; };
+		5985C0EC1C20825B008A4FC7 /* StarLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarLabel.m; sourceTree = "<group>"; };
 		5988FF751C16E0F000223FD3 /* MiddleOutSegue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiddleOutSegue.h; sourceTree = "<group>"; };
 		5988FF761C16E0F000223FD3 /* MiddleOutSegue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiddleOutSegue.m; sourceTree = "<group>"; };
 		5988FF781C16E0F700223FD3 /* OutlineProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OutlineProgressView.h; sourceTree = "<group>"; };
@@ -175,7 +174,6 @@
 		5988FF881C16E12800223FD3 /* execSystemsData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = execSystemsData.json; sourceTree = "<group>"; };
 		5988FF891C16E12800223FD3 /* intelligenceData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = intelligenceData.json; sourceTree = "<group>"; };
 		5988FF8A1C16E12800223FD3 /* loadingData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loadingData.json; sourceTree = "<group>"; };
-		59A302CD1C18698C001E55F9 /* SpeechKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpeechKit.framework; path = Samaritan/SpeechKit.framework; sourceTree = "<group>"; };
 		59A302CF1C186999001E55F9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		59A302D11C18699E001E55F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		59A302D31C1869A6001E55F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -211,7 +209,6 @@
 				59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */,
 				59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */,
 				59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */,
-				59A302CE1C18698C001E55F9 /* SpeechKit.framework in Frameworks */,
 				59ED10881C19DBBC00C81793 /* OpenEars.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,7 +397,7 @@
 				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
 				5988FF7B1C16E0FD00223FD3 /* Outline Progrss View */,
 				5988FF911C16E97900223FD3 /* Blinking Image View */,
-				5988FF921C16E98500223FD3 /* Dynamic Label */,
+				5988FF921C16E98500223FD3 /* Labels */,
 				592192E31C0B2D5600E93480 /* SamaritanView */,
 				18E8A5E21C1C9B770043D205 /* Weather Cell */,
 				18105C301C1EF97F0086D6BB /* Listing Cell */,
@@ -560,15 +557,19 @@
 			name = "Blinking Image View";
 			sourceTree = "<group>";
 		};
-		5988FF921C16E98500223FD3 /* Dynamic Label */ = {
+		5988FF921C16E98500223FD3 /* Labels */ = {
 			isa = PBXGroup;
 			children = (
 				5955D06A1C14556D000BD806 /* UnderlinedLabel.h */,
 				5955D06B1C14556D000BD806 /* UnderlinedLabel.m */,
+				5985C0E81C208071008A4FC7 /* DoubleUnderlinedLabel.h */,
+				5985C0E91C208071008A4FC7 /* DoubleUnderlinedLabel.m */,
 				59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */,
 				59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */,
+				5985C0EB1C20825B008A4FC7 /* StarLabel.h */,
+				5985C0EC1C20825B008A4FC7 /* StarLabel.m */,
 			);
-			name = "Dynamic Label";
+			name = Labels;
 			sourceTree = "<group>";
 		};
 		59A302D71C186B7E001E55F9 /* Frameworks */ = {
@@ -576,10 +577,6 @@
 			children = (
 				18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */,
 				59ED10811C19DBBB00C81793 /* Open Ears */,
-				59A302CD1C18698C001E55F9 /* SpeechKit.framework */,
-				18635B2A1C175743006F10B1 /* earcon_cancel.wav */,
-				18635B2B1C175743006F10B1 /* earcon_done_listening.wav */,
-				18635B2C1C175743006F10B1 /* earcon_listening.wav */,
 				59A302D51C186A43001E55F9 /* AVFoundation.framework */,
 				59A302D31C1869A6001E55F9 /* CoreGraphics.framework */,
 				59A302D11C18699E001E55F9 /* SystemConfiguration.framework */,
@@ -684,7 +681,6 @@
 				18E8A5DE1C1C98790043D205 /* WeatherCell.xib in Resources */,
 				5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */,
 				59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */,
-				18635B2F1C175743006F10B1 /* earcon_listening.wav in Resources */,
 				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
 				18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
@@ -693,14 +689,12 @@
 				18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */,
 				5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */,
 				5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */,
-				18635B2E1C175743006F10B1 /* earcon_done_listening.wav in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
 				18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */,
 				18105C321C1EF9A70086D6BB /* ListingCell.xib in Resources */,
 				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
-				18635B2D1C175743006F10B1 /* earcon_cancel.wav in Resources */,
 				59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +706,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5985C0ED1C20825B008A4FC7 /* StarLabel.m in Sources */,
 				5988FF771C16E0F000223FD3 /* MiddleOutSegue.m in Sources */,
 				5938BF891C1B28AC000E6D8C /* UIImage+CoreGraphics.m in Sources */,
 				592192E01C0B2AD200E93480 /* SamaritanData.m in Sources */,
@@ -755,6 +750,7 @@
 				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,
 				18E8A5E81C1CBA8D0043D205 /* Reachability.m in Sources */,
 				5955D06C1C14556D000BD806 /* UnderlinedLabel.m in Sources */,
+				5985C0EA1C208071008A4FC7 /* DoubleUnderlinedLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

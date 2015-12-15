@@ -462,6 +462,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                     <animations/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="6xm-qI-q4I" id="Oq2-BJ-sAD"/>
+                                                    </connections>
                                                 </searchBar>
                                             </subviews>
                                             <animations/>

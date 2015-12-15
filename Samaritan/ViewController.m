@@ -17,8 +17,6 @@
 
 @end
 
-const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0x78, 0x8f, 0x29, 0x92, 0x7e, 0x27, 0xdf, 0x54, 0x7c, 0x39, 0xd9, 0xcf, 0x91, 0xb5, 0x24, 0x0e, 0x30, 0x08, 0x0f, 0x52, 0x55, 0x10, 0x92, 0x58, 0x2b, 0x27, 0xdd, 0xb8, 0xc9, 0x44, 0x42, 0x41, 0xd4, 0x6b, 0xd3, 0x52, 0x92, 0xb2, 0xa7, 0x0e, 0xeb, 0x80, 0xde, 0x7c, 0x35, 0x02, 0x8a, 0x65, 0x0b, 0x99, 0xb7, 0x60, 0xa9, 0x49, 0xb8, 0xd4, 0x70, 0x95, 0x8c};
-
 @implementation ViewController
 {
 	
@@ -53,12 +51,13 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 		[self.textLabel setText:@"What are your commands?"];
 	});
 	
-	/* 
+	/*
 	// Test other view controllers here.
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
 		[self performSegueWithIdentifier:@"SwitchToListing" sender:self];
 	});
-	*/
+	 */
+	
 	
 	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
 	[self.openEarsEventsObserver setDelegate:self];
@@ -127,7 +126,9 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 -(void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
 	[[OEPocketsphinxController sharedInstance] stopListening];
-	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+	});
 }
 
 -(void)setTheme:(Themes *)theme {
@@ -146,7 +147,7 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 #pragma mark - Navigation
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	
+	[[OEPocketsphinxController sharedInstance] stopListening];
 	if ([segue.identifier isEqualToString:@"SwitchToWeather"]) {
 		UINavigationController *navc = [segue destinationViewController];
 		WeatherTableViewController *wtvc = [navc.viewControllers firstObject];
@@ -242,7 +243,6 @@ const unsigned char SpeechKitApplicationKey[] = {0x85, 0x8d, 0xa1, 0x67, 0x8a, 0
 
 - (void) pocketsphinxDidStopListening {
 	printf("\n[pocketsphinx stopped]");
-	[[OEPocketsphinxController sharedInstance] resumeRecognition];
 }
 
 - (void) pocketsphinxDidSuspendRecognition {

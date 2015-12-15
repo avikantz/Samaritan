@@ -11,15 +11,11 @@
 #import "BlinkingImageView.h"
 #import "DynamicLabel.h"
 
-@interface ViewController : UIViewController <DynamicLabelDelegate, /* SpeechKitDelegate, SKRecognizerDelegate,*/ OEEventsObserverDelegate>
+@interface ViewController : UIViewController <DynamicLabelDelegate, OEEventsObserverDelegate>
 
 @property (weak, nonatomic) IBOutlet DynamicLabel *textLabel;
 
 @property (weak, nonatomic) IBOutlet BlinkingImageView *redTriangleImageView;
-
-//@property (strong, nonatomic) SKRecognizer *voiceSearch;
-
-@property (strong, nonatomic) AppDelegate *appDelegate;
 
 @property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
 

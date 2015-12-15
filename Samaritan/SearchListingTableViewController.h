@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SearchListingTableViewController : UITableViewController
+@interface SearchListingTableViewController : UITableViewController <UISearchBarDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *searchQueryBar;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *typeOfSearchSegmentedControl;

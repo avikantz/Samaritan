@@ -141,66 +141,74 @@
     {
         cell = [[ListingTableViewCell alloc] init];
     }
-    if (dataToBeDisplayed != nil)
-    {
+	
+	cell.nameLabel.text = nil;
+	cell.descriptionLabel.text = nil;
+	cell.imdbRatingLabel.text = nil;
+	cell.metascoreLabel.text = nil;
+	cell.castLabel.text = nil;
+	cell.runtimeAndRatingLabel.text = nil;
+	cell.writersLabel.text = nil;
+	cell.directorLabel.text = nil;
+	cell.yrOfReleaseLabel.text = nil;
+	cell.genreLabel.text = nil;
+	cell.awardsListLabel.text = nil;
+	
+    if (dataToBeDisplayed != nil) {
+		
         cell.nameLabel.text =  [dataToBeDisplayed objectForKey:@"Title"];
-        cell.descriptionTextView.text = [dataToBeDisplayed objectForKey:@"Plot"];
+		
+        cell.descriptionLabel.text = [dataToBeDisplayed objectForKey:@"Plot"];
+		
         cell.imdbRatingLabel.text = [NSString stringWithFormat:@"IMDb %@ | %@ votes",[dataToBeDisplayed objectForKey:@"imdbRating"], [dataToBeDisplayed objectForKey:@"imdbVotes"]];
-        cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
+		
+		if (!([[dataToBeDisplayed objectForKey:@"Metascore"] isEqualToString:@"N/A"]))
+			cell.metascoreLabel.text = [dataToBeDisplayed objectForKey:@"Metascore"];
+		else
+			cell.metascoreLabel.text = [[dataToBeDisplayed objectForKey:@"imdbRating"] stringByReplacingOccurrencesOfString:@"." withString:@""];
+		
         cell.castLabel.text = [dataToBeDisplayed objectForKey:@"Actors"];
+		
         cell.genreLabel.text = [dataToBeDisplayed objectForKey:@"Genre"];
+		
         cell.runtimeAndRatingLabel.text = [NSString stringWithFormat:@"%@ | %@", [dataToBeDisplayed objectForKey:@"Rated"], [dataToBeDisplayed objectForKey:@"Runtime"]];
+		
         cell.writersLabel.text = [NSString stringWithFormat:@"Written by %@",[dataToBeDisplayed objectForKey:@"Writer"]];
+		
         cell.directorLabel.text = [NSString stringWithFormat:@"Directed by %@", [dataToBeDisplayed objectForKey:@"Director"]];
-        cell.awardsListTextView.text = [dataToBeDisplayed objectForKey:@"Awards"];
+		
+        cell.awardsListLabel.text = [dataToBeDisplayed objectForKey:@"Awards"];
+		
         if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"movie"] || [[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"episode"])
-        {
             cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"%@", [dataToBeDisplayed objectForKey:@"Released"]];
-        }
+		
         else if ([[dataToBeDisplayed objectForKey:@"Type"] isEqualToString:@"series"])
-        {
             cell.yrOfReleaseLabel.text = [NSString stringWithFormat:@"%@", [dataToBeDisplayed objectForKey:@"Year"]];
-        }
-		cell.awardsListTextView.font = [UIFont fontWithName:currentTheme.fontName size:16.f];
-		cell.descriptionTextView.font = [UIFont fontWithName:currentTheme.fontName size:16.f];
-    }
-    else
-    {
-        cell.nameLabel.text = nil;
-        cell.descriptionTextView.text = nil;
-        cell.imdbRatingLabel.text = nil;
-        cell.metascoreLabel.text = nil;
-        cell.castLabel.text = nil;
-        cell.runtimeAndRatingLabel.text = nil;
-        cell.writersLabel.text = nil;
-        cell.directorLabel.text = nil;
-        cell.yrOfReleaseLabel.text = nil;
-        cell.genreLabel.text = nil;
-        cell.awardsListTextView.text = nil;
+		
     }
     cell.backgroundColor = currentTheme.backgroundColor;
 	[cell setTintColor:currentTheme.foregroundColor];
 	
 	cell.listingImage.image = nil;
+	cell.listingImageBlurred.image = nil;
 	cell.listingImage.alpha = 0.0;
+	cell.listingImageBlurred.alpha = 0.0;
 	dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
 		NSData *imageData = [NSData dataWithContentsOfURL:[NSURL URLWithString:[dataToBeDisplayed objectForKey:@"Poster"]]];
-		UIImage *image = [[UIImage imageWithData:imageData] applyDarkEffect];
+		cell.posterImage = [UIImage imageWithData:imageData];
 		dispatch_async(dispatch_get_main_queue(), ^{
-			cell.listingImage.image = image;
+			cell.listingImage.image = cell.posterImage;
+			cell.listingImageBlurred.image = [cell.posterImage applyDarkEffect];
 			[cell setTintColor:[UIColor whiteColor]];
 			[UIView animateWithDuration:0.3 animations:^{
 				cell.listingImage.alpha = 1.f;
+				cell.listingImageBlurred.alpha = 1.f;
 			}];
 		});
 	});
     
     return cell;
     
-}
-
--(BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
 }
 
 - (IBAction)backAction:(id)sender

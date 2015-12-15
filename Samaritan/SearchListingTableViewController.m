@@ -34,7 +34,9 @@
 {
     [super viewDidLoad];
 	
-	[self.searchQueryBar becomeFirstResponder];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.searchQueryBar becomeFirstResponder];
+	});
 	
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,7 +45,7 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
     currentTheme = [AppDelegate currentTheme];
@@ -80,27 +82,9 @@
 
 # pragma mark - Table view data source
 
-- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    
-    if (indexPath.section == 0)
-    {
-        
-        if (indexPath.row == 0)
-        {
-            
-            [self.searchQueryBar becomeFirstResponder];
-            
-        }
-        
-    }
-    
-    if (indexPath.section == tableView.numberOfSections - 1)
-    {
-        
-        [self resignFirstResponder];
-        
-    }
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	[self.searchQueryBar resignFirstResponder];
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
@@ -108,8 +92,7 @@
 
 # pragma mark - Scroll view delegate
 
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
     [self.searchQueryBar resignFirstResponder];
     
@@ -136,6 +119,12 @@
 
 - (IBAction)doneAction:(id)sender {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Search bar delegate
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+	[self performSegueWithIdentifier:@"ShowListing" sender:self];
 }
 
 

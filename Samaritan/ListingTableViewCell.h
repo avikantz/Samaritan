@@ -11,6 +11,7 @@
 @interface ListingTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *listingImage;
+@property (weak, nonatomic) IBOutlet UIImageView *listingImageBlurred;
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *metascoreLabel;
 @property (strong, nonatomic) IBOutlet UILabel *imdbRatingLabel;
@@ -20,7 +21,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *runtimeAndRatingLabel;
 @property (strong, nonatomic) IBOutlet UILabel *writersLabel;
 @property (strong, nonatomic) IBOutlet UILabel *yrOfReleaseLabel;
-@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (strong, nonatomic) IBOutlet UITextView *awardsListTextView;
+@property (strong, nonatomic) IBOutlet UILabel *descriptionLabel;
+@property (strong, nonatomic) IBOutlet UILabel *awardsListLabel;
+
+@property (strong, nonatomic) UIImage *posterImage;
 
 @end
