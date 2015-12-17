@@ -312,6 +312,7 @@
                         <outlet property="textLabel" destination="R0S-RB-bGg" id="QFu-Gi-e2N"/>
                         <segue destination="xKU-E8-EgO" kind="presentation" identifier="SwitchToWeather" id="iBj-xG-1or"/>
                         <segue destination="kES-Ty-uNs" kind="presentation" identifier="SwitchToListing" id="Ijh-z2-XGI"/>
+                        <segue destination="cJ8-5D-CBl" kind="presentation" identifier="OpenTroll" id="xD3-k2-bVE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -381,7 +382,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6VJ-z2-fZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1030" y="1109"/>
+            <point key="canvasLocation" x="1842" y="1109"/>
         </scene>
         <!--WEATHER-->
         <scene sceneID="kQ9-Dy-JQh">
@@ -494,7 +495,6 @@
                                                     <segments>
                                                         <segment title="MOVIE"/>
                                                         <segment title="SERIES"/>
-                                                        <segment title="EPISODE"/>
                                                     </segments>
                                                 </segmentedControl>
                                             </subviews>
@@ -742,7 +742,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y3t-WJ-jfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1693" y="1109"/>
+            <point key="canvasLocation" x="2505" y="1109"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PtD-aY-RAQ">
@@ -898,6 +898,47 @@ drive status
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ap8-sW-gOH" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1091" y="362"/>
+        </scene>
+        <!--Troll View Controller-->
+        <scene sceneID="0sY-pK-07b">
+            <objects>
+                <viewController id="C7T-7b-vXb" customClass="TrollViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dcj-Te-bcj"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tkn-sV-xTd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LqU-qf-Ogd">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7cv-r4-7bc">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7cv-r4-7bc" firstAttribute="top" secondItem="dcj-Te-bcj" secondAttribute="bottom" id="0vg-fN-ze8"/>
+                            <constraint firstItem="7cv-r4-7bc" firstAttribute="leading" secondItem="LqU-qf-Ogd" secondAttribute="leading" id="8ph-hJ-dbK"/>
+                            <constraint firstAttribute="trailing" secondItem="7cv-r4-7bc" secondAttribute="trailing" id="kMq-fm-NP6"/>
+                            <constraint firstItem="7cv-r4-7bc" firstAttribute="bottom" secondItem="Tkn-sV-xTd" secondAttribute="top" id="zKg-hg-Lbc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uzh-Ru-HKs">
+                        <barButtonItem key="leftBarButtonItem" title="BACK" id="woR-5b-Ied">
+                            <connections>
+                                <action selector="backAction:" destination="C7T-7b-vXb" id="nTa-k5-7hZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="backgroundImage" destination="7cv-r4-7bc" id="FZd-qN-04L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26j-qV-MmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-32" y="1169"/>
         </scene>
         <!--Startup Full Access View Controller-->
         <scene sceneID="L6E-27-GGH">
@@ -1173,7 +1214,7 @@ drive status
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bgJ-sC-Ren" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="1109"/>
+            <point key="canvasLocation" x="1154" y="1109"/>
         </scene>
         <!--ADD THEME-->
         <scene sceneID="Cg8-u5-1xy">
@@ -1550,6 +1591,25 @@ drive status
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hU6-gj-gIF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1901" y="2593"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="lZa-cP-nTC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cJ8-5D-CBl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sWY-V7-CQW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="C7T-7b-vXb" kind="relationship" relationship="rootViewController" id="ayj-ZA-8eB"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ejI-If-iFD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-844" y="1169"/>
         </scene>
     </scenes>
     <resources>

@@ -12,6 +12,7 @@
 #import "WeatherTableViewController.h"
 #import <CoreLocation/CoreLocation.h>
 #import "Reachability.h"
+#import "TrollViewController.h"
 
 @interface ViewController () <CLLocationManagerDelegate>
 
@@ -35,6 +36,7 @@
 	
 	NSString *lmPath;
 	NSString *dicPath;
+    NSString *trollIdentifier;
 
 }
 
@@ -54,7 +56,7 @@
 	/*
 	// Test other view controllers here.
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[self performSegueWithIdentifier:@"SwitchToListing" sender:self];
+		[self performSegueWithIdentifier:@"OpenTroll" sender:self];
 	});
 	 */
 	
@@ -90,7 +92,7 @@
 			[wordsModel addObject:[string uppercaseString]];
 		}
 	}
-	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV"]];
+	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV", @"SHUT", @"UP", @"WORK", @"BYE", @"GOOBYE", @"WHO", @"IS", @"IT"]];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
@@ -146,13 +148,21 @@
 
 #pragma mark - Navigation
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
 	[[OEPocketsphinxController sharedInstance] stopListening];
-	if ([segue.identifier isEqualToString:@"SwitchToWeather"]) {
+	if ([segue.identifier isEqualToString:@"SwitchToWeather"])
+    {
 		UINavigationController *navc = [segue destinationViewController];
 		WeatherTableViewController *wtvc = [navc.viewControllers firstObject];
 		wtvc.currentLocation = currentLocation;
 	}
+    if ([segue.identifier isEqualToString:@"OpenTroll"])
+    {
+        UINavigationController *navc = [segue destinationViewController];
+        TrollViewController *tvc = [navc.viewControllers firstObject];
+        tvc.identifer = trollIdentifier;
+    }
 	
 }
 
@@ -175,7 +185,7 @@
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
     //NSLog(@"TAGS: %@", extractedTags);
-    
+    // defining special cases at the start (random ideas)
     if ([self isInternetAvailable])
     {
 	
@@ -185,48 +195,79 @@
 			return;
 		}
         
-        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"EPISODE"] || [hypothesis containsString:@"TV"])
+        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"TV"])
         {
             [self performSegueWithIdentifier:@"SwitchToListing" sender:self];
             return;
         }
 		
     }
-	
-    NSInteger highestNumberOfMatches = 0;
-	for (SamaritanData *data in commands)
+    
+    if ([hypothesis containsString:@"SHUT UP"])
     {
-        //NSLog(@"checking %@", data.displayString);
-		NSString *upperCaseTags = [data.tags uppercaseString];
-        //NSLog(@"tags being checked %@", upperCaseTags);
-		BOOL matched = NO;
-        // add counter here to find number of tags being matched to
-        // return the string with maximum counter
+        [self.textLabel setText:@"SHEESH LOOKS LIKE SOMEONE IS ON THEIR PERIOD"];
+    }
+    
+    else if ([hypothesis containsString:@"WORK"])
+    {
+        [self.textLabel setText:@"DO OR DO NOT THERE IS NO TRY"];
+    }
+    
+    else if ([hypothesis containsString:@"BYE"] || [hypothesis containsString:@"GOODBYE"])
+    {
+        [self.textLabel setText:@"MAY THE FORCE BE WITH YOU"];
+    }
+    // core motion - slowly raise phone for this
+    else if ([hypothesis containsString:@""])
+    {
+        [self.textLabel setText:@"THE FORCE IS STRONG WITH THIS ONE"];
+    }
+    
+    else if ([hypothesis containsString:@"WHO IS IT"])
+    {
+        trollIdentifier = @"JOHN CENA";
+        [self performSegueWithIdentifier:@"OpenTroll" sender:self];
+        return;
+    }
+	
+    else
+    {
+        NSInteger highestNumberOfMatches = 0;
+        for (SamaritanData *data in commands)
+        {
+            //NSLog(@"checking %@", data.displayString);
+            NSString *upperCaseTags = [data.tags uppercaseString];
+            //NSLog(@"tags being checked %@", upperCaseTags);
+            BOOL matched = NO;
+            // add counter here to find number of tags being matched to
+            // return the string with maximum counter
         
-        NSInteger numberOfMatchedTags = 0;
-		for (NSString *string in extractedTags)
-        {
-            //NSLog(@"checking tag %@", string);
-			if (![upperCaseTags containsString:string])
-				matched = NO;
-            else
-                numberOfMatchedTags += 1;
-		}
-        //NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
-        // no need for the boolean flag
-		if (numberOfMatchedTags >= highestNumberOfMatches)
-        {
-			matchedData = data;
-            //NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
-            highestNumberOfMatches = numberOfMatchedTags;
+            NSInteger numberOfMatchedTags = 0;
+            for (NSString *string in extractedTags)
+            {
+                //NSLog(@"checking tag %@", string);
+                if (![upperCaseTags containsString:string])
+                    matched = NO;
+                else
+                    numberOfMatchedTags += 1;
+            }
+            //NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+            // no need for the boolean flag
+            if (numberOfMatchedTags >= highestNumberOfMatches)
+            {
+                matchedData = data;
+                //NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+                highestNumberOfMatches = numberOfMatchedTags;
+            }
         }
-	}
-	if (matchedData != nil) {
-		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
-		[self.textLabel setText:matchedData.displayString];
-		[[OEPocketsphinxController sharedInstance] stopListening];
-		[self.redTriangleImageView stopBlinking];
-	}
+        if (matchedData != nil)
+        {
+            printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
+            [self.textLabel setText:matchedData.displayString];
+            [[OEPocketsphinxController sharedInstance] stopListening];
+            [self.redTriangleImageView stopBlinking];
+        }
+    }
 }
 
 - (void) pocketsphinxDidStartListening {

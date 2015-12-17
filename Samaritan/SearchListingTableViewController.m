@@ -107,9 +107,6 @@
 		case 1:
 			ltvc.typeOf = @"series";
 			break;
-		case 2:
-			ltvc.typeOf = @"episode";
-			break;
 		default:
 			ltvc.typeOf = @"movie";
 			break;

@@ -14,6 +14,9 @@
 		18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB41C1DAB24002A5536 /* rain.jpeg */; };
 		18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB51C1DAB24002A5536 /* sun.jpeg */; };
 		18486BB91C1DAB24002A5536 /* clouds.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18486BB61C1DAB24002A5536 /* clouds.jpeg */; };
+		18656A9A1C22980B0071FA14 /* TrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18656A991C22980B0071FA14 /* TrollViewController.m */; };
+		18656A9C1C22C1FE0071FA14 /* john cena.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18656A9B1C22C1FE0071FA14 /* john cena.jpeg */; };
+		18656A9E1C22DC950071FA14 /* John Cena Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18656A9D1C22DC950071FA14 /* John Cena Theme.mp3 */; };
 		1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */; };
 		18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */; };
 		18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5D71C1C8C950043D205 /* WeatherTableViewController.m */; };
@@ -90,6 +93,10 @@
 		18486BB41C1DAB24002A5536 /* rain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = rain.jpeg; sourceTree = "<group>"; };
 		18486BB51C1DAB24002A5536 /* sun.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun.jpeg; sourceTree = "<group>"; };
 		18486BB61C1DAB24002A5536 /* clouds.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = clouds.jpeg; sourceTree = "<group>"; };
+		18656A981C22980B0071FA14 /* TrollViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TrollViewController.h; sourceTree = "<group>"; };
+		18656A991C22980B0071FA14 /* TrollViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TrollViewController.m; sourceTree = "<group>"; };
+		18656A9B1C22C1FE0071FA14 /* john cena.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "john cena.jpeg"; sourceTree = "<group>"; };
+		18656A9D1C22DC950071FA14 /* John Cena Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "John Cena Theme.mp3"; sourceTree = "<group>"; };
 		1866A54D1C1F17AA005A7BA2 /* SearchListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListingTableViewController.h; sourceTree = "<group>"; };
 		1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListingTableViewController.m; sourceTree = "<group>"; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
@@ -237,6 +244,15 @@
 			name = Listings;
 			sourceTree = "<group>";
 		};
+		18656A971C2294BC0071FA14 /* Troll */ = {
+			isa = PBXGroup;
+			children = (
+				18656A981C22980B0071FA14 /* TrollViewController.h */,
+				18656A991C22980B0071FA14 /* TrollViewController.m */,
+			);
+			name = Troll;
+			sourceTree = "<group>";
+		};
 		18D51F861C14F9E80083A3FD /* New Commands */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,6 +344,8 @@
 		592192BA1C0B298200E93480 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				18656A9D1C22DC950071FA14 /* John Cena Theme.mp3 */,
+				18656A9B1C22C1FE0071FA14 /* john cena.jpeg */,
 				18486BB41C1DAB24002A5536 /* rain.jpeg */,
 				18486BB51C1DAB24002A5536 /* sun.jpeg */,
 				18486BB61C1DAB24002A5536 /* clouds.jpeg */,
@@ -363,6 +381,7 @@
 				5955D0761C145931000BD806 /* Settings */,
 				18E8A5D91C1C8C9E0043D205 /* Weather */,
 				18105C361C1EFDA10086D6BB /* Listings */,
+				18656A971C2294BC0071FA14 /* Troll */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -687,6 +706,7 @@
 				59CA38401C201EB50084BDA8 /* SVProgressHUD.bundle in Resources */,
 				5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */,
 				18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */,
+				18656A9C1C22C1FE0071FA14 /* john cena.jpeg in Resources */,
 				5988FF8C1C16E12800223FD3 /* intelligenceData.json in Resources */,
 				5988FF8B1C16E12800223FD3 /* execSystemsData.json in Resources */,
 				592192CA1C0B298200E93480 /* Assets.xcassets in Resources */,
@@ -695,6 +715,7 @@
 				5955D0591C142E23000BD806 /* defaultCommands.json in Resources */,
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
+				18656A9E1C22DC950071FA14 /* John Cena Theme.mp3 in Resources */,
 				59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +757,7 @@
 				18105C2F1C1EF9700086D6BB /* ListingTableViewCell.m in Sources */,
 				5955D0661C144B8D000BD806 /* Themes.m in Sources */,
 				5988FF871C16E12100223FD3 /* LoadingData.m in Sources */,
+				18656A9A1C22980B0071FA14 /* TrollViewController.m in Sources */,
 				5955D0651C144B8D000BD806 /* Themes+CoreDataProperties.m in Sources */,
 				5938BF871C1B28AC000E6D8C /* HRColorPickerView.m in Sources */,
 				5988FF801C16E11300223FD3 /* StartupFullAccessViewController.m in Sources */,
