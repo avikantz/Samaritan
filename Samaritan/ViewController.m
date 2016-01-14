@@ -13,6 +13,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "Reachability.h"
 #import "TrollViewController.h"
+#import <CoreMotion/CoreMotion.h>
 
 @interface ViewController () <CLLocationManagerDelegate>
 
@@ -23,8 +24,6 @@
 	
 	NSMutableArray *texts;
 	NSMutableArray *commands;
-    
-    NSString *recordedString;
 	
 	NSManagedObjectContext *managedObjectContext;
 	NSFetchRequest *fetchRequest;
@@ -33,10 +32,16 @@
 	
 	CLLocation *currentLocation;
     CLLocationManager *locationManager;
+    
+    CMAltimeter *heightData;
+    CMAltitudeData *currentHeight;
 	
 	NSString *lmPath;
 	NSString *dicPath;
     NSString *trollIdentifier;
+    NSString *recordedString;
+    
+    NSNumber *relativeCurrentHeight;
 
 }
 
@@ -66,12 +71,13 @@
 	
 	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 	
-	locationManager = [[CLLocationManager alloc]init];
+	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	[locationManager requestWhenInUseAuthorization];
 	[locationManager startUpdatingLocation];
 	currentLocation = [locationManager location];
+
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -92,7 +98,7 @@
 			[wordsModel addObject:[string uppercaseString]];
 		}
 	}
-	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV", @"SHUT", @"UP", @"WORK", @"BYE", @"GOOBYE", @"WHO", @"IS", @"IT"]];
+	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV", @"SHUT", @"UP", @"WORK", @"BYE", @"GOODBYE", @"WHO", @"IS", @"IT", @"FINN", @"IDENTIFICATION", @"PLEASE", @"ID"]];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
@@ -180,12 +186,11 @@
     
     //algorithm to return command from recorded audio, after recognition
     
-    
-    
 	SamaritanData *matchedData = nil;
 	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
     //NSLog(@"TAGS: %@", extractedTags);
     // defining special cases at the start (random ideas)
+    
     if ([self isInternetAvailable])
     {
 	
@@ -218,9 +223,22 @@
         [self.textLabel setText:@"MAY THE FORCE BE WITH YOU"];
     }
     // core motion - slowly raise phone for this
-    else if ([hypothesis containsString:@""])
+    
+    else if ([hypothesis containsString:@""] && [self.textLabel.text isEqualToString:@""])
     {
-        [self.textLabel setText:@"THE FORCE IS STRONG WITH THIS ONE"];
+        NSOperationQueue *altitudeQueue;
+        [heightData startRelativeAltitudeUpdatesToQueue:(NSOperationQueue *)altitudeQueue withHandler:^(CMAltitudeData * _Nullable altitudeData, NSError * _Nullable error) {
+            if (currentHeight.relativeAltitude > 0)
+            {
+                [self.textLabel setText:@"THE FORCE IS STRONG WITH THIS ONE"];
+                [heightData stopRelativeAltitudeUpdates];
+            }
+        }];
+    }
+    
+    else if ([hypothesis containsString:@"FINN"])
+    {
+        [self.textLabel setText:@"YOU WERE SUPPOSED TO DESTROY THE RESISTANCE NOT JOIN THEM"];
     }
     
     else if ([hypothesis containsString:@"WHO IS IT"])
@@ -228,6 +246,11 @@
         trollIdentifier = @"JOHN CENA";
         [self performSegueWithIdentifier:@"OpenTroll" sender:self];
         return;
+    }
+    
+    else if ([hypothesis containsString:@"IDENTIFICATION PLEASE"] || [hypothesis containsString:@"ID PLEASE"])
+    {
+        [self.textLabel setText:@"THESE AREN'T THE DROIDS YOU'RE LOOKING FOR"];
     }
 	
     else

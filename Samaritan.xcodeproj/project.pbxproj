@@ -18,6 +18,7 @@
 		18656A9C1C22C1FE0071FA14 /* john cena.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 18656A9B1C22C1FE0071FA14 /* john cena.jpeg */; };
 		18656A9E1C22DC950071FA14 /* John Cena Theme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 18656A9D1C22DC950071FA14 /* John Cena Theme.mp3 */; };
 		1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */; };
+		187A624D1C3BEE5800DE73E4 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187A624C1C3BEE5800DE73E4 /* CoreMotion.framework */; };
 		18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */; };
 		18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5D71C1C8C950043D205 /* WeatherTableViewController.m */; };
 		18E8A5DC1C1C944C0043D205 /* SSJSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5DB1C1C944C0043D205 /* SSJSONModel.m */; };
@@ -99,6 +100,7 @@
 		18656A9D1C22DC950071FA14 /* John Cena Theme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "John Cena Theme.mp3"; sourceTree = "<group>"; };
 		1866A54D1C1F17AA005A7BA2 /* SearchListingTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchListingTableViewController.h; sourceTree = "<group>"; };
 		1866A54E1C1F17AB005A7BA2 /* SearchListingTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchListingTableViewController.m; sourceTree = "<group>"; };
+		187A624C1C3BEE5800DE73E4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		18DEA5C21C14B2430010DAE0 /* AllCommandsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AllCommandsTableViewController.h; path = Samaritan/AllCommandsTableViewController.h; sourceTree = "<group>"; };
 		18DEA5C31C14B2430010DAE0 /* AllCommandsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AllCommandsTableViewController.m; path = Samaritan/AllCommandsTableViewController.m; sourceTree = "<group>"; };
 		18E8A5D61C1C8C950043D205 /* WeatherTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherTableViewController.h; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				187A624D1C3BEE5800DE73E4 /* CoreMotion.framework in Frameworks */,
 				18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */,
 				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
 				59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */,
@@ -594,6 +597,7 @@
 		59A302D71C186B7E001E55F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				187A624C1C3BEE5800DE73E4 /* CoreMotion.framework */,
 				18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */,
 				59ED10811C19DBBB00C81793 /* Open Ears */,
 				59A302D51C186A43001E55F9 /* AVFoundation.framework */,
