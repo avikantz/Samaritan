@@ -9,7 +9,7 @@
   },
   {
     "displayString": "Resistance is futile.",
-    "tags": "borg star trek resistance"
+    "tags": "borg resistance"
   },
   {
     "displayString": "This was not an attack. This was a test.",
@@ -29,7 +29,7 @@
   },
   {
     "displayString": "For academic purposes only.",
-    "tags": "fap academic purposes"
+    "tags": "academic purposes"
   },
   {
     "displayString": "Asset in danger, sending reinforcements.",
@@ -53,11 +53,11 @@
  },
  {
     "displayString": "open systems interconnection",
-    "tags": "ready open start"
+    "tags": "ready open"
  },
  {
     "displayString": "launching nuclear retaliation protocol",
-    "tags": "destroy war nuclear attack"
+    "tags": "destroy nuclear attack"
  },
  {
     "displayString": "alerting target now",
@@ -69,7 +69,7 @@
  },
  {
     "displayString": "hey there",
-    "tags": "hey hi hello wassup"
+    "tags": "hello wassup"
  },
  {
     "displayString": "luke i am your father",
@@ -80,8 +80,32 @@
     "tags": "siri"
  },
  {
-    "displayString": "ugh why would you even talk about that",
-    "tags": "maths mathematics academics studies study"
+ "displayString": "May the force be with you.",
+ "tags": "goodbye bye"
+ },
+ {
+ "displayString": "Do or do not, there is no try.",
+ "tags": "work"
+ },
+ {
+ "displayString": "it's samaritan moron",
+ "tags": "siri"
+ },
+ {
+ "displayString": "You were supposed to destroy the resistance, not join them. TRAITOR!",
+ "tags": "finn"
+ },
+ {
+ "displayString": "These are not the droids you're looking for.",
+ "tags": "identification"
+ },
+ {
+    "displayString": "No, kill, destroy, delete, Frak studies.",
+    "tags": "academics study"
+ },
+ {
+ "displayString": "Sheesh, looks like someone is on their period",
+ "tags": "shut fuck"
  },
  {
     "displayString": "ka me ha me ha",

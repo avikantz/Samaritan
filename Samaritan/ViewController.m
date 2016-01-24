@@ -98,7 +98,7 @@
 			[wordsModel addObject:[string uppercaseString]];
 		}
 	}
-	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"SHOWS", @"TV", @"SHUT", @"UP", @"WORK", @"BYE", @"GOODBYE", @"WHO", @"IS", @"IT", @"FINN", @"IDENTIFICATION", @"PLEASE", @"ID"]];
+	[wordsModel addObjectsFromArray:@[@"WEATHER", @"MOVIES", @"EPISODE", @"SERIES", @"WHO"]];
 	OELanguageModelGenerator *lmGenerator = [[OELanguageModelGenerator alloc] init];
 	NSError *err = [lmGenerator generateLanguageModelFromArray:wordsModel withFilesNamed:LANGUAGE_MODEL_FILE_NAME forAcousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"]];
 	
@@ -109,7 +109,8 @@
 		lmPath = [lmGenerator pathToSuccessfullyGeneratedLanguageModelWithRequestedName:LANGUAGE_MODEL_FILE_NAME];
 		dicPath = [lmGenerator pathToSuccessfullyGeneratedDictionaryWithRequestedName:LANGUAGE_MODEL_FILE_NAME];
 		
-	} else {
+	}
+	else {
 		NSLog(@"Error: %@",[err localizedDescription]);
 	}
 	
@@ -200,28 +201,14 @@
 			return;
 		}
         
-        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"] || [hypothesis containsString:@"TV"])
+        if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"])
         {
             [self performSegueWithIdentifier:@"SwitchToListing" sender:self];
             return;
         }
 		
     }
-    
-    if ([hypothesis containsString:@"SHUT UP"])
-    {
-        [self.textLabel setText:@"SHEESH LOOKS LIKE SOMEONE IS ON THEIR PERIOD"];
-    }
-    
-    else if ([hypothesis containsString:@"WORK"])
-    {
-        [self.textLabel setText:@"DO OR DO NOT THERE IS NO TRY"];
-    }
-    
-    else if ([hypothesis containsString:@"BYE"] || [hypothesis containsString:@"GOODBYE"])
-    {
-        [self.textLabel setText:@"MAY THE FORCE BE WITH YOU"];
-    }
+	
     // core motion - slowly raise phone for this
     
     else if ([hypothesis containsString:@""] && [self.textLabel.text isEqualToString:@""])
@@ -236,21 +223,11 @@
         }];
     }
     
-    else if ([hypothesis containsString:@"FINN"])
-    {
-        [self.textLabel setText:@"YOU WERE SUPPOSED TO DESTROY THE RESISTANCE NOT JOIN THEM"];
-    }
-    
-    else if ([hypothesis containsString:@"WHO IS IT"])
+    else if ([hypothesis isEqualToString:@"WHO"])
     {
         trollIdentifier = @"JOHN CENA";
         [self performSegueWithIdentifier:@"OpenTroll" sender:self];
         return;
-    }
-    
-    else if ([hypothesis containsString:@"IDENTIFICATION PLEASE"] || [hypothesis containsString:@"ID PLEASE"])
-    {
-        [self.textLabel setText:@"THESE AREN'T THE DROIDS YOU'RE LOOKING FOR"];
     }
 	
     else
