@@ -3,11 +3,11 @@
 <br>
 An attempt to clone the basic functionality and user interface of 'Samaritan' as seen on CBS' Person of Interest.
 
-<video src='Images/Intro.mp4'>Intro</video>
+<img src='Images/Intro.gif'></img>
 
 Kick-ass intro screen.
 
-<video src='Images/Samaritan.mp4'>Samaritan</video>
+<img src='Images/Samaritan.gif'></img>
 
 Some commands, supported by voice recognition (Open Ears’ Pocket Sphinx), free to add your own.
 
