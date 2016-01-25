@@ -65,12 +65,13 @@
 	});
 	 */
 	
-//	[[Wit sharedInstance] toggleCaptureVoiceIntent:self];
+	[[Wit sharedInstance] start];
+	[[Wit sharedInstance] setDelegate:self];
 	
-	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
-	[self.openEarsEventsObserver setDelegate:self];
-	
-	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+//	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+//	[self.openEarsEventsObserver setDelegate:self];
+//	
+//	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
@@ -93,6 +94,7 @@
 	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
 	commands = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 	
+	/*
 	NSMutableArray *wordsModel = [NSMutableArray new];
 	for (SamaritanData *data in commands) {
 		for (NSString *string in [data.tags componentsSeparatedByString:@" "]) {
@@ -116,11 +118,11 @@
 	}
 	
 	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
-	
+	*/
 }
 
 -(void)viewDidDisappear:(BOOL)animated {
-	[[OEPocketsphinxController sharedInstance] stopListening];
+//	[[OEPocketsphinxController sharedInstance] stopListening];
 }
 
 -(void)populateTextLabel {
@@ -135,10 +137,10 @@
 
 -(void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
-	[[OEPocketsphinxController sharedInstance] stopListening];
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
-	});
+//	[[OEPocketsphinxController sharedInstance] stopListening];
+//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+//	});
 }
 
 -(void)setTheme:(Themes *)theme {
@@ -154,7 +156,7 @@
 	// Dispose of any resources that can be recreated.
 }
 
-/*
+
 #pragma mark - Wit delegate
 
 - (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
@@ -163,20 +165,18 @@
 		return;
 	}
 	NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
-	NSString *intent = [firstOutcome objectForKey:@"intent"];
+//	NSString *intent = [firstOutcome objectForKey:@"intent"];
 	
 	NSLog(@"WIT OUTPUT: %@", firstOutcome);
 	
-//	labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
-	
-//	[self.view addSubview:labelView];
+	[[Wit sharedInstance] toggleCaptureVoiceIntent];
 }
- */
+
 
 
 #pragma mark - Navigation
 
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
 	[[OEPocketsphinxController sharedInstance] stopListening];
 	if ([segue.identifier isEqualToString:@"SwitchToWeather"])
@@ -196,7 +196,7 @@
 
 #pragma mark - OEEventsObserver delegate
 
-- (void) pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
+- (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
 	NSLog(@"\n[pocketsphinx\n\t| hypothesis:'%@'\n\t| score: '%@'\n\t| ID:'%@'.\n\t]", hypothesis, recognitionScore, utteranceID);
 	
 	// Return if score is less than specified value

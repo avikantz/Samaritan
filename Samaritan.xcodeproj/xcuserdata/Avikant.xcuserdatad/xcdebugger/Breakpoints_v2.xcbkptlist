@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Samaritan/ViewController.m"
-            timestampString = "471895751.100325"
+            timestampString = "475395587.362798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
             landmarkName = "-viewWillAppear:"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Samaritan/ViewController.m"
-            timestampString = "475394729.176845"
+            timestampString = "475395652.689593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,13 +90,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Samaritan/ViewController.m"
-            timestampString = "475394729.176845"
+            timestampString = "475395587.362798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
-            landmarkName = "@implementation ViewController"
-            landmarkType = "3">
+            startingLineNumber = "161"
+            endingLineNumber = "161"
+            landmarkName = "-witDidGraspIntent:messageId:customData:error:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Samaritan/ViewController.m"
-            timestampString = "475394729.176845"
+            timestampString = "475395652.689593"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "220"
-            endingLineNumber = "220"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-pocketsphinxDidReceiveHypothesis:recognitionScore:utteranceID:"
             landmarkType = "5">
          </BreakpointContent>

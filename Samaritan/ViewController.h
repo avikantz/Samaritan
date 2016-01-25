@@ -11,7 +11,7 @@
 #import "BlinkingImageView.h"
 #import "DynamicLabel.h"
 
-@interface ViewController : UIViewController <DynamicLabelDelegate, OEEventsObserverDelegate>
+@interface ViewController : UIViewController <DynamicLabelDelegate, OEEventsObserverDelegate, WitDelegate>
 
 @property (weak, nonatomic) IBOutlet DynamicLabel *textLabel;
 
