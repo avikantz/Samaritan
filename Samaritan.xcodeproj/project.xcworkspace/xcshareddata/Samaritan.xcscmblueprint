@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "79DEAFC93D6871404BF7E00DF4BC4C9C160F169C",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "89809D3CA87665BFAF393B74C8ABE7C3C80FC7F9" : 0,
+    "79DEAFC93D6871404BF7E00DF4BC4C9C160F169C" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1F264CD6-2568-4A4D-B445-497CB5FD5520",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "89809D3CA87665BFAF393B74C8ABE7C3C80FC7F9" : "..\/APIs\/Wit-4.1.0\/SampleApp\/wit-ios-helloworld",
+    "79DEAFC93D6871404BF7E00DF4BC4C9C160F169C" : "Samaritan\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Samaritan",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Samaritan.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/avikantz\/Samaritan.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "79DEAFC93D6871404BF7E00DF4BC4C9C160F169C"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/wit-ai\/wit-ios-helloworld.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "89809D3CA87665BFAF393B74C8ABE7C3C80FC7F9"
+    }
+  ]
+}

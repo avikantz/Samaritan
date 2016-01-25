@@ -26,6 +26,7 @@
 		18E8A5E11C1C9A620043D205 /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5E01C1C9A620043D205 /* WeatherTableViewCell.m */; };
 		18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */; };
 		18E8A5E81C1CBA8D0043D205 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 18E8A5E71C1CBA8D0043D205 /* Reachability.m */; };
+		591AC3581C55E516007E3E1F /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 591AC3571C55E516007E3E1F /* MobileCoreServices.framework */; };
 		592192BC1C0B298200E93480 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BB1C0B298200E93480 /* main.m */; };
 		592192BF1C0B298200E93480 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192BE1C0B298200E93480 /* AppDelegate.m */; };
 		592192C21C0B298200E93480 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 592192C11C0B298200E93480 /* ViewController.m */; };
@@ -113,6 +114,7 @@
 		18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		18E8A5E61C1CBA8D0043D205 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		18E8A5E71C1CBA8D0043D205 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		591AC3571C55E516007E3E1F /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		592192B71C0B298200E93480 /* Samaritan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaritan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		592192BB1C0B298200E93480 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		592192BD1C0B298200E93480 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				591AC3581C55E516007E3E1F /* MobileCoreServices.framework in Frameworks */,
 				187A624D1C3BEE5800DE73E4 /* CoreMotion.framework in Frameworks */,
 				18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */,
 				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
@@ -597,6 +600,7 @@
 		59A302D71C186B7E001E55F9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				591AC3571C55E516007E3E1F /* MobileCoreServices.framework */,
 				187A624C1C3BEE5800DE73E4 /* CoreMotion.framework */,
 				18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */,
 				59ED10811C19DBBB00C81793 /* Open Ears */,

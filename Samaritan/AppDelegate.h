@@ -15,6 +15,7 @@
 #import <OpenEars/OELanguageModelGenerator.h>
 #import <OpenEars/OEAcousticModel.h>
 #import "SVProgressHUD.h"
+//#import <Wit/Wit.h>
 
 
 #define SWidth [UIScreen mainScreen].bounds.size.width

@@ -65,6 +65,7 @@
 	});
 	 */
 	
+//	[[Wit sharedInstance] toggleCaptureVoiceIntent:self];
 	
 	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
 	[self.openEarsEventsObserver setDelegate:self];
@@ -152,6 +153,26 @@
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
+
+/*
+#pragma mark - Wit delegate
+
+- (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
+	if (e) {
+		NSLog(@"[Wit] error: %@", [e localizedDescription]);
+		return;
+	}
+	NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
+	NSString *intent = [firstOutcome objectForKey:@"intent"];
+	
+	NSLog(@"WIT OUTPUT: %@", firstOutcome);
+	
+//	labelView.text = [NSString stringWithFormat:@"intent = %@", intent];
+	
+//	[self.view addSubview:labelView];
+}
+ */
+
 
 #pragma mark - Navigation
 
