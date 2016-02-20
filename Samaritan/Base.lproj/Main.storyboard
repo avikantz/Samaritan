@@ -236,7 +236,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT ARE YOUR COMMANDS?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="R0S-RB-bGg" customClass="DynamicLabel">
-                                <rect key="frame" x="32" y="285" width="536" height="29"/>
+                                <rect key="frame" x="32" y="285.5" width="536" height="28.5"/>
                                 <fontDescription key="fontDescription" name="MagdaCleanMono-Regular" family="MagdaCleanMono" pointSize="28"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -258,14 +258,14 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <button opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-9a-tso">
-                                <rect key="frame" x="20" y="20" width="44" height="44"/>
+                                <rect key="frame" x="20" y="32" width="44" height="44"/>
                                 <state key="normal" image="settings"/>
                                 <connections>
                                     <segue destination="tAa-Oh-AvI" kind="presentation" id="93w-0x-vQT"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.20000000298023224" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajc-Hg-kWu">
-                                <rect key="frame" x="536" y="20" width="44" height="44"/>
+                                <rect key="frame" x="536" y="32" width="44" height="44"/>
                                 <state key="normal" image="database"/>
                                 <connections>
                                     <segue destination="OJ6-hb-rjs" kind="presentation" id="9mx-I9-wA1"/>
@@ -277,14 +277,15 @@
                             <constraint firstItem="FKU-6z-m2b" firstAttribute="centerX" secondItem="R0S-RB-bGg" secondAttribute="centerX" id="IYH-pE-BpX"/>
                             <constraint firstItem="R0S-RB-bGg" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M6d-JI-XHz"/>
                             <constraint firstItem="FKU-6z-m2b" firstAttribute="top" secondItem="R0S-RB-bGg" secondAttribute="bottom" constant="8" id="QIS-5d-XHy"/>
-                            <constraint firstItem="wiy-9a-tso" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="YAZ-ar-jpZ"/>
+                            <constraint firstItem="wiy-9a-tso" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="YAZ-ar-jpZ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="R0S-RB-bGg" secondAttribute="trailing" constant="12" id="nl4-Rx-cQx"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ajc-Hg-kWu" secondAttribute="trailing" id="t9l-ea-vZH"/>
                             <constraint firstAttribute="leadingMargin" secondItem="wiy-9a-tso" secondAttribute="leading" id="tXA-t7-weI"/>
-                            <constraint firstItem="ajc-Hg-kWu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="wv8-up-hoo"/>
+                            <constraint firstItem="ajc-Hg-kWu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="wv8-up-hoo"/>
                             <constraint firstItem="R0S-RB-bGg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="12" id="xWk-hH-Dlz"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="redTriangleImageView" destination="FKU-6z-m2b" id="E3Y-SC-XU6"/>
                         <outlet property="textLabel" destination="R0S-RB-bGg" id="QFu-Gi-e2N"/>

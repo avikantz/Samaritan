@@ -42,6 +42,8 @@
     NSString *recordedString;
     
     NSNumber *relativeCurrentHeight;
+	
+	UITapGestureRecognizer *tapGesture;
 
 }
 
@@ -65,13 +67,13 @@
 	});
 	 */
 	
-	[[Wit sharedInstance] start];
-	[[Wit sharedInstance] setDelegate:self];
+//	[[Wit sharedInstance] start];
+//	[[Wit sharedInstance] setDelegate:self];
 	
-//	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
-//	[self.openEarsEventsObserver setDelegate:self];
-//	
-//	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
+	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
+	[self.openEarsEventsObserver setDelegate:self];
+	
+	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
 	
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
@@ -80,21 +82,26 @@
 	[locationManager startUpdatingLocation];
 	currentLocation = [locationManager location];
 
+	tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
+	[self.view addGestureRecognizer:tapGesture];
+	
 }
 
--(void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	currentTheme = [AppDelegate currentTheme];
 	[self setTheme:currentTheme];
 }
 
--(void)viewDidAppear:(BOOL)animated {
+- (void)viewDidAppear:(BOOL)animated {
+	
 	// Load "commands" from Core Data Store
+	
 	managedObjectContext = [AppDelegate managedObjectContext];
 	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
 	commands = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 	
-	/*
+	
 	NSMutableArray *wordsModel = [NSMutableArray new];
 	for (SamaritanData *data in commands) {
 		for (NSString *string in [data.tags componentsSeparatedByString:@" "]) {
@@ -118,14 +125,14 @@
 	}
 	
 	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
-	*/
+	
 }
 
--(void)viewDidDisappear:(BOOL)animated {
-//	[[OEPocketsphinxController sharedInstance] stopListening];
+- (void)viewDidDisappear:(BOOL)animated {
+	[[OEPocketsphinxController sharedInstance] stopListening];
 }
 
--(void)populateTextLabel {
+- (void)populateTextLabel {
 	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
 	NSString *text = data.displayString;
 	[self.textLabel setText:text];
@@ -135,20 +142,27 @@
 	});
 }
 
--(void)didFinishTextAnimation {
+- (void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
-//	[[OEPocketsphinxController sharedInstance] stopListening];
-//	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
-//	});
+	[[OEPocketsphinxController sharedInstance] stopListening];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+	});
 }
 
--(void)setTheme:(Themes *)theme {
+- (void)setTheme:(Themes *)theme {
 	self.view.backgroundColor = theme.backgroundColor;
 	self.textLabel.textColor = theme.foregroundColor;
 	self.textLabel.font = [UIFont fontWithName:theme.fontName size:28.f];
 	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
 	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
+}
+
+- (void)handleTap:(UITapGestureRecognizer *)recognizer {
+	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
+	NSString *text = data.displayString;
+	[self.textLabel setText:text];
+	[self.redTriangleImageView stopBlinking];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -231,7 +245,7 @@
     }
 	
     // core motion - slowly raise phone for this
-    
+    /*
     else if ([hypothesis containsString:@""] && [self.textLabel.text isEqualToString:@""])
     {
         NSOperationQueue *altitudeQueue;
@@ -243,52 +257,55 @@
             }
         }];
     }
-    
+	 
     else if ([hypothesis isEqualToString:@"WHO"])
     {
         trollIdentifier = @"JOHN CENA";
         [self performSegueWithIdentifier:@"OpenTroll" sender:self];
         return;
     }
+	 */
 	
-    else
-    {
-        NSInteger highestNumberOfMatches = 0;
-        for (SamaritanData *data in commands)
-        {
-            //NSLog(@"checking %@", data.displayString);
-            NSString *upperCaseTags = [data.tags uppercaseString];
-            //NSLog(@"tags being checked %@", upperCaseTags);
-            BOOL matched = NO;
-            // add counter here to find number of tags being matched to
-            // return the string with maximum counter
-        
-            NSInteger numberOfMatchedTags = 0;
-            for (NSString *string in extractedTags)
-            {
-                //NSLog(@"checking tag %@", string);
-                if (![upperCaseTags containsString:string])
-                    matched = NO;
-                else
-                    numberOfMatchedTags += 1;
-            }
-            //NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
-            // no need for the boolean flag
-            if (numberOfMatchedTags >= highestNumberOfMatches)
-            {
-                matchedData = data;
-                //NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
-                highestNumberOfMatches = numberOfMatchedTags;
-            }
-        }
-        if (matchedData != nil)
-        {
-            printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
-            [self.textLabel setText:matchedData.displayString];
-            [[OEPocketsphinxController sharedInstance] stopListening];
-            [self.redTriangleImageView stopBlinking];
-        }
+	NSInteger highestNumberOfMatches = 0;
+	
+	for (SamaritanData *data in commands)
+	{
+		//NSLog(@"checking %@", data.displayString);
+		NSString *upperCaseTags = [data.tags uppercaseString];
+		//NSLog(@"tags being checked %@", upperCaseTags);
+		BOOL matched = NO;
+		// add counter here to find number of tags being matched to
+		// return the string with maximum counter
+	
+		NSInteger numberOfMatchedTags = 0;
+		for (NSString *string in extractedTags)
+		{
+			//NSLog(@"checking tag %@", string);
+			if (![upperCaseTags containsString:string])
+				matched = NO;
+			else {
+				numberOfMatchedTags += 1;
+				matched = YES;
+			}
+		}
+		//NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+		// no need for the boolean flag
+		if (numberOfMatchedTags >= highestNumberOfMatches)
+		{
+			matchedData = data;
+			//NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+			highestNumberOfMatches = numberOfMatchedTags;
+		}
     }
+	
+	if (matchedData != nil)
+	{
+		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
+		[self.textLabel setText:matchedData.displayString];
+		[[OEPocketsphinxController sharedInstance] stopListening];
+		[self.redTriangleImageView stopBlinking];
+	}
+	
 }
 
 - (void) pocketsphinxDidStartListening {
@@ -330,7 +347,7 @@
 
 #pragma mark - CLLocationManager Delegate Methods
 
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray<CLLocation *> *)locations {
 	currentLocation = [locations lastObject];
 }
 

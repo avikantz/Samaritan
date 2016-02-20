@@ -73,6 +73,7 @@
 	toPath = [self beizerPathForProgress:progress];
 	[progressAnimation setFromValue:(id)fromPath.CGPath];
 	[progressAnimation setToValue:(id)toPath.CGPath];
+	[shapeLayer removeAllAnimations];
 	[shapeLayer addAnimation:progressAnimation forKey:@"fill"];
 	fromPath = toPath;
 }

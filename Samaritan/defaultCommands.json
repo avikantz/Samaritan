@@ -69,31 +69,31 @@
  },
  {
     "displayString": "hey there",
-    "tags": "hello wassup"
+    "tags": "hello"
  },
  {
     "displayString": "luke i am your father",
-    "tags": "dad father daddy"
+    "tags": "father daddy"
  },
  {
     "displayString": "it's samaritan moron",
     "tags": "siri"
  },
  {
- "displayString": "May the force be with you.",
- "tags": "goodbye bye"
+	"displayString": "May the force be with you.",
+	"tags": "goodbye"
  },
  {
- "displayString": "Do or do not, there is no try.",
- "tags": "work"
+	"displayString": "Do or do not, there is no try.",
+	"tags": "work"
  },
  {
- "displayString": "it's samaritan moron",
- "tags": "siri"
+	"displayString": "it's samaritan moron",
+	"tags": "siri"
  },
  {
  "displayString": "You were supposed to destroy the resistance, not join them. TRAITOR!",
- "tags": "finn"
+ "tags": "finn traitor"
  },
  {
  "displayString": "These are not the droids you're looking for.",
@@ -104,15 +104,7 @@
     "tags": "academics study"
  },
  {
- "displayString": "Sheesh, looks like someone is on their period",
- "tags": "shut fuck"
- },
- {
-    "displayString": "ka me ha me ha",
-    "tags": "goku attack cell"
- },
- {
-    "displayString": "spirit bomb",
-    "tags": "goku attack buu"
+	"displayString": "Sheesh, looks like someone is on their period",
+	"tags": "shut fuck"
  }
 ]
