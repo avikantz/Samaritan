@@ -77,12 +77,12 @@
 	
 	// Setup WIT.AI
 	
-	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
-	[[AVAudioSession sharedInstance] setActive:YES error:nil];
+//	[[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
+//	[[AVAudioSession sharedInstance] setActive:YES error:nil];
 //
-	[Wit sharedInstance].accessToken = @"FOCPPMITQVTZUSCP2TRINZPIIQVWDMRG";
+//	[Wit sharedInstance].accessToken = @"FOCPPMITQVTZUSCP2TRINZPIIQVWDMRG";
 //	//enabling detectSpeechStop will automatically stop listening the microphone when the user stop talking
-	[Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
+//	[Wit sharedInstance].detectSpeechStop = WITVadConfigDetectSpeechStop;
 //
 	self.window = [[UIWindow alloc] initWithFrame:UIScreen.mainScreen.bounds];
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];

@@ -29,8 +29,12 @@
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Samaritan would like to know where you are anytime.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Samaritan would like to listen in to everything.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Samaritan would like to know where you are while you use the app.</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Samaritan would like to listen in to everything.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>magdacleanmono-regular.otf</string>

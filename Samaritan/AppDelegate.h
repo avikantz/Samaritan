@@ -9,13 +9,13 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 #import "Themes.h"
-#import <OpenEars/OEPocketsphinxController.h>
-#import <OpenEars/OEAcousticModel.h>
-#import <OpenEars/OEEventsObserver.h>
-#import <OpenEars/OELanguageModelGenerator.h>
-#import <OpenEars/OEAcousticModel.h>
+//#import <OpenEars/OEPocketsphinxController.h>
+//#import <OpenEars/OEAcousticModel.h>
+//#import <OpenEars/OEEventsObserver.h>
+//#import <OpenEars/OELanguageModelGenerator.h>
+//#import <OpenEars/OEAcousticModel.h>
 #import "SVProgressHUD.h"
-#import <Wit/Wit.h>
+//#import <Wit/Wit.h>
 
 
 #define SWidth [UIScreen mainScreen].bounds.size.width

@@ -6,21 +6,27 @@
 //  Copyright © 2015 Dark Army. All rights reserved.
 //
 
+#import <Speech/Speech.h>
+#import <CoreLocation/CoreLocation.h>
+#import <CoreMotion/CoreMotion.h>
+
 #import "ViewController.h"
 #import "SamaritanData.h"
 #import "Themes.h"
 #import "WeatherTableViewController.h"
-#import <CoreLocation/CoreLocation.h>
 #import "Reachability.h"
 #import "TrollViewController.h"
-#import <CoreMotion/CoreMotion.h>
 
-@interface ViewController () <CLLocationManagerDelegate>
+@interface ViewController () <CLLocationManagerDelegate, SFSpeechRecognizerDelegate>
+
+@property (nonatomic) SFSpeechRecognizer *speechRecognizer;
+@property (nonatomic) SFSpeechAudioBufferRecognitionRequest *recognitionRequest;
+@property (nonatomic) SFSpeechRecognitionTask *recognitionTask;
+@property (nonatomic) AVAudioEngine *audioEngine;
 
 @end
 
-@implementation ViewController
-{
+@implementation ViewController {
 	
 	NSMutableArray *texts;
 	NSMutableArray *commands;
@@ -54,11 +60,6 @@
 	commands = [NSMutableArray new];
 	
 	self.textLabel.delegate = self;
-	[self.textLabel setDefaultText:@"______"];
-	
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[self.textLabel setText:@"What are your commands?"];
-	});
 	
 	/*
 	// Test other view controllers here.
@@ -70,20 +71,30 @@
 //	[[Wit sharedInstance] start];
 //	[[Wit sharedInstance] setDelegate:self];
 	
+	NSLocale *locale = [NSLocale localeWithLocaleIdentifier:@"en-US"];
+	
+	self.speechRecognizer = [[SFSpeechRecognizer alloc] initWithLocale:locale];
+	self.speechRecognizer.delegate = self;
+	self.recognitionRequest = nil;
+	self.recognitionTask = nil;
+	self.audioEngine = [[AVAudioEngine alloc] init];
+	
+	/*
+	if (![[OEPocketsphinxController sharedInstance] micPermissionIsGranted]) {
+		[[OEPocketsphinxController sharedInstance] requestMicPermission];
+	}
+	
 	self.openEarsEventsObserver = [[OEEventsObserver alloc] init];
 	[self.openEarsEventsObserver setDelegate:self];
 	
 	[[OEPocketsphinxController sharedInstance] setActive:TRUE error:nil];
-	
+	*/
+	 
 	locationManager = [[CLLocationManager alloc] init];
 	locationManager.delegate = self;
 	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-	[locationManager requestWhenInUseAuthorization];
-	[locationManager startUpdatingLocation];
-	currentLocation = [locationManager location];
 
 	tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTap:)];
-	[self.view addGestureRecognizer:tapGesture];
 	
 }
 
@@ -95,13 +106,48 @@
 
 - (void)viewDidAppear:(BOOL)animated {
 	
+	[self.textLabel setDefaultText:@"______"];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		[self.textLabel setText:@"What are your commands?"];
+	});
+
+	
+	// Speech kit
+	
+	[SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
+		switch (status) {
+			case SFSpeechRecognizerAuthorizationStatusAuthorized:
+				break;
+			case SFSpeechRecognizerAuthorizationStatusDenied: {
+				SHOW_ALERT(@"Voice recognition denied. Samaritan will find you.");
+				break;
+			}
+			case SFSpeechRecognizerAuthorizationStatusRestricted:
+			case SFSpeechRecognizerAuthorizationStatusNotDetermined: {
+				SHOW_ALERT(@"Speech recognition restricted on this device.");
+				break;
+			}
+			default:
+				break;
+		}
+	}];
+	
+	// Location settings
+	
+	[locationManager requestWhenInUseAuthorization];
+	[locationManager startUpdatingLocation];
+	currentLocation = [locationManager location];
+	
 	// Load "commands" from Core Data Store
 	
 	managedObjectContext = [AppDelegate managedObjectContext];
 	fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"SamaritanData"];
 	commands = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 	
+	[self.view addGestureRecognizer:tapGesture];
 	
+	/*
+	 // Create data model for training the pocket sphinx set
 	NSMutableArray *wordsModel = [NSMutableArray new];
 	for (SamaritanData *data in commands) {
 		for (NSString *string in [data.tags componentsSeparatedByString:@" "]) {
@@ -125,12 +171,23 @@
 	}
 	
 	[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+	*/
 	
 }
 
-- (void)viewDidDisappear:(BOOL)animated {
-	[[OEPocketsphinxController sharedInstance] stopListening];
+- (void)viewWillDisappear:(BOOL)animated {
+	if ([self.audioEngine isRunning]) {
+		[self.audioEngine stop];
+		[self.recognitionRequest endAudio];
+		[self.redTriangleImageView stopBlinking];
+	}
 }
+
+- (void)viewDidDisappear:(BOOL)animated {
+//	[[OEPocketsphinxController sharedInstance] stopListening];
+}
+
+#pragma mark -
 
 - (void)populateTextLabel {
 	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
@@ -144,9 +201,10 @@
 
 - (void)didFinishTextAnimation {
 	[self.redTriangleImageView startBlinking];
-	[[OEPocketsphinxController sharedInstance] stopListening];
-	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+//	[[OEPocketsphinxController sharedInstance] stopListening];
+	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.8 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//		[[OEPocketsphinxController sharedInstance] startListeningWithLanguageModelAtPath:lmPath dictionaryAtPath:dicPath acousticModelAtPath:[OEAcousticModel pathToModel:@"AcousticModelEnglish"] languageModelIsJSGF:NO];
+		[self startRecording];
 	});
 }
 
@@ -159,10 +217,20 @@
 }
 
 - (void)handleTap:(UITapGestureRecognizer *)recognizer {
-	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
-	NSString *text = data.displayString;
-	[self.textLabel setText:text];
-	[self.redTriangleImageView stopBlinking];
+//	SamaritanData *data = [commands objectAtIndex:arc4random_uniform((int)commands.count)];
+//	NSString *text = data.displayString;
+//	[self.textLabel setText:text];
+//	[self.textLabel setText:@"What are your commands?"];
+	
+	if ([self.audioEngine isRunning]) {
+		[self.audioEngine stop];
+		[self.recognitionRequest endAudio];
+		[self.redTriangleImageView stopBlinking];
+	} else {
+		[self startRecording];
+		[self.redTriangleImageView startBlinking];
+	}
+	
 }
 
 - (void)didReceiveMemoryWarning {
@@ -170,7 +238,162 @@
 	// Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Speech recording
 
+- (void)startRecording {
+	
+	if ([self.audioEngine isRunning]) {
+		[self.audioEngine stop];
+		[self.recognitionRequest endAudio];
+		[self.redTriangleImageView stopBlinking];
+	}
+	
+	if (self.recognitionTask != nil) {
+		[self.recognitionTask cancel];
+		self.recognitionTask = nil;
+	}
+	
+	NSError *error;
+	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+	[audioSession setCategory:AVAudioSessionCategoryRecord error:&error];
+	if (error) NSLog(@"Error = %@", error);
+	[audioSession setMode:AVAudioSessionModeMeasurement error:&error];
+	if (error) NSLog(@"Error = %@", error);
+	[audioSession setActive:YES error:&error];
+	if (error) NSLog(@"Error = %@", error);
+	
+	self.recognitionRequest = [SFSpeechAudioBufferRecognitionRequest new];
+	
+	AVAudioInputNode *inputNode = [self.audioEngine inputNode];
+	if (inputNode == nil) { NSLog(@"Failed to create node."); return; }
+	
+	if (self.recognitionRequest == nil) { NSLog(@"Fatal error, recog request is nil."); return; }
+	
+	// Configure request so that results are returned before audio recording is finished
+	self.recognitionRequest.shouldReportPartialResults = YES;
+	
+	// A recognition task represents a speech recognition session.
+	// We keep a reference to the task so that it can be cancelled.
+	self.recognitionTask = [self.speechRecognizer recognitionTaskWithRequest:self.recognitionRequest resultHandler:^(SFSpeechRecognitionResult * _Nullable result, NSError * _Nullable error) {
+		
+		BOOL isFinal = NO;
+		NSString *intent;
+		
+		if (result != nil) {
+			intent = result.bestTranscription.formattedString;
+			isFinal = result.isFinal;
+			NSLog(@"SK INTENT: %@", intent);
+		}
+		
+		if (error != nil || isFinal) {
+			
+			[self.audioEngine stop];
+			[inputNode removeTapOnBus:0];
+			
+			self.recognitionRequest = nil;
+			self.recognitionTask = nil;
+			
+			[self processSpeechKitHypothesis:intent.uppercaseString];
+		}
+		
+	}];
+	
+	AVAudioFormat *recordingFormat = [inputNode outputFormatForBus:0];
+	[inputNode installTapOnBus:0 bufferSize:1024 format:recordingFormat block:^(AVAudioPCMBuffer * _Nonnull buffer, AVAudioTime * _Nonnull when) {
+		[self.recognitionRequest appendAudioPCMBuffer:buffer];
+	}];
+	
+	[self.audioEngine prepare];
+	
+	[self.audioEngine startAndReturnError:&error];
+	if (error) { NSLog(@"Failed to start audio engine"); }
+	
+	NSLog(@"Listening...");
+	
+}
+
+
+- (void)processSpeechKitHypothesis:(NSString *)hypothesis {
+	
+	NSLog(@"Processing hypothesis: %@", hypothesis);
+	
+	if (hypothesis.length < 2) {
+		NSLog(@"Null hypothesis, returning...");
+		[self.textLabel setText:@"Null Hypothesis!"];
+		return;
+	}
+	
+	SamaritanData *matchedData = nil;
+	NSArray *extractedTags = [hypothesis componentsSeparatedByString:@" "];
+	
+	// Handle internet and keywords based tasks
+	if ([self isInternetAvailable]) {
+		if ([hypothesis containsString:@"WEATHER"]) {
+			[self performSegueWithIdentifier:@"SwitchToWeather" sender:self];
+			return;
+		}
+		if ([hypothesis containsString:@"SERIES"] || [hypothesis containsString:@"MOVIES"]) {
+			[self performSegueWithIdentifier:@"SwitchToListing" sender:self];
+			return;
+		}
+	}
+
+	// Handle general tasks
+	
+	NSInteger highestNumberOfMatches = 0;
+	
+	for (SamaritanData *data in commands) {
+		
+		//NSLog(@"checking %@", data.displayString);
+		NSString *upperCaseTags = [data.tags uppercaseString];
+		//NSLog(@"tags being checked %@", upperCaseTags);
+		BOOL matched = NO;
+		// add counter here to find number of tags being matched to
+		// return the string with maximum counter
+		
+		NSInteger numberOfMatchedTags = 0;
+		for (NSString *string in extractedTags) {
+			
+			//NSLog(@"checking tag %@", string);
+			if (![upperCaseTags containsString:string])
+				matched = NO;
+			else {
+				numberOfMatchedTags += 1;
+				matched = YES;
+			}
+		}
+		//NSLog(@"data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+		// no need for the boolean flag
+		if (numberOfMatchedTags >= highestNumberOfMatches) {
+			matchedData = data;
+			//NSLog(@"matched data %@ with %li tags", data.displayString, (long) numberOfMatchedTags);
+			highestNumberOfMatches = numberOfMatchedTags;
+		}
+	}
+	
+	if (matchedData != nil) {
+		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
+		[self.textLabel setText:matchedData.displayString];
+//		[[OEPocketsphinxController sharedInstance] stopListening];
+		[self.audioEngine stop];
+		[self.recognitionRequest endAudio];
+		[self.redTriangleImageView stopBlinking];
+	}
+	
+}
+
+#pragma mark - SFSpeechRecognizerDelegate
+
+- (void)speechRecognizer:(SFSpeechRecognizer *)speechRecognizer availabilityDidChange:(BOOL)available {
+	NSLog(@"");
+	if (available) {
+		[self.redTriangleImageView startBlinking];
+	} else {
+		[self.redTriangleImageView stopBlinking];
+	}
+}
+
+/*
 #pragma mark - Wit delegate
 
 - (void)witDidGraspIntent:(NSArray *)outcomes messageId:(NSString *)messageId customData:(id) customData error:(NSError*)e {
@@ -179,20 +402,21 @@
 		return;
 	}
 	NSDictionary *firstOutcome = [outcomes objectAtIndex:0];
-//	NSString *intent = [firstOutcome objectForKey:@"intent"];
+	NSString *intent = [firstOutcome objectForKey:@"intent"];
 	
 	NSLog(@"WIT OUTPUT: %@", firstOutcome);
 	
 	[[Wit sharedInstance] toggleCaptureVoiceIntent];
 }
 
+ */
 
 
 #pragma mark - Navigation
 
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-	[[OEPocketsphinxController sharedInstance] stopListening];
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	
+//	[[OEPocketsphinxController sharedInstance] stopListening];
 	if ([segue.identifier isEqualToString:@"SwitchToWeather"])
     {
 		UINavigationController *navc = [segue destinationViewController];
@@ -208,6 +432,7 @@
 	
 }
 
+
 #pragma mark - OEEventsObserver delegate
 
 - (void)pocketsphinxDidReceiveHypothesis:(NSString *)hypothesis recognitionScore:(NSString *)recognitionScore utteranceID:(NSString *)utteranceID {
@@ -218,8 +443,8 @@
 		return;
 	}
 	
-	[[OEPocketsphinxController sharedInstance] resumeRecognition];
-    
+//	[[OEPocketsphinxController sharedInstance] resumeRecognition];
+	
     //algorithm to return command from recorded audio, after recognition
     
 	SamaritanData *matchedData = nil;
@@ -302,12 +527,12 @@
 	{
 		printf("\nMatched: \"%s\"\n", matchedData.displayString.UTF8String);
 		[self.textLabel setText:matchedData.displayString];
-		[[OEPocketsphinxController sharedInstance] stopListening];
+//		[[OEPocketsphinxController sharedInstance] stopListening];
 		[self.redTriangleImageView stopBlinking];
 	}
 	
 }
-
+/*
 - (void) pocketsphinxDidStartListening {
 	printf("\n[pocketsphinx listening]");
 }
@@ -344,6 +569,7 @@
 - (void) pocketSphinxContinuousTeardownDidFailWithReason:(NSString *)reasonForFailure {
 	NSLog(@"Listening teardown wasn't successful and returned the failure reason: %@", reasonForFailure);
 }
+*/
 
 #pragma mark - CLLocationManager Delegate Methods
 
@@ -355,17 +581,13 @@
 	[locationManager startUpdatingLocation];
 }
 
-- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
-{
-    
+- (void) locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"failed to get location because of %@", error);
-    
 }
 
 # pragma mark - Connection Check
 
-- (BOOL) isInternetAvailable
-{
+- (BOOL) isInternetAvailable {
     
     Reachability *reachability = [Reachability reachabilityForInternetConnection];
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
