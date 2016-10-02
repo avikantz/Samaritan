@@ -11,6 +11,9 @@
 @implementation ListingTableViewCell
 
 - (void)awakeFromNib {
+	
+	[super awakeFromNib];
+	
     // Initialization code
 	
 }

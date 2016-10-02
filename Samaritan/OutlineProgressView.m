@@ -25,6 +25,9 @@
 }
 
 -(void)awakeFromNib {
+	
+	[super awakeFromNib];
+	
 	if (!self.bgColor)
 		self.bgColor = [UIColor clearColor];
 	if (!self.fgColor)

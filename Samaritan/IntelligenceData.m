@@ -10,13 +10,13 @@
 
 @implementation IntelligenceData
 
--(instancetype)init {
+- (instancetype)init {
 	if (self)
 		self = [super init];
 	return self;
 }
 
--(instancetype)initWithAgency:(NSString *)agency andWeight:(NSInteger)weight {
+- (instancetype)initWithAgency:(NSString *)agency andWeight:(NSInteger)weight {
 	if (self) {
 		self = [super init];
 		self.agency = agency;
@@ -25,18 +25,18 @@
 	return self;
 }
 
-+(NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename {
++ (NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename {
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
 	return [self returnArrayFromJSONFile:filePath];
 }
 
-+(NSArray *)returnArrayFromJSONFile:(NSString *)filePath {
++ (NSArray *)returnArrayFromJSONFile:(NSString *)filePath {
 	NSError *error;
 	id data = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:filePath] options:kNilOptions error:&error];
 	return [self returnArrayFromJSONData:data];
 }
 
-+(NSArray *)returnArrayFromJSONData:(id)data {
++ (NSArray *)returnArrayFromJSONData:(id)data {
 	NSMutableArray *array = [NSMutableArray new];
 	for (id dict in data) {
 		NSString *agencyName = dict[@"name"];
@@ -47,7 +47,7 @@
 	return array;
 }
 
-+(NSInteger)totalWeightOfAgencies:(NSArray *)agencies {
++ (NSInteger)totalWeightOfAgencies:(NSArray *)agencies {
 	NSInteger weight = 0;
 	for (IntelligenceData *idata in agencies)
 		weight += idata.weight;

@@ -14,12 +14,12 @@
 @property NSInteger weight;
 @property BOOL isSingle;
 
--(instancetype)initWithCommand:(NSString *)command andWeight:(NSInteger)weight;
+- (instancetype)initWithCommand:(NSString *)command andWeight:(NSInteger)weight;
 
-+(NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename;
-+(NSArray *)returnArrayFromJSONFile:(NSString *)filePath;
-+(NSArray *)returnArrayFromJSONData:(id)data;
++ (NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename;
++ (NSArray *)returnArrayFromJSONFile:(NSString *)filePath;
++ (NSArray *)returnArrayFromJSONData:(id)data;
 
-+(NSInteger)totalWeightOfCommands:(NSArray *)commands;
++ (NSInteger)totalWeightOfCommands:(NSArray *)commands;
 
 @end

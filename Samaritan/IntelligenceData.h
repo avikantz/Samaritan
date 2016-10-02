@@ -13,12 +13,12 @@
 @property NSString *agency;
 @property NSInteger weight;
 
--(instancetype)initWithAgency:(NSString *)agency andWeight:(NSInteger)weight;
+- (instancetype)initWithAgency:(NSString *)agency andWeight:(NSInteger)weight;
 
-+(NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename;
-+(NSArray *)returnArrayFromJSONFile:(NSString *)filePath;
-+(NSArray *)returnArrayFromJSONData:(id)data;
++ (NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename;
++ (NSArray *)returnArrayFromJSONFile:(NSString *)filePath;
++ (NSArray *)returnArrayFromJSONData:(id)data;
 
-+(NSInteger)totalWeightOfAgencies:(NSArray *)agencies;
++ (NSInteger)totalWeightOfAgencies:(NSArray *)agencies;
 
 @end

@@ -25,6 +25,7 @@
 	[[NSUserDefaults standardUserDefaults] setValue:selectedTheme.themeName forKey:@"selectedTheme"];
 	
 	self.showsIntroSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"showsIntro"];
+	self.adminModeSwitch.on = [[NSUserDefaults standardUserDefaults] boolForKey:@"adminMode"];
 
 }
 
@@ -39,15 +40,17 @@
 
 - (IBAction)doneAction:(id)sender {
 	[[NSUserDefaults standardUserDefaults] setObject:selectedTheme.themeName forKey:@"selectedTheme"];
+	[[NSUserDefaults standardUserDefaults] setBool:self.adminModeSwitch.on forKey:@"adminMode"];
+	[[NSUserDefaults standardUserDefaults] setBool:self.showsIntroSwitch.on forKey:@"showsIntro"];
 	[self dismissViewControllerAnimated:YES completion:nil];
 }
 
--(void)didFinishPickingTheme:(Themes *)theme {
+- (void)didFinishPickingTheme:(Themes *)theme {
 	selectedTheme = theme;
 	[self setTheme:theme];
 }
 
--(void)setTheme:(Themes *)theme {
+- (void)setTheme:(Themes *)theme {
 	[[UIBarButtonItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName: theme.foregroundColor, NSFontAttributeName: [UIFont fontWithName:theme.fontName size:18.f]} forState:UIControlStateNormal];
 	self.navigationController.navigationBar.barTintColor = theme.backgroundColor;
 	self.navigationController.navigationBar.backgroundColor = theme.backgroundColor;
@@ -68,55 +71,12 @@
 	self.showsIntroSwitch.onTintColor = theme.foregroundColor;
 	self.showsIntroSwitch.tintColor = theme.foregroundColor;
 	self.showsIntroSwitch.thumbTintColor = theme.backgroundColor;
+	self.adminModeSwitch.onTintColor = theme.foregroundColor;
+	self.adminModeSwitch.tintColor = theme.foregroundColor;
+	self.adminModeSwitch.thumbTintColor = theme.backgroundColor;
 	[[[UIApplication sharedApplication] keyWindow] setTintColor:theme.foregroundColor];
 	[[[UIApplication sharedApplication] keyWindow] setBackgroundColor:theme.backgroundColor];
 }
-
-#pragma mark - Table view data source
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
@@ -124,10 +84,15 @@
 	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
+#pragma mark - Switches
+
 - (IBAction)showsIntroSwitchValueChanged:(UISwitch *)sender {
-	[[NSUserDefaults standardUserDefaults] setBool:self.showsIntroSwitch.on forKey:@"showsIntro"];
+//	[[NSUserDefaults standardUserDefaults] setBool:self.showsIntroSwitch.on forKey:@"showsIntro"];
 }
 
+- (IBAction)adminModeSwitchValueChanged:(UISwitch *)sender {
+//	[[NSUserDefaults standardUserDefaults] setBool:self.adminModeSwitch.on forKey:@"adminMode"];
+}
 
 
 #pragma mark - Navigation

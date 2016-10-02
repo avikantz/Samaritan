@@ -10,13 +10,14 @@
 #import "AppDelegate.h"
 #import "BlinkingImageView.h"
 #import "DynamicLabel.h"
+#import "LogTextView.h"
 
-@interface ViewController : UIViewController <DynamicLabelDelegate/*, OEEventsObserverDelegate, WitDelegate*/>
+@interface ViewController : UIViewController <DynamicLabelDelegate>
 
 @property (weak, nonatomic) IBOutlet DynamicLabel *textLabel;
 
 @property (weak, nonatomic) IBOutlet BlinkingImageView *redTriangleImageView;
 
-//@property (strong, nonatomic) OEEventsObserver *openEarsEventsObserver;
+@property (weak, nonatomic) IBOutlet LogTextView *textView;
 
 @end

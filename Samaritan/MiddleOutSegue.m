@@ -11,9 +11,13 @@
 
 #define degsToRads(degs) degs * M_PI / 180.0f
 
+@interface MiddleOutSegue () <CAAnimationDelegate>
+
+@end
+
 @implementation MiddleOutSegue
 
--(void)perform {
+- (void)perform {
 	self.window = [[[UIApplication sharedApplication] delegate] window];
 //	CGSize viewSize      = [(UIView *)[self.window.subviews objectAtIndex:0] frame].size;
 	CGSize viewSize      = self.window.bounds.size;
@@ -71,9 +75,10 @@
 	
 	[[self.sourceViewController view] removeFromSuperview];
 }
+
 #pragma mark - Core Animation Delegates
 
--(void)animationDidStop:(CAAnimation *)animation finished:(BOOL)isFinished {
+- (void)animationDidStop:(CAAnimation *)animation finished:(BOOL)isFinished {
 	
 	if (isFinished) {
 		
@@ -93,7 +98,7 @@
 
 #pragma mark - Image Utilities
 
-+(CGImageRef)clipImageFromLayer:(CALayer *)layer size:(CGSize)size offsetX:(CGFloat)offsetX {
++ (CGImageRef)clipImageFromLayer:(CALayer *)layer size:(CGSize)size offsetX:(CGFloat)offsetX {
 	UIGraphicsBeginImageContext(size);
 	CGContextRef context = UIGraphicsGetCurrentContext();
 	CGContextTranslateCTM(context, offsetX, 0.0f);
@@ -105,7 +110,7 @@
 
 #pragma mark - Animations
 
--(CAAnimation *)zoomInAnimation {
+- (CAAnimation *)zoomInAnimation {
 	
 	CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
 	
@@ -125,7 +130,7 @@
 	return animationGroup;
 }
 
--(CAAnimation *)middleOutAnimationWithRotationDegree:(CGFloat)degree {
+- (CAAnimation *)middleOutAnimationWithRotationDegree:(CGFloat)degree {
 	
 	CAAnimationGroup *animationGroup = [CAAnimationGroup animation];
 	

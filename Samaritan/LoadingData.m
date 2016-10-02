@@ -10,13 +10,13 @@
 
 @implementation LoadingData
 
--(instancetype)init {
+- (instancetype)init {
 	if (self)
 		self = [super init];
 	return self;
 }
 
--(instancetype)initWithCommand:(NSString *)command andWeight:(NSInteger)weight {
+- (instancetype)initWithCommand:(NSString *)command andWeight:(NSInteger)weight {
 	if (self) {
 		self = [super init];
 		self.command = command;
@@ -26,18 +26,18 @@
 	return self;
 }
 
-+(NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename {
++ (NSArray *)returnArrayFromBundledJSONFile:(NSString *)filename {
 	NSString *filePath = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
 	return [self returnArrayFromJSONFile:filePath];
 }
 
-+(NSArray *)returnArrayFromJSONFile:(NSString *)filePath {
++ (NSArray *)returnArrayFromJSONFile:(NSString *)filePath {
 	NSError *error;
 	id data = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:filePath] options:kNilOptions error:&error];
 	return [self returnArrayFromJSONData:data];
 }
 
-+(NSArray *)returnArrayFromJSONData:(id)data {
++ (NSArray *)returnArrayFromJSONData:(id)data {
 	NSMutableArray *array = [NSMutableArray new];
 	for (id dict in data) {
 		NSString *commandName = dict[@"command"];
@@ -58,7 +58,7 @@
 	return array;
 }
 
-+(NSInteger)totalWeightOfCommands:(NSArray *)commands {
++ (NSInteger)totalWeightOfCommands:(NSArray *)commands {
 	NSInteger weight = 0;
 	for (LoadingData *ldata in commands)
 		weight += ldata.weight;

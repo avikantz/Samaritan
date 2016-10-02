@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *showsIntroLabel;
 @property (weak, nonatomic) IBOutlet UISwitch *showsIntroSwitch;
 
+@property (weak, nonatomic) IBOutlet UISwitch *adminModeSwitch;
+
 
 @end

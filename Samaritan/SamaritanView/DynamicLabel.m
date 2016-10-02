@@ -23,6 +23,9 @@
 }
 
 -(void)awakeFromNib {
+	
+	[super awakeFromNib];
+	
 	if (!self.lineWidth)
 		self.lineWidth = 2.f;
 	if (!self.wordSpeed)

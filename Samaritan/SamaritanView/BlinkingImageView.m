@@ -15,6 +15,9 @@
 }
 
 -(void)awakeFromNib {
+	
+	[super awakeFromNib];
+	
 	if (!self.blinkDuration)
 		self.blinkDuration = kDefaultBlinkDuration;
 	

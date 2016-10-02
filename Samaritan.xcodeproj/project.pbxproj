@@ -71,22 +71,14 @@
 		59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D11C18699E001E55F9 /* SystemConfiguration.framework */; };
 		59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D31C1869A6001E55F9 /* CoreGraphics.framework */; };
 		59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59A302D51C186A43001E55F9 /* AVFoundation.framework */; };
+		59AF4F421DA0D10E00C92D0B /* LogTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59AF4F411DA0D10E00C92D0B /* LogTextView.m */; };
 		59CA38341C2019E70084BDA8 /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CA38331C2019E70084BDA8 /* UIImage+ImageEffects.m */; };
-		59CA383F1C201EB50084BDA8 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CA38381C201EB50084BDA8 /* SVIndefiniteAnimatedView.m */; };
-		59CA38401C201EB50084BDA8 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59CA383A1C201EB50084BDA8 /* SVProgressHUD.bundle */; };
-		59CA38411C201EB50084BDA8 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CA383C1C201EB50084BDA8 /* SVProgressHUD.m */; };
-		59CA38421C201EB50084BDA8 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59CA383E1C201EB50084BDA8 /* SVRadialGradientLayer.m */; };
 		59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */; };
 		59EB085E1C0B77DA000DFBEA /* DynamicLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */; };
-		59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */; };
-		59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */; };
-		59ED10881C19DBBC00C81793 /* OpenEars.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED10841C19DBBC00C81793 /* OpenEars.framework */; };
-		59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 59ED10851C19DBBC00C81793 /* Slt.framework */; };
-		F5B4899A6190303A12449BF1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F361E2377DB23CBE64DD7334 /* libPods.a */; };
+		ECFD687C74CE55BB132A50C6 /* libPods-Samaritan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C740CA564F98FC58CFD03FC7 /* libPods-Samaritan.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		016B3B5767F15C0F237539DA /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		18105C2D1C1EF9700086D6BB /* ListingTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListingTableViewCell.h; sourceTree = "<group>"; };
 		18105C2E1C1EF9700086D6BB /* ListingTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListingTableViewCell.m; sourceTree = "<group>"; };
 		18105C311C1EF9A70086D6BB /* ListingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ListingCell.xib; sourceTree = "<group>"; };
@@ -191,26 +183,17 @@
 		59A302D11C18699E001E55F9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		59A302D31C1869A6001E55F9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		59A302D51C186A43001E55F9 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		59AF4F401DA0D10E00C92D0B /* LogTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogTextView.h; sourceTree = "<group>"; };
+		59AF4F411DA0D10E00C92D0B /* LogTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogTextView.m; sourceTree = "<group>"; };
 		59CA38321C2019E70084BDA8 /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		59CA38331C2019E70084BDA8 /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
-		59CA38371C201EB50084BDA8 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
-		59CA38381C201EB50084BDA8 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
-		59CA38391C201EB50084BDA8 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
-		59CA383A1C201EB50084BDA8 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
-		59CA383B1C201EB50084BDA8 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
-		59CA383C1C201EB50084BDA8 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		59CA383D1C201EB50084BDA8 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
-		59CA383E1C201EB50084BDA8 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		59EB08591C0B7577000DFBEA /* BlinkingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BlinkingImageView.h; path = SamaritanView/BlinkingImageView.h; sourceTree = "<group>"; };
 		59EB085A1C0B7577000DFBEA /* BlinkingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BlinkingImageView.m; path = SamaritanView/BlinkingImageView.m; sourceTree = "<group>"; };
 		59EB085C1C0B77DA000DFBEA /* DynamicLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DynamicLabel.h; path = SamaritanView/DynamicLabel.h; sourceTree = "<group>"; };
 		59EB085D1C0B77DA000DFBEA /* DynamicLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DynamicLabel.m; path = SamaritanView/DynamicLabel.m; sourceTree = "<group>"; };
-		59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelEnglish.bundle; sourceTree = "<group>"; };
-		59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AcousticModelSpanish.bundle; sourceTree = "<group>"; };
-		59ED10841C19DBBC00C81793 /* OpenEars.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenEars.framework; sourceTree = "<group>"; };
-		59ED10851C19DBBC00C81793 /* Slt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Slt.framework; sourceTree = "<group>"; };
-		83F082915CB75B8C27C78FD9 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		F361E2377DB23CBE64DD7334 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C740CA564F98FC58CFD03FC7 /* libPods-Samaritan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Samaritan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D83234C1806DEA5FD84CDDDA /* Pods-Samaritan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Samaritan.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Samaritan/Pods-Samaritan.debug.xcconfig"; sourceTree = "<group>"; };
+		DD696ABB43C93D90DE51F17C /* Pods-Samaritan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Samaritan.release.xcconfig"; path = "Pods/Target Support Files/Pods-Samaritan/Pods-Samaritan.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,12 +205,10 @@
 				187A624D1C3BEE5800DE73E4 /* CoreMotion.framework in Frameworks */,
 				18E8A5E51C1CA7F50043D205 /* CoreLocation.framework in Frameworks */,
 				59A302D61C186A43001E55F9 /* AVFoundation.framework in Frameworks */,
-				59ED10891C19DBBC00C81793 /* Slt.framework in Frameworks */,
 				59A302D41C1869A6001E55F9 /* CoreGraphics.framework in Frameworks */,
 				59A302D21C18699E001E55F9 /* SystemConfiguration.framework in Frameworks */,
 				59A302D01C186999001E55F9 /* AudioToolbox.framework in Frameworks */,
-				59ED10881C19DBBC00C81793 /* OpenEars.framework in Frameworks */,
-				F5B4899A6190303A12449BF1 /* libPods.a in Frameworks */,
+				ECFD687C74CE55BB132A50C6 /* libPods-Samaritan.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,13 +302,31 @@
 			name = Reachability;
 			sourceTree = "<group>";
 		};
+		299CB112C1B5DB384735DA53 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D83234C1806DEA5FD84CDDDA /* Pods-Samaritan.debug.xcconfig */,
+				DD696ABB43C93D90DE51F17C /* Pods-Samaritan.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		591F1F951D9FA07000BCB30E /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				59AF4F401DA0D10E00C92D0B /* LogTextView.h */,
+				59AF4F411DA0D10E00C92D0B /* LogTextView.m */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
 		592192AE1C0B298200E93480 = {
 			isa = PBXGroup;
 			children = (
 				59A302D71C186B7E001E55F9 /* Frameworks */,
 				592192B91C0B298200E93480 /* Samaritan */,
 				592192B81C0B298200E93480 /* Products */,
-				D75531561018F6B27889D432 /* Pods */,
+				299CB112C1B5DB384735DA53 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -426,6 +425,7 @@
 			children = (
 				592192C31C0B298200E93480 /* Main.storyboard */,
 				592192CB1C0B298200E93480 /* LaunchScreen.storyboard */,
+				591F1F951D9FA07000BCB30E /* TextView */,
 				5988FF7B1C16E0FD00223FD3 /* Outline Progrss View */,
 				5988FF911C16E97900223FD3 /* Blinking Image View */,
 				5988FF921C16E98500223FD3 /* Labels */,
@@ -472,7 +472,6 @@
 		5938BF8A1C1B28AF000E6D8C /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				59CA38361C201EB50084BDA8 /* SVProgressHUD */,
 				59CA38351C2019ED0084BDA8 /* Image Effects */,
 				18E8A5E91C1CBA920043D205 /* Reachability */,
 				18E8A5E31C1C9B970043D205 /* JSON Parse */,
@@ -609,12 +608,11 @@
 				591AC3571C55E516007E3E1F /* MobileCoreServices.framework */,
 				187A624C1C3BEE5800DE73E4 /* CoreMotion.framework */,
 				18E8A5E41C1CA7F50043D205 /* CoreLocation.framework */,
-				59ED10811C19DBBB00C81793 /* Open Ears */,
 				59A302D51C186A43001E55F9 /* AVFoundation.framework */,
 				59A302D31C1869A6001E55F9 /* CoreGraphics.framework */,
 				59A302D11C18699E001E55F9 /* SystemConfiguration.framework */,
 				59A302CF1C186999001E55F9 /* AudioToolbox.framework */,
-				F361E2377DB23CBE64DD7334 /* libPods.a */,
+				C740CA564F98FC58CFD03FC7 /* libPods-Samaritan.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -628,42 +626,6 @@
 			name = "Image Effects";
 			sourceTree = "<group>";
 		};
-		59CA38361C201EB50084BDA8 /* SVProgressHUD */ = {
-			isa = PBXGroup;
-			children = (
-				59CA38371C201EB50084BDA8 /* SVIndefiniteAnimatedView.h */,
-				59CA38381C201EB50084BDA8 /* SVIndefiniteAnimatedView.m */,
-				59CA38391C201EB50084BDA8 /* SVProgressHUD-Prefix.pch */,
-				59CA383A1C201EB50084BDA8 /* SVProgressHUD.bundle */,
-				59CA383B1C201EB50084BDA8 /* SVProgressHUD.h */,
-				59CA383C1C201EB50084BDA8 /* SVProgressHUD.m */,
-				59CA383D1C201EB50084BDA8 /* SVRadialGradientLayer.h */,
-				59CA383E1C201EB50084BDA8 /* SVRadialGradientLayer.m */,
-			);
-			path = SVProgressHUD;
-			sourceTree = "<group>";
-		};
-		59ED10811C19DBBB00C81793 /* Open Ears */ = {
-			isa = PBXGroup;
-			children = (
-				59ED10821C19DBBC00C81793 /* AcousticModelEnglish.bundle */,
-				59ED10831C19DBBC00C81793 /* AcousticModelSpanish.bundle */,
-				59ED10841C19DBBC00C81793 /* OpenEars.framework */,
-				59ED10851C19DBBC00C81793 /* Slt.framework */,
-			);
-			name = "Open Ears";
-			path = Framework;
-			sourceTree = "<group>";
-		};
-		D75531561018F6B27889D432 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				83F082915CB75B8C27C78FD9 /* Pods.debug.xcconfig */,
-				016B3B5767F15C0F237539DA /* Pods.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -671,12 +633,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 592192D11C0B298200E93480 /* Build configuration list for PBXNativeTarget "Samaritan" */;
 			buildPhases = (
-				0F80A9E6D6577F86942AF34D /* Check Pods Manifest.lock */,
+				2E55FE5058D11B5370C12231 /* [CP] Check Pods Manifest.lock */,
 				592192B31C0B298200E93480 /* Sources */,
 				592192B41C0B298200E93480 /* Frameworks */,
 				592192B51C0B298200E93480 /* Resources */,
-				08A0977E3C57ECD0FE7B4802 /* Embed Pods Frameworks */,
-				BF10211B90852E667CCCBC68 /* Copy Pods Resources */,
+				E44B7146478ACE4C2BB4BDD1 /* [CP] Embed Pods Frameworks */,
+				7F19A5CBE239ABDC5113DC64 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -698,7 +660,6 @@
 				TargetAttributes = {
 					592192B61C0B298200E93480 = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = HN3SCP8A52;
 					};
 				};
 			};
@@ -727,11 +688,9 @@
 			files = (
 				18E8A5DE1C1C98790043D205 /* WeatherCell.xib in Resources */,
 				5988FF8D1C16E12800223FD3 /* loadingData.json in Resources */,
-				59ED10871C19DBBC00C81793 /* AcousticModelSpanish.bundle in Resources */,
 				5955D0791C146586000BD806 /* defaultThemes.json in Resources */,
 				18486BB71C1DAB24002A5536 /* rain.jpeg in Resources */,
 				592192CD1C0B298200E93480 /* LaunchScreen.storyboard in Resources */,
-				59CA38401C201EB50084BDA8 /* SVProgressHUD.bundle in Resources */,
 				5955D0691C14544F000BD806 /* SamaritanView.xib in Resources */,
 				18486BB81C1DAB24002A5536 /* sun.jpeg in Resources */,
 				18656A9C1C22C1FE0071FA14 /* john cena.jpeg in Resources */,
@@ -744,56 +703,55 @@
 				592192D51C0B29A600E93480 /* magdacleanmono-regular.otf in Resources */,
 				592192C51C0B298200E93480 /* Main.storyboard in Resources */,
 				18656A9E1C22DC950071FA14 /* John Cena Theme.mp3 in Resources */,
-				59ED10861C19DBBC00C81793 /* AcousticModelEnglish.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		08A0977E3C57ECD0FE7B4802 /* Embed Pods Frameworks */ = {
+		2E55FE5058D11B5370C12231 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		0F80A9E6D6577F86942AF34D /* Check Pods Manifest.lock */ = {
+		7F19A5CBE239ABDC5113DC64 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Samaritan/Pods-Samaritan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		BF10211B90852E667CCCBC68 /* Copy Pods Resources */ = {
+		E44B7146478ACE4C2BB4BDD1 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Samaritan/Pods-Samaritan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -814,6 +772,7 @@
 				5938BF851C1B28AC000E6D8C /* HRColorInfoView.m in Sources */,
 				592192C21C0B298200E93480 /* ViewController.m in Sources */,
 				5938BF831C1B28AC000E6D8C /* HRBrightnessSlider.m in Sources */,
+				59AF4F421DA0D10E00C92D0B /* LogTextView.m in Sources */,
 				5938BF841C1B28AC000E6D8C /* HRColorCursor.m in Sources */,
 				5988FF811C16E11300223FD3 /* StartupViewController.m in Sources */,
 				59EB085B1C0B7577000DFBEA /* BlinkingImageView.m in Sources */,
@@ -821,12 +780,10 @@
 				1866A54F1C1F17AB005A7BA2 /* SearchListingTableViewController.m in Sources */,
 				592192BF1C0B298200E93480 /* AppDelegate.m in Sources */,
 				59CA38341C2019E70084BDA8 /* UIImage+ImageEffects.m in Sources */,
-				59CA38411C201EB50084BDA8 /* SVProgressHUD.m in Sources */,
 				18E8A5E11C1C9A620043D205 /* WeatherTableViewCell.m in Sources */,
 				18E8A5DC1C1C944C0043D205 /* SSJSONModel.m in Sources */,
 				592192C81C0B298200E93480 /* Samaritan.xcdatamodeld in Sources */,
 				5955D06F1C14585C000BD806 /* SamatitanViewTableViewCell.m in Sources */,
-				59CA38421C201EB50084BDA8 /* SVRadialGradientLayer.m in Sources */,
 				5938BF821C1B28AC000E6D8C /* HRBrightnessCursor.m in Sources */,
 				5955D0721C145921000BD806 /* SettingsTableViewController.m in Sources */,
 				18DEA5C41C14B2430010DAE0 /* AllCommandsTableViewController.m in Sources */,
@@ -842,7 +799,6 @@
 				592192BC1C0B298200E93480 /* main.m in Sources */,
 				5955D0751C14592C000BD806 /* ThemePickerTableViewController.m in Sources */,
 				18105C351C1EFD990086D6BB /* ListingTableViewController.m in Sources */,
-				59CA383F1C201EB50084BDA8 /* SVIndefiniteAnimatedView.m in Sources */,
 				18E8A5D81C1C8C950043D205 /* WeatherTableViewController.m in Sources */,
 				5938BF881C1B28AC000E6D8C /* HRHSVColorUtil.m in Sources */,
 				5988FF7A1C16E0F700223FD3 /* OutlineProgressView.m in Sources */,
@@ -960,10 +916,10 @@
 		};
 		592192D21C0B298200E93480 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 83F082915CB75B8C27C78FD9 /* Pods.debug.xcconfig */;
+			baseConfigurationReference = D83234C1806DEA5FD84CDDDA /* Pods-Samaritan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HN3SCP8A52;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -984,10 +940,10 @@
 		};
 		592192D31C0B298200E93480 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 016B3B5767F15C0F237539DA /* Pods.release.xcconfig */;
+			baseConfigurationReference = DD696ABB43C93D90DE51F17C /* Pods-Samaritan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = HN3SCP8A52;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

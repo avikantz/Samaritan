@@ -11,6 +11,7 @@
 @implementation SamatitanViewTableViewCell
 
 - (void)awakeFromNib {
+	[super awakeFromNib];
     // Initialization code
 }
 
